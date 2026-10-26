@@ -1,0 +1,213 @@
+{
+  "stage": "I03",
+  "origins": {
+    "human-step": "0.1.5",
+    "md-word": "0.1.7"
+  },
+  "references": [
+    {
+      "workflow": "human-step",
+      "source_role": "author.md",
+      "en": "locales/en/human-step/references/author.md",
+      "ru": "locales/ru/human-step/references/author.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "executor.md",
+      "en": "locales/en/human-step/references/executor.md",
+      "ru": "locales/ru/human-step/references/executor.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "code.md",
+      "en": "locales/en/human-step/references/code.md",
+      "ru": "locales/ru/human-step/references/code.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "non-code.md",
+      "en": "locales/en/human-step/references/non-code.md",
+      "ru": "locales/ru/human-step/references/non-code.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "coordination.md",
+      "en": "locales/en/human-step/references/coordination.md",
+      "ru": "locales/ru/human-step/references/coordination.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "experience.md",
+      "en": "locales/en/human-step/references/experience.md",
+      "ru": "locales/ru/human-step/references/experience.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "lessons.md",
+      "en": "locales/en/human-step/references/lessons.md",
+      "ru": "locales/ru/human-step/references/lessons.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "commit-examples.md",
+      "en": "locales/en/human-step/references/commit-examples.md",
+      "ru": "locales/ru/human-step/references/commit-examples.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "approved-packet.md",
+      "en": "locales/en/human-step/references/packet-example.md",
+      "ru": "locales/ru/human-step/references/packet-example.md"
+    },
+    {
+      "workflow": "human-step",
+      "source_role": "language-and-maintenance.md",
+      "en": "locales/en/human-step/references/language-and-maintenance.md",
+      "ru": "locales/ru/human-step/references/language-and-maintenance.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "requirements.md",
+      "en": "locales/en/md-word/references/requirements.md",
+      "ru": "locales/ru/md-word/references/requirements.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "workspace.md",
+      "en": "locales/en/md-word/references/workspace.md",
+      "ru": "locales/ru/md-word/references/workspace.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "agent-log.md",
+      "en": "locales/en/md-word/references/agent-log.md",
+      "ru": "locales/ru/md-word/references/agent-log.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "coordination.md",
+      "en": "locales/en/md-word/references/coordination.md",
+      "ru": "locales/ru/md-word/references/coordination.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "subagents.md",
+      "en": "locales/en/md-word/references/subagents.md",
+      "ru": "locales/ru/md-word/references/subagents.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "authoring.md",
+      "en": "locales/en/md-word/references/authoring.md",
+      "ru": "locales/ru/md-word/references/authoring.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "illustrations.md",
+      "en": "locales/en/md-word/references/illustrations.md",
+      "ru": "locales/ru/md-word/references/illustrations.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "word-layout.md",
+      "en": "locales/en/md-word/references/word-layout.md",
+      "ru": "locales/ru/md-word/references/word-layout.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "word-examples.md",
+      "en": "locales/en/md-word/references/word-examples.md",
+      "ru": "locales/ru/md-word/references/word-examples.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "user-profile.md",
+      "en": "locales/en/md-word/references/user-profile.md",
+      "ru": "locales/ru/md-word/references/user-profile.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "feedback.md",
+      "en": "locales/en/md-word/references/feedback.md",
+      "ru": "locales/ru/md-word/references/feedback.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "ratings-and-cases.md",
+      "en": "locales/en/md-word/references/ratings-and-cases.md",
+      "ru": "locales/ru/md-word/references/ratings-and-cases.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "evaluation.md",
+      "en": "locales/en/md-word/references/evaluation.md",
+      "ru": "locales/ru/md-word/references/evaluation.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "lessons.md",
+      "en": "locales/en/md-word/references/lessons.md",
+      "ru": "locales/ru/md-word/references/lessons.md"
+    },
+    {
+      "workflow": "md-word",
+      "source_role": "language-and-maintenance.md",
+      "en": "locales/en/md-word/references/language-and-maintenance.md",
+      "ru": "locales/ru/md-word/references/language-and-maintenance.md"
+    }
+  ],
+  "templates": [
+    {
+      "en": "shared/templates/en/human-step-packet.md",
+      "ru": "shared/templates/ru/human-step-packet.md"
+    },
+    {
+      "en": "shared/templates/en/human-step-result.md",
+      "ru": "shared/templates/ru/human-step-result.md"
+    },
+    {
+      "en": "shared/templates/en/human-step-feedback.md",
+      "ru": "shared/templates/ru/human-step-feedback.md"
+    },
+    {
+      "en": "shared/templates/en/task-spec.md",
+      "ru": "shared/templates/ru/task-spec.md"
+    },
+    {
+      "en": "shared/templates/en/task-state.md",
+      "ru": "shared/templates/ru/task-state.md"
+    },
+    {
+      "en": "shared/templates/en/handoff.md",
+      "ru": "shared/templates/ru/handoff.md"
+    },
+    {
+      "en": "shared/templates/en/feedback.md",
+      "ru": "shared/templates/ru/feedback.md"
+    },
+    {
+      "en": "shared/templates/en/accepted-case.md",
+      "ru": "shared/templates/ru/accepted-case.md"
+    }
+  ],
+  "historical_examples": {
+    "status": "review_drafts; representation decision open",
+    "narratives": [
+      {
+        "en": "locales/en/md-word/examples/index.md",
+        "ru": "locales/ru/md-word/examples/index.md"
+      },
+      {
+        "en": "locales/en/md-word/examples/case-a.md",
+        "ru": "locales/ru/md-word/examples/case-a.md"
+      },
+      {
+        "en": "locales/en/md-word/examples/case-b.md",
+        "ru": "locales/ru/md-word/examples/case-b.md"
+      }
+    ],
+    "structured_alternative": "shared/examples/historical-candidates.json",
+    "runtime_schema_changed": false
+  },
+  "scope": "I03 reference and optional-form migration; existing workspace templates retained separately"
+}

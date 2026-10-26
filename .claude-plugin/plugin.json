@@ -1,0 +1,7 @@
+{
+  "name": "workflow-tools-preview",
+  "displayName": "Workflow Tools Preview",
+  "version": "0.0.0-i05",
+  "description": "Test preview of exact step packets and task accompaniment with paired English/Russian instructions and a private external profile.",
+  "license": "PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial"
+}

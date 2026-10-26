@@ -1,0 +1,4 @@
+interface:
+  display_name: "Human Step"
+  short_description: "Prepare and execute exact step packets"
+  default_prompt: "Use $human-step to prepare a precise, checkable handoff packet for this task."

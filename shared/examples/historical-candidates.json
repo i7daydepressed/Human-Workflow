@@ -1,0 +1,155 @@
+{
+  "draft_format_version": 1,
+  "representation_decision": "retain_both_narrative_and_json",
+  "runtime_input": false,
+  "classification": "de-identified historical paraphrases, not synthetic fixtures or new execution records",
+  "compatible_with_legacy_case_catalog": false,
+  "scales": {
+    "recorded-relative-preference": {
+      "kind": "relative_preference",
+      "baseline": "1",
+      "baseline_meaning": {
+        "en": "normal / acceptable",
+        "ru": "нормальный / приемлемый"
+      },
+      "higher_is_preferred": true,
+      "min": null,
+      "max": null,
+      "scope": "the recorded case profile only; not a default for other users",
+      "teacher_assignment_limit": "Source registry assigns this scale to the reported teacher number; no independent institutional rubric was established"
+    }
+  },
+  "cases": [
+    {
+      "id": "case-a",
+      "classification": "adapted_historical_review_draft",
+      "runtime_input": false,
+      "narratives": {
+        "en": "locales/en/md-word/examples/case-a.md",
+        "ru": "locales/ru/md-word/examples/case-a.md"
+      },
+      "historical_acceptance": {
+        "status": "recorded_user_confirmation",
+        "evidence_layer": "earlier case author attributes user message",
+        "confirmation_date": {
+          "value": null,
+          "status": "withheld_from_public"
+        },
+        "actual_acceptance_date": {
+          "value": null,
+          "status": "unknown_in_source"
+        },
+        "observed_directly_in_this_stage": false,
+        "applies_to": "historical work, not the cleaned preset or this candidate"
+      },
+      "user_rating": {
+        "kind": "user_report_rating",
+        "value": "1.4",
+        "display": {
+          "ru": "1,4",
+          "en": "1.4"
+        },
+        "scale_id": "recorded-relative-preference",
+        "rater_role": "user",
+        "scope": "report",
+        "date": {
+          "value": null,
+          "status": "withheld_from_public"
+        },
+        "reported_date": null,
+        "quote_disposition": "private_original_retained; public text is a paraphrase",
+        "independent_teacher_verification": null
+      },
+      "teacher_rating": {
+        "kind": "teacher_work_rating",
+        "value": "1.3",
+        "display": {
+          "ru": "1,3",
+          "en": "1.3"
+        },
+        "scale_id": "recorded-relative-preference",
+        "rater_role": "teacher_reported_by_user",
+        "scope": "whole_work; separate report-only attribution not established",
+        "date": {
+          "value": null,
+          "status": "unknown_in_source"
+        },
+        "reported_date": {
+          "value": null,
+          "status": "withheld_from_public"
+        },
+        "quote_disposition": "private_original_retained; public text is a paraphrase",
+        "independent_teacher_verification": false
+      },
+      "source_dates": "Known personal record dates are withheld; unknown event dates remain explicitly unknown",
+      "controlled_skill_evaluation": false,
+      "submitted_bytes_established": false,
+      "rating_cause_established": false,
+      "clarification_history": [
+        {
+          "phase": "earlier",
+          "summary": "The source recorded 1.3 with unresolved attribution."
+        },
+        {
+          "phase": "later",
+          "summary": "The source clarified teacher 1.3 via user; user report rating 1.4 remained separate. Actual teacher grading date was unknown."
+        }
+      ],
+      "quality_observation": {
+        "rater_role": "user",
+        "kind": "paraphrase",
+        "summary": "Image selection and visual style were positively assessed.",
+        "causal_effect_on_rating": false
+      }
+    },
+    {
+      "id": "case-b",
+      "classification": "adapted_historical_review_draft",
+      "runtime_input": false,
+      "narratives": {
+        "en": "locales/en/md-word/examples/case-b.md",
+        "ru": "locales/ru/md-word/examples/case-b.md"
+      },
+      "historical_acceptance": {
+        "status": "recorded_user_confirmation",
+        "evidence_layer": "earlier project-state entry attributes user confirmation; primary dialogue not rechecked",
+        "confirmation_date": {
+          "value": null,
+          "status": "withheld_from_public"
+        },
+        "actual_acceptance_date": {
+          "value": null,
+          "status": "unknown_in_source"
+        },
+        "observed_directly_in_this_stage": false,
+        "applies_to": "historical work, not the cleaned preset or this candidate"
+      },
+      "user_rating": {
+        "kind": "user_report_rating",
+        "value": "0.95",
+        "display": {
+          "ru": "0,95",
+          "en": "0.95"
+        },
+        "scale_id": "recorded-relative-preference",
+        "rater_role": "user",
+        "scope": "report",
+        "date": {
+          "value": null,
+          "status": "withheld_from_public"
+        },
+        "reported_date": null,
+        "quote_disposition": "private_original_retained; public text is a paraphrase",
+        "independent_teacher_verification": null
+      },
+      "teacher_rating": null,
+      "source_dates": "Known personal record dates are withheld; unknown event dates remain explicitly unknown",
+      "controlled_skill_evaluation": false,
+      "submitted_bytes_established": false,
+      "rating_cause_established": false,
+      "clarification_history": []
+    }
+  ],
+  "privacy": "Names, private links, literal quotes, exact source hashes and identifying project labels are not included. This is de-identification, not an anonymity certificate.",
+  "publication_status": "pending_owner_review_separate_stage"
+}

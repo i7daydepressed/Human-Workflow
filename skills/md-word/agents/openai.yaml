@@ -1,0 +1,4 @@
+interface:
+  display_name: "Task Accompaniment and Reports"
+  short_description: "Accompany tasks and preserve report evidence"
+  default_prompt: "Use $md-word to accompany this task and preserve its current state and evidence."

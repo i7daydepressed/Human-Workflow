@@ -1,0 +1,20 @@
+{
+  "name": "workflow-tools",
+  "interface": {
+    "displayName": "Workflow Tools"
+  },
+  "plugins": [
+    {
+      "name": "workflow-tools-preview",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

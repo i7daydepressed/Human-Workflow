@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "workflow-tools-preview",
+  "version": "0.0.0-i05",
+  "description": "Preview: exact step packets and task accompaniment, with independent English and Russian instructions.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Workflow Tools Preview",
+        "shortDescription": "Exact steps and task accompaniment",
+        "longDescription": "A local review candidate with two workflows, paired EN/RU instructions, an external private profile, and a neutral Word preset. Technical identity and version are temporary. The I04 base was exercised on Codex CLI; see the packaged validation scope for this candidate.",
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Prepare an exact handoff packet for the attached task; write the result in my language.",
+          "Accompany this task and preserve its state without creating a final report."
+        ]
+      }
+    }
+  },
+  "license": "PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial"
+}

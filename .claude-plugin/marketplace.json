@@ -1,0 +1,13 @@
+{
+  "name": "workflow-tools",
+  "owner": {
+    "name": "Workflow Tools maintainers"
+  },
+  "plugins": [
+    {
+      "name": "workflow-tools-preview",
+      "source": "./",
+      "description": "Exact step packets and task accompaniment with paired EN/RU instructions."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "stage": "I05",
+  "release_version": null,
+  "origins": {
+    "human-step": "0.1.5",
+    "md-word": "0.1.7"
+  },
+  "contracts": {
+    "human-step": [
+      "SCOPE",
+      "AUTHORIZATION",
+      "LANGUAGE",
+      "READINESS",
+      "BASELINE",
+      "EXACT_PACKET",
+      "EXECUTION",
+      "EVIDENCE",
+      "HANDOFF",
+      "FEEDBACK"
+    ],
+    "md-word": [
+      "SCOPE",
+      "LANGUAGE",
+      "REQUIREMENTS",
+      "PROFILE",
+      "CORE",
+      "EVIDENCE",
+      "CHECKPOINT",
+      "AUTHORING",
+      "COVER_CHOICE",
+      "WORD_PATCH",
+      "HANDOFF",
+      "RATINGS",
+      "FEEDBACK"
+    ]
+  },
+  "semantic_parity": "Task contracts retained from I04; paired client-status documentation updated during I05. The I04 base has scoped Codex CLI evidence; the I05 candidate has not been installed on the client.",
+  "complete_reference_migration": true
+}

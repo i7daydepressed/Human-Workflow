@@ -1,0 +1,7 @@
+# Private profile and task choices
+
+Read the [profile contract](../../../../docs/profile.en.md) and use an explicitly selected profile outside the installation. It records optional language, style, workspace, Word-resource and history preferences. Current requirements/user decisions take precedence. A profile is data, not authorization, execution evidence or credentials. Without access state the limit and continue from available task settings; do not silently create a duplicate.
+
+Do not import another author's name, cover fields, comment typography, point sizes, table theme, code-image style, rating rubric or cloud folders as universal defaults. Derive current body/table/caption/TOC formatting from the selected sample and actual assignment. Explicit task choices prevail over generic artifact-skill defaults. Keep working choices in task state/layout catalog, not submitted prose without a reason.
+
+Layout and cover are independent. `unselected` is not consent to builtin. Offer the user's own cover, including one already supplied in a full sample, or the neutral cover. Ask only necessary fields; teacher/student-record number are not universally mandatory. A profile locator alone neither applies the cover nor validates rendering. Product updates do not rewrite profiles or reformat existing documents. Local export/import copies only selected resources, excludes history by default and is not cloud synchronization.

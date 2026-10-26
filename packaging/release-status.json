@@ -1,0 +1,75 @@
+{
+  "stage": "github-ready",
+  "product_name": null,
+  "public_author": null,
+  "license": "PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial",
+  "release_version": null,
+  "public_release_ready": false,
+  "installable_plugin_built": true,
+  "word_preset_ready": true,
+  "reference_migration_complete": true,
+  "historical_cases_migrated": true,
+  "host_installation_tested": [
+    {
+      "client": "Codex CLI 0.162.1",
+      "package_version": "0.0.0-i04",
+      "platform_reported": "macOS 26.5.2 arm64",
+      "python_reported": "3.14.5",
+      "evidence": "Owner-supplied CLI output, executor reports and independently inspected returned artifacts"
+    }
+  ],
+  "word_preset_validation_scope": "Neutral source assets reviewed on Linux/LibreOffice with substituted fonts; Microsoft Word untested",
+  "historical_case_drafts_ready": true,
+  "public_case_representation_approved": true,
+  "historical_case_representations": [
+    "narrative",
+    "json"
+  ],
+  "public_case_publication_approved": false,
+  "temporary_package_name": "workflow-tools-preview",
+  "temporary_package_version": "0.0.0-i05",
+  "local_marketplace_prepared": true,
+  "current_candidate_host_installation_tested": false,
+  "base_client_checks": "docs/client-checks.en.md",
+  "runtime_unchanged_since": "I04",
+  "task_contracts_unchanged_since": "I04",
+  "mac_new_version_update_tested": false,
+  "repository_installation_prepared": true,
+  "github_uploaded": false,
+  "repository_marketplace_name": "workflow-tools",
+  "claude_repository": {
+    "version": "0.0.0-i05",
+    "prepared": true,
+    "host_validated": false,
+    "core_base": "I05",
+    "public_release": false
+  },
+  "historical_claude_archive": {
+    "version": "0.0.0-i06-claude",
+    "built": true,
+    "host_validated": false,
+    "core_base": "I05",
+    "public_release": false
+  },
+  "licensing": {
+    "policy_date": "2026-10-27",
+    "free_license": "PolyForm-Noncommercial-1.0.0",
+    "commercial_license": "LicenseRef-Workflow-Tools-Commercial",
+    "commercial_terms_revision": "prepared-v0.1",
+    "owner_approved": {
+      "individual_usd": 10,
+      "team_usd": 50,
+      "team_max_people": 5,
+      "payment": "one-time",
+      "version_scope": "confirmed purchased major version",
+      "meter": "human users; not devices, agents, runs or outputs"
+    },
+    "commercial_sales_open": false,
+    "public_licensor_identity": null,
+    "commercial_contact": null,
+    "payment_method": null,
+    "seller_jurisdiction": null,
+    "legal_review": "not performed",
+    "runtime_enforcement": "none added"
+  }
+}

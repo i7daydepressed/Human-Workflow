@@ -1,0 +1,20 @@
+{
+  "name": "workflow-preview-i04",
+  "interface": {
+    "displayName": "Workflow Preview I04"
+  },
+  "plugins": [
+    {
+      "name": "workflow-tools-preview",
+      "source": {
+        "source": "local",
+        "path": "./plugins/workflow-tools-preview"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
