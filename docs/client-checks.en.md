@@ -1,6 +1,6 @@
 # Client evidence — I06
 
-Updated 2026-10-27. The public I05 source tree was read at GitHub commit `23a57e765494ab2480461e62843ed6c4c8716d37`. License terms and prices have been selected; commercial sales remain closed. The I06 changes are being applied to the owner's Drive source copy; this record does not claim a new GitHub push, host installation, or Mac upgrade.
+Updated 2026-10-27. The I06 source tree (`0.0.0-i06`) is published on GitHub at commit `a8d124f77f77cb14ffcfca6abc0e839baee8fbd6`; its verified I05 base is commit `23a57e765494ab2480461e62843ed6c4c8716d37`. License terms and prices have been selected; commercial sales remain closed. Publication does not establish host installation or a Mac client upgrade; these checks remain unverified for I06.
 
 I06 adds generated skill-local resources, clearer md-word selection metadata and cooperation with available format skills, paired human-facing documentation, and profile/output protection for isolated resource paths. Canonical Word files and profile schema are preserved.
 

@@ -26,11 +26,11 @@
     },
     "docs/client-checks.en.md": {
       "source": "docs/client-checks.en.md",
-      "sha256": "f2f363beb56ca82be48949750aff408a6cee3265ae3f313ca1226dddb0ad5396"
+      "sha256": "f4c9d16c252a238e2863e21468d8c1676a1a682927522c4312746ef053935c28"
     },
     "docs/client-checks.ru.md": {
       "source": "docs/client-checks.ru.md",
-      "sha256": "6394a0bd149fa91adcb42137ebdc73b251774dfa62a9b090f64900b228f819c1"
+      "sha256": "c4c6fd1cf320c4187b91af3e2e142e266e2a9f43c0e44aeef99a7d221b76ed23"
     },
     "docs/installation.en.md": {
       "source": "docs/installation.en.md",

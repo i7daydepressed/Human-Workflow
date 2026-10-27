@@ -72,8 +72,8 @@
     "legal_review": "not performed",
     "runtime_enforcement": "none added"
   },
-  "github_uploaded_version": "0.0.0-i05",
-  "current_candidate_github_uploaded": false,
+  "github_uploaded_version": "0.0.0-i06",
+  "current_candidate_github_uploaded": true,
   "runtime_change_scope": "Skill-local generated resources; installation-root detection for profile/output guards",
   "generated_skill_resources": {
     "canonical_source": "locales/, shared/, docs/",
