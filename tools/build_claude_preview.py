@@ -29,16 +29,20 @@ def claude_payload(root):
     for target, origin in replacements.items():
         files[target] = source[origin]
         provenance[target] = {'source': origin, 'sha256': hashlib.sha256(files[target]).hexdigest()}
+    canonical = json.loads(source['plugin.json'])
+    package = json.loads(source['packaging/skill-resources.json'])['package']
     manifest = json.loads(files['.claude-plugin/plugin.json'])
     if (set(manifest) != {'name', 'displayName', 'version', 'description', 'license'}
-            or manifest['name'] != identity or manifest['version'] != '0.0.0-i06'
-            or manifest['license'] != json.loads(source['plugin.json'])['license']
+            or manifest['name'] != identity or manifest['version'] != canonical['version']
+            or manifest['displayName'] != package['display_name']
+            or manifest['license'] != canonical['license']
             or not all(isinstance(v, str) and v for v in manifest.values())):
-        raise ValueError('Expected the recorded temporary Claude preview identity')
+        raise ValueError('Expected Claude identity/version/license agreement with canonical plugin.json')
     files['PACKAGE-MANIFEST.json'] = encoded({
-        'kind': 'claude_plugin_preview', 'stage': 'I06', 'base_package_version': '0.0.0-i06',
+        'kind': 'claude_plugin_preview', 'stage': json.loads(source['packaging/contracts.json'])['stage'],
+        'base_package_version': canonical['version'], 'package': package,
         'claude_host_validation': 'not run', 'installed': False, 'published': False,
-        'public_identity': 'Human Workflow; retained technical ID; preview version', 'license': manifest['license'],
+        'public_identity': package['display_name'], 'license': manifest['license'],
         'commercial_sales_open': False, 'files': provenance})
     return files
 

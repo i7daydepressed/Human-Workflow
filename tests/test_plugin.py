@@ -58,17 +58,27 @@ class PortablePlugin(unittest.TestCase):
             self.assertIsNone(archive.testzip())
             self.assertEqual(set(archive.namelist()), set(mapping) | {'PACKAGE-MANIFEST.json'})
             manifest = json.loads(archive.read('plugin.json'))
-            self.assertEqual(manifest['name'], 'workflow-tools-preview')
-            self.assertEqual(manifest['version'], '0.0.0-i06')
+            self.assertEqual(manifest['name'], 'human-workflow')
+            self.assertEqual(manifest['version'], '0.0.7')
             self.assertTrue(manifest['$schema'].endswith('/1.0.0/plugin.schema.json'))
-            self.assertEqual(manifest['license'], 'PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial')
-            for name in ['LICENSE', 'COMMERCIAL-LICENSE.md', 'COMMERCIAL-LICENSE.ru.md',
-                         'docs/licensing.en.md', 'docs/licensing.ru.md']:
+            self.assertEqual(manifest['license'], 'Apache-2.0')
+            for name in ['LICENSE', 'docs/licensing.en.md', 'docs/licensing.ru.md']:
                 self.assertEqual(archive.read(name), (source / name).read_bytes())
             for key in ['author', 'repository', 'mcpServers', 'skills']:
                 self.assertNotIn(key, manifest)
             recorded = json.loads(archive.read('PACKAGE-MANIFEST.json'))
             self.assertFalse(recorded['host_installation_verified'])
+            self.assertFalse(recorded['published'])
+            self.assertEqual(recorded['package']['name'], 'human-workflow')
+            self.assertEqual(recorded['package']['version'], '0.0.7')
+            self.assertEqual(recorded['package']['display_name'], 'Human-workflow-v0.0.7')
+            self.assertEqual(recorded['license'], 'Apache-2.0')
+            self.assertEqual(recorded['package']['source_sha256'],
+                             hashlib.sha256(archive.read('plugin.json')).hexdigest())
+            for skill in ('human-step', 'md-word'):
+                self.assertEqual(archive.read('skills/' + skill + '/resources/LICENSE'), archive.read('LICENSE'))
+            self.assertFalse(any(Path(n).name in ('COMMERCIAL-LICENSE.md', 'COMMERCIAL-LICENSE.ru.md')
+                                 for n in archive.namelist()))
             for target, origin in mapping.items():
                 content = archive.read(target)
                 self.assertEqual(content, (source / origin).read_bytes())
@@ -79,6 +89,23 @@ class PortablePlugin(unittest.TestCase):
             for skill in ('human-step', 'md-word'):
                 self.assertEqual(archive.read('skills/' + skill + '/resources/shared/scripts/report_workspace.py'),
                                  archive.read('shared/scripts/report_workspace.py'))
+
+    def test_builder_uses_canonical_version_after_regeneration(self):
+        source = self.clone()
+        manifest_path = source / 'plugin.json'
+        manifest = json.loads(manifest_path.read_text())
+        manifest['version'] = '0.0.8'
+        manifest['extensions']['com.openai']['interface']['displayName'] = 'Human-workflow-v0.0.8'
+        manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
+        sync = subprocess.run([sys.executable, '-B', str(source / 'tools/sync_skill_resources.py')],
+                              capture_output=True, text=True)
+        self.assertEqual(sync.returncode, 0, sync.stdout + sync.stderr)
+        output = self.run_builder(source)
+        with ZipFile(output) as archive:
+            receipt = json.loads(archive.read('PACKAGE-MANIFEST.json'))
+            self.assertEqual(receipt['package']['version'], '0.0.8')
+            self.assertEqual(receipt['package']['display_name'], 'Human-workflow-v0.0.8')
+            self.assertEqual(json.loads(archive.read('plugin.json'))['version'], '0.0.8')
 
     def test_plugin_and_marketplace_are_reproducible(self):
         a = self.run_builder(name='a.zip', marketplace='ma.zip')
@@ -93,6 +120,7 @@ class PortablePlugin(unittest.TestCase):
             archive.extractall(repo)
         catalog = json.loads((repo / '.agents/plugins/marketplace.json').read_text())
         self.assertEqual(len(catalog['plugins']), 1)
+        self.assertEqual(catalog['name'], 'workflow-preview-i04')
         entry = catalog['plugins'][0]
         path = entry['source']['path']
         self.assertTrue(path.startswith('./'))

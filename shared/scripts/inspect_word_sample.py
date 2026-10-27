@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from zipfile import ZipFile
 import xml.etree.ElementTree as E
-from safe_paths import destination
+from safe_paths import destination, external_path
 
 NS = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
       'm': 'http://schemas.openxmlformats.org/officeDocument/2006/math'}
@@ -81,6 +81,7 @@ def main():
     result = inspect(args.docx.resolve())
     payload = json.dumps(result, ensure_ascii=False, indent=2)
     if args.out:
+        external_path(args.out, __file__)
         output = destination(args.out.expanduser().parent.resolve(), args.out.name)
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(payload, encoding='utf-8')

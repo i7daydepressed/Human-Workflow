@@ -1,5 +1,5 @@
 {
-  "stage": "I06",
+  "stage": "I07",
   "release_version": null,
   "origins": {
     "human-step": "0.1.5",
@@ -27,6 +27,7 @@
       "EVIDENCE",
       "CHECKPOINT",
       "AUTHORING",
+      "MD_APPROVAL",
       "COVER_CHOICE",
       "WORD_PATCH",
       "HANDOFF",
@@ -34,6 +35,6 @@
       "FEEDBACK"
     ]
   },
-  "semantic_parity": "Paired task contracts retain the I04 scope, with an explicit clarification that available format skills cooperate with md-word. I06 changes resource delivery, path guards, and selection/documentation metadata. Actual new host installation remains unverified.",
+  "semantic_parity": "I07 paired clauses add revision-bound staged MD approval with sourced exceptions, same-agent role inference, early verified persistence, authority reconciliation and task-level no-cover; document capability and installation-write boundaries are explicit. Marker parity is not behavioral proof.",
   "complete_reference_migration": true
 }

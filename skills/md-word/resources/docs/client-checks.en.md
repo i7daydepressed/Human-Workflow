@@ -1,4 +1,24 @@
-# Client evidence — I06
+# Client evidence — I07 candidate
+
+Updated 2026-10-27. The local candidate is `human-workflow` `0.0.7`, displayed as Human-workflow-v0.0.7, licensed Apache-2.0. It is based on reviewed commit `52f692850ddcd10594697b40377bedfa55550354`. This implementation does not publish, install, or migrate the candidate. Earlier published I06 and its prior licensing are historical evidence, not current Apache-candidate results.
+
+I07 changes revision-bound Markdown approval, same-agent role inference, task-level no-cover, early persistence/authority reconciliation, write preflights and identity diagnostics. Mechanical tests/builds establish only their actual checked scope; new results must be recorded from the changed candidate after execution, not copied from the I06 count below. No real client behavior or migration is established by source or archive inspection.
+
+| New-candidate layer | Status / evidence boundary |
+| --- | --- |
+| Installation / client manifest validation | not run unless separately observed with actual app/CLI version and returned output |
+| Selection and loading | not run; exposed metadata, chosen skill, actual body/resource reads are distinct facts |
+| Behavioral C1-C9 / automatic selection / negative controls | not run; source contract/marker checks do not prove compliance |
+| Identity migration C10 | not run; a rename map and migration guide are preparation only |
+| Source/helper/resource/archive checks | Record actual changed-candidate commands, counts, artifacts and limitations in the execution record |
+
+Explicit invocation and automatic selection require separate fresh-context observations. Successful arithmetic or a polished document does not prove coordinator loading. Missing read traces are unassessed rather than proof of no read. Saving requires verified writes; delivery requires accessible intended outputs. Quota interruption, feature eligibility and instruction compliance are separate. The [installation matrix](installation.en.md) distinguishes custom-skill uploads, paid plugins, chat and hook-capable surfaces, and Codex CLI/Desktop. [Migration/rollback](migration.en.md) is for later authorization.
+
+## Earlier version-bound evidence
+
+The material below retains its original I06/I05/I04 scope, including historical license/publication wording. None of its tests or client reports is silently relabelled as I07.
+
+# Historical I06 client evidence
 
 Updated 2026-10-27. The I06 source tree (`0.0.0-i06`) is published on GitHub at commit `a8d124f77f77cb14ffcfca6abc0e839baee8fbd6`; its verified I05 base is commit `23a57e765494ab2480461e62843ed6c4c8716d37`. License terms and prices have been selected; commercial sales remain closed. Publication does not establish host installation or a Mac client upgrade; these checks remain unverified for I06.
 

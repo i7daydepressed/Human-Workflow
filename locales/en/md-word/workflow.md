@@ -1,4 +1,4 @@
-# MD–Word — I04 core
+# MD–Word — core
 
 <!-- contract:SCOPE -->
 Accompany requirements and core work through a verifiable result and a human-readable explanation. Derive deliverables from the actual assignment. A final report can be required, planned, or unnecessary. Do not create an empty report or Word folders solely for process compliance. Accept core work only with suitable knowledge, tools, and authorization; own execution and verification of the part accepted.
@@ -15,6 +15,8 @@ Use an explicitly selected profile outside the installation. Task requirements a
 <!-- contract:CORE -->
 Establish the core executor and boundaries. Use human-step for transferable exact instructions and returned evidence. A bounded executor receives only relevant requirements, base version, actions, checks, and return materials. Optional subagents require actual availability and authorization. Without an assigned report, preserve proportionate state and explanation for continuation.
 
+Infer the role from the current assignment. When the user assigns feasible small core work and its report to this agent, execute and verify that core here. Do not require a separate executor or ask a generic mode question when the assignment is clear. Preparing a packet remains distinct from executing it.
+
 For work and a report from a guide or sample, combine this workflow with available document, spreadsheet, PDF, or coding skills. Those skills handle format-specific operations; this workflow coordinates requirements, state, evidence, and handoff. Check actual availability rather than assuming a named skill is installed.
 
 <!-- contract:EVIDENCE -->
@@ -23,11 +25,20 @@ Inspect actual artifacts and versions. Separate planned action, executed action,
 <!-- contract:CHECKPOINT -->
 Preserve user changes, current state, and an attributable log. Use existing project files instead of duplicate template names. Record known model/role labels with their source; unknown is valid. Checkpoints include selected materials and hashes, not all external linked bytes. Keep previous snapshots. `accepted` and `teacher-accepted` require explicit sourced confirmation; they are not automatic consequences of a good draft. Local snapshots are not cloud synchronization or anonymized exports.
 
+After a significant core or draft result, and before costly or interruptible conversion/rendering, save proportionate current state and an attributable event while tools are available. Include actual results/checks, selected MD/DOCX authorities, approval state, unresolved issues and the next action. Check the actual write result. If the agreed remote destination is unavailable, record pending synchronization and any permitted local copy; do not claim a local snapshot is synchronized.
+
 <!-- contract:AUTHORING -->
 When assigned, draft a connected Markdown account based on requirements and actual results, including a substantive introduction/conclusion unless the assignment says otherwise. Cover theoretical and additional requirements. For illustrations preserve provenance, relative paths, meaningful caption, and explanation before/after. Count a compound figure by its shared caption, separately from image-file count. Check meaning, arithmetic, readability, and structure; audits do not inspect image meaning.
 
+<!-- contract:MD_APPROVAL -->
+For a newly authored report that proceeds from Markdown to Word, use staged content approval by default unless the current assignment explicitly selects direct conversion or waives this gate. A request for a final DOCX alone does not approve an unseen draft. Present the actual current Markdown or an accessible link, identify its revision or hash, record approval as pending, and save the current state before dependent conversion. Wait until approval covers that content. Reuse approval already supplied for the selected revision; record the source of any direct-conversion choice or waiver. Material content changes invalidate the affected approval. A formatting-only patch to the authoritative DOCX does not restart content approval unless content or a task requirement changes. Continue independent authorized core work and checks; do not turn this content gate into repeated execution-permission questions.
+
 <!-- contract:COVER_CHOICE -->
 Before Word formatting, establish layout and cover independently. If the cover choice is unknown, offer the user's own cover (including one already supplied in a full sample) or the neutral built-in cover. `unselected` is not consent to builtin. Ask only needed fields; do not require a student number or teacher name universally. The built-in preset is not a universal institutional standard. The cleaned preset and bounded cover helper are available; follow the [Word preset contract](../../../docs/word-preset.en.md). Never expose the private original as a fallback.
+
+When requirements permit, an explicit none choice means no separate cover; skip cover merging and verify the actual body-only document. Keep this task-level choice distinct from unselected and from persistent profile schema 1.
+
+Immediately before conversion, check that approval covers the selected content revision, or record the explicit source of direct conversion or waiver. A hash-only change with no material content change requires a recorded equivalence and revision relationship; it is not silently approved or rejected.
 
 <!-- contract:WORD_PATCH -->
 For a new conversion use selected current Markdown and layout. For a late edit use the authoritative current DOCX and its divergence map; modification time alone is insufficient. Preserve agreed cover, manual tables, image geometry, real heading levels, numbering, and live TOC. Inventory formatted blocks instead of replacing the source sample with an unrelated document. There is no universal compositor in this package.

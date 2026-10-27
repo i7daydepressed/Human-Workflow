@@ -46,20 +46,23 @@ def payload(root):
         provenance[target] = {'source': origin, 'sha256': hashlib.sha256(source[origin]).hexdigest()}
     manifest = json.loads(files['plugin.json'])
     identity = manifest['name']
-    if identity != 'workflow-tools-preview' or manifest['version'] != '0.0.0-i06':
-        raise ValueError('I06 builder supports only the recorded preview identity')
+    if (identity != 'human-workflow' or manifest != json.loads(source['plugin.json'])
+            or not isinstance(manifest['version'], str) or not manifest['version']):
+        raise ValueError('Expected stable plugin identity and canonical manifest/version agreement')
     if manifest.get('$schema') != 'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json':
         raise ValueError('Expected the portable Agent Plugins manifest')
     if set(manifest) != {'$schema', 'name', 'version', 'description', 'extensions', 'license'}:
         raise ValueError('Unexpected identity or service metadata in the preview manifest')
-    if manifest['license'] != 'PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial':
-        raise ValueError('Expected the owner-selected licensing alternatives')
+    if manifest['license'] != 'Apache-2.0':
+        raise ValueError('Expected the owner-selected Apache-2.0 license')
     entries = sorted(n for n in files if n.startswith('skills/') and n.endswith('/SKILL.md'))
     if entries != ['skills/human-step/SKILL.md', 'skills/md-word/SKILL.md']:
         raise ValueError('Expected exactly two workflow entrypoints')
     files['PACKAGE-MANIFEST.json'] = encoded({
-        'kind': 'portable_plugin_preview', 'stage': 'I06',
-        'identity_status': 'Human Workflow display name; retained technical ID; preview version',
+        'kind': 'portable_plugin_preview', 'stage': json.loads(source['packaging/contracts.json'])['stage'],
+        'package': json.loads(source['packaging/skill-resources.json'])['package'],
+        'license': manifest['license'],
+        'identity_status': 'Stable technical name; candidate version/display from canonical plugin.json',
         'host_installation_verified': False, 'published': False,
         'files': provenance})
     return files, identity

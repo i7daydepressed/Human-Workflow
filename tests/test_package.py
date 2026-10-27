@@ -81,7 +81,9 @@ class SourcePackage(unittest.TestCase):
                 self.assertEqual(found, ids)
 
     def test_local_markdown_links_resolve(self):
-        for path in SOURCE.rglob('*.md'):
+        names = json.loads((SOURCE / 'packaging/source-allowlist.json').read_text())
+        self.assertFalse(any(name.startswith(('docs/codex/', 'docx/codex/')) for name in names))
+        for path in (SOURCE / name for name in names if name.endswith('.md')):
             for target in re.findall(r'!?\[[^\]]*\]\(([^)]+)\)', path.read_text()):
                 if re.match(r'^[a-z]+:', target) or target.startswith('#'):
                     continue

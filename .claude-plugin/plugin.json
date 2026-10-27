@@ -1,7 +1,7 @@
 {
-  "name": "workflow-tools-preview",
-  "displayName": "Human Workflow",
-  "version": "0.0.0-i06",
+  "name": "human-workflow",
+  "displayName": "Human-workflow-v0.0.7",
+  "version": "0.0.7",
   "description": "Test preview of exact step packets and task accompaniment with paired English/Russian instructions and a private external profile.",
-  "license": "PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial"
+  "license": "Apache-2.0"
 }

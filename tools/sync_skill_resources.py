@@ -38,6 +38,12 @@ def make_plan(root):
     if not isinstance(names, list) or not all(isinstance(n, str) for n in names) or len(names) != len(set(names)):
         raise ValueError('Expected a unique source allowlist')
     canonical = sorted(n for n in names if not generated_name(n) and n != REGISTRY)
+    manifest_bytes = safe_path(root, 'plugin.json').read_bytes()
+    manifest = json.loads(manifest_bytes)
+    package = {
+        'name': manifest['name'], 'version': manifest['version'],
+        'display_name': manifest['extensions']['com.openai']['interface']['displayName'],
+        'source': 'plugin.json', 'source_sha256': hashlib.sha256(manifest_bytes).hexdigest()}
     files = {}
     mapping = {}
     for skill in SKILLS:
@@ -48,7 +54,7 @@ def make_plan(root):
                              for language in ('en', 'ru'))
             shared = name.startswith('shared/') and (skill == 'md-word' or not name.startswith('shared/examples/'))
             if not (own_locale or shared or name.startswith('docs/')
-                    or name in ('LICENSE', 'COMMERCIAL-LICENSE.md', 'COMMERCIAL-LICENSE.ru.md')):
+                    or name in ('LICENSE', 'NOTICE', 'THIRD-PARTY-NOTICES')):
                 continue
             source = safe_path(root, name)
             if not source.is_file():
@@ -61,9 +67,10 @@ def make_plan(root):
             provenance[name] = info
         files[prefix + 'resource-manifest.json'] = encoded({
             'schema_version': 1, 'kind': 'workflow_skill_resources',
-            'skill': skill, 'generated': True, 'files': provenance})
+            'skill': skill, 'generated': True, 'package': package, 'files': provenance})
     files[REGISTRY] = encoded({
         'schema_version': 1,
+        'package': package,
         'canonical_roots': ['locales/', 'shared/', 'docs/'],
         'policy': 'Edit canonical sources; regenerate skill-local copies. No private profiles or task files.',
         'files': mapping})

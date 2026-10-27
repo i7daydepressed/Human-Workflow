@@ -2,17 +2,21 @@
 
 ## Current input
 
-For initial assembly, use agreed MD and the selected sample. After manual Word edits, obtain current DOCX and save its baseline SHA-256. Check project.md/log for changed captions, panel labels, image sizes, tables, fonts, cover. Apply the new edit to this DOCX. For MD content changes, compare old MD, new MD, and current Word; preserve manual edits and show exact conflicts.
+For initial assembly, use the selected current MD content revision and sample. Before conversion, verify approval covers that content under the [MD_APPROVAL contract](../workflow.md), or record an explicitly sourced direct-conversion choice or waiver; a request for an unseen final DOCX alone is insufficient. After manual Word edits, obtain current DOCX and save its baseline SHA-256. Check project.md/log for changed captions, panel labels, image sizes, tables, fonts, cover. Apply the new edit to this DOCX. For MD content changes, compare old MD, new MD, and current Word; preserve manual edits and show exact conflicts.
 
 The previous converter may not describe final Word: an earlier project preserved manual edits in later patch scripts. A DOCX hash differing from a historical snapshot signals a different revision, not necessarily corruption or unauthorized edits.
 
 ## Preparation
 
-Obtain fresh MD, images, and selected DOCX. Read the documents skill and follow its runtime/render workflow. Explicitly select layout sample and current-work cover source; retaining a cover does not mean copying another lab's number/topic.
+Obtain fresh MD, images, and selected DOCX. Use the available document-editing capability and follow its applicable instructions and runtime/render workflow. A skill named documents is one host-specific example, not a dependency. Explicitly select layout sample and current-work cover source; retaining a cover does not mean copying another lab's number/topic.
 
 Run `python3 <package-root>/shared/scripts/inspect_word_sample.py sample.docx --out sample-inventory.json`. Inspect the sample and XML. Identify cover/section break, body, headings 1–3, caption, image, table/header/data row, equation, list, unnumbered section, TOC. Determine margins, spacing, indents, fonts, keepNext/keepLines, headers/footers, numbering. Bold alone does not identify a block role.
 
 Do not reuse paragraph indices from a different lab/sample revision.
+
+## Task-level no separate cover
+
+When requirements permit, record an explicit `none` choice separately from `unselected`; do not request title-page fields for `none`. Choose body layout independently. Skip `word_cover.py`: its CLI still supports only builtin/uploaded/from_sample. The neutral base contains a cover section, so a new label does not make it body-only. Use available document editing on a task copy to omit the actual cover blocks/section, then check pagination, headers/footers and fields in the final body-only result. Preserve canonical base.docx/cover.docx bytes. Keep this override in task state; schema-1 profile choices remain unchanged and are not silently rewritten.
 
 ## XML blocks
 
@@ -44,7 +48,7 @@ Preserve hyperlinks and use editable OMML equations where supported. Otherwise s
 
 Compare sections, figures, tables, equations against MD and check references to deleted material. Check cover, body, third-level headings, numbering, tables, links, final pages, placeholders, and sample leftovers.
 
-Render under the documents skill and inspect every page. Open suspicious contact-sheet regions at readable scale. After a small repeat edit, inspect only changed pages if render comparison confirms others unchanged. Script counts do not establish visual review.
+Render with an available suitable renderer and inspect every final page. If rendering is unavailable, complete independent structural and content checks, record visual QA as not assessed, and do not claim visual Word acceptance. Open suspicious contact-sheet regions at readable scale. After a small repeat edit, inspect only changed pages if render comparison confirms others unchanged. Script counts do not establish visual review.
 
 Keep QA renders internal. Deliver DOCX; add PDF/archives when requested. Preserve converter and chosen XML-block map without hardcoded transient scratch paths.
 

@@ -5,9 +5,12 @@
   },
   "plugins": [
     {
-      "name": "workflow-tools-preview",
+      "name": "human-workflow",
       "source": "./",
       "description": "Exact step packets and task accompaniment with paired EN/RU instructions."
     }
-  ]
+  ],
+  "renames": {
+    "workflow-tools-preview": "human-workflow"
+  }
 }

@@ -1,8 +1,8 @@
 {
-  "stage": "resource-isolation-preview",
-  "product_name": "Human Workflow",
+  "stage": "I07-local-candidate",
+  "product_name": "Human-workflow-v0.0.7",
   "public_author": null,
-  "license": "PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial",
+  "license": "Apache-2.0",
   "release_version": null,
   "public_release_ready": false,
   "installable_plugin_built": true,
@@ -26,22 +26,22 @@
     "json"
   ],
   "public_case_publication_approved": false,
-  "temporary_package_name": "workflow-tools-preview",
-  "temporary_package_version": "0.0.0-i06",
+  "temporary_package_name": "human-workflow",
+  "temporary_package_version": "0.0.7",
   "local_marketplace_prepared": true,
   "current_candidate_host_installation_tested": false,
   "base_client_checks": "docs/client-checks.en.md",
   "runtime_unchanged_since": null,
-  "task_contracts_unchanged_since": "I04",
+  "task_contracts_unchanged_since": null,
   "mac_new_version_update_tested": false,
   "repository_installation_prepared": true,
   "github_uploaded": true,
   "repository_marketplace_name": "workflow-tools",
   "claude_repository": {
-    "version": "0.0.0-i06",
+    "version": "0.0.7",
     "prepared": true,
     "host_validated": false,
-    "core_base": "I06",
+    "core_base": "I07",
     "public_release": false
   },
   "historical_claude_archive": {
@@ -53,28 +53,16 @@
   },
   "licensing": {
     "policy_date": "2026-10-27",
-    "free_license": "PolyForm-Noncommercial-1.0.0",
-    "commercial_license": "LicenseRef-Workflow-Tools-Commercial",
-    "commercial_terms_revision": "prepared-v0.1",
-    "owner_approved": {
-      "individual_usd": 10,
-      "team_usd": 50,
-      "team_max_people": 5,
-      "payment": "one-time",
-      "version_scope": "confirmed purchased major version",
-      "meter": "human users; not devices, agents, runs or outputs"
-    },
+    "license": "Apache-2.0",
+    "scope": "Publisher-controlled plugin material to the extent the publisher may license it; third-party rights/notices preserved",
+    "commercial_use": "Permitted under Apache-2.0 without a separate paid grant or seat restriction",
     "commercial_sales_open": false,
-    "public_licensor_identity": null,
-    "commercial_contact": null,
-    "payment_method": null,
-    "seller_jurisdiction": null,
-    "legal_review": "not performed",
-    "runtime_enforcement": "none added"
+    "rights_audit": "not performed",
+    "runtime_enforcement": "none"
   },
   "github_uploaded_version": "0.0.0-i06",
-  "current_candidate_github_uploaded": true,
-  "runtime_change_scope": "Skill-local generated resources; installation-root detection for profile/output guards",
+  "current_candidate_github_uploaded": false,
+  "runtime_change_scope": "Preflight task/output installation guards; generated identity diagnostics; staged MD approval and persistence contracts",
   "generated_skill_resources": {
     "canonical_source": "locales/, shared/, docs/",
     "physical_copies": "generated per skill",
@@ -96,15 +84,44 @@
       "cause": "not independently established"
     }
   ],
+  "historical_local_validation": [
+    {
+      "package_name": "workflow-tools-preview",
+      "package_version": "0.0.0-i06",
+      "evidence": {
+        "date": "2026-10-27",
+        "baseline_tests_passed": 85,
+        "candidate_tests_passed": 92,
+        "isolated_skills": "passed",
+        "independent_synthetic_explicit_md_word": "passed; returned artifacts inspected",
+        "implicit_skill_selection": "not tested",
+        "claude_code_validation": "not run: CLI unavailable",
+        "actual_claude_host": "not run",
+        "real_mac_update": "not run"
+      }
+    }
+  ],
   "local_validation": {
+    "package_name": "human-workflow",
+    "package_version": "0.0.7",
+    "status": "passed: changed-candidate mechanical tests",
+    "host_installation": "not run",
+    "identity_migration": "not run",
+    "behavioral_checks": "not run",
     "date": "2026-10-27",
-    "baseline_tests_passed": 85,
-    "candidate_tests_passed": 92,
-    "isolated_skills": "passed",
-    "independent_synthetic_explicit_md_word": "passed; returned artifacts inspected",
-    "implicit_skill_selection": "not tested",
-    "claude_code_validation": "not run: CLI unavailable",
-    "actual_claude_host": "not run",
-    "real_mac_update": "not run"
-  }
+    "tests_run": 101,
+    "tests_passed": 101,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "test_exit_code": 0,
+    "focused_isolated_tests_passed": 9,
+    "python": "3.14.5",
+    "lxml": "6.1.3",
+    "temporary_path_mode": "canonical resolved path",
+    "generated_resources": "passed",
+    "archive_validation": "passed: CRC, allowlists, member/source/provenance hashes, Apache license bytes and public Markdown links",
+    "targeted_privacy_audit": "not assessed: no owner-supplied private marker configuration",
+    "deterministic_builds": "passed: changed-candidate regression suite; final repeat receipts recorded outside payload"
+  },
+  "candidate_identity_migration_tested": false
 }

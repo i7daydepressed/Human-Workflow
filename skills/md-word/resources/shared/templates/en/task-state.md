@@ -8,6 +8,13 @@ Core: version, completed, remaining:
 Report: requirement status, selected revision/format, state:
 Working MD / ID:
 Current DOCX / ID / baseline SHA-256:
+Report mode: staged | direct | no_report; source of direct/waiver if selected:
+MD revision: actual path/ID and revision or SHA-256, or unknown:
+MD approval status: not_applicable | pending | approved | waived | invalidated:
+MD approval source: actual user message/reference, or unknown:
+MD approved revision: actual revision/hash, or not_applicable:
+Cover choice: unselected | builtin | uploaded | from_sample | none (task-level only):
+Persistence: actual destination/version, verified write result, pending synchronization if applicable:
 content_authority:
 layout_authority:
 md_docx_diverged:

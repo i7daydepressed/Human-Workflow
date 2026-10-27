@@ -1,4 +1,4 @@
-# Human-step — I04 core
+# Human-step — core
 
 <!-- contract:SCOPE -->
 Turn an agreed assignment into reproducible instructions, execute a supplied packet, or review actual results. State the mode. Apply the same contract to code, files, data, UI, settings, and confirmed physical actions. This workflow supplies procedure, not competence or access in every domain.

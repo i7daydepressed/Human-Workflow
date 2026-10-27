@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import sys
 import uuid
-from safe_paths import directory as checked_directory, destination
+from safe_paths import directory as checked_directory, destination, external_path
 
 IDENTITY_KEYS = ['agent', 'agent_id', 'id_source', 'model', 'model_source',
                  'user', 'task', 'skill_version', 'timezone']
@@ -27,6 +27,7 @@ def read_object(path):
 
 
 def checked_dir(root):
+    root = external_path(root, __file__)
     directory = checked_directory(root, 'agent-logs')
     directory.mkdir(parents=True, exist_ok=True)
     return directory

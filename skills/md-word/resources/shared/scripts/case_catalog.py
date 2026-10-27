@@ -5,7 +5,7 @@ from decimal import Decimal, InvalidOperation
 import json
 from pathlib import Path
 import sys
-from safe_paths import destination
+from safe_paths import destination, external_path
 
 
 def score(value):
@@ -190,6 +190,7 @@ def main():
         if args.command == 'index':
             result = index(data, args.language)
             if args.out:
+                external_path(args.out, __file__)
                 output = destination(args.out.expanduser().parent.resolve(), args.out.name)
                 output.parent.mkdir(parents=True, exist_ok=True)
                 output.write_text(result, encoding='utf-8')

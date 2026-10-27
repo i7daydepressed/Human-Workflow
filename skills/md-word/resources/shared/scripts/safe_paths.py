@@ -14,6 +14,14 @@ def installation_root(module_file):
     return resource_root
 
 
+def external_path(path, module_file):
+    """Не даём задаче или результату попасть внутрь исходников либо установки."""
+    resolved = Path(path).expanduser().resolve()
+    if resolved.is_relative_to(installation_root(module_file)):
+        raise ValueError('Task/output path must be outside the product source/installation')
+    return resolved
+
+
 def destination(root, relative):
     root = Path(root).resolve()
     relative = Path(relative)

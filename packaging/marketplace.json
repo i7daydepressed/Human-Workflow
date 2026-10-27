@@ -1,14 +1,14 @@
 {
   "name": "workflow-preview-i04",
   "interface": {
-    "displayName": "Human Workflow"
+    "displayName": "Human-workflow-v0.0.7"
   },
   "plugins": [
     {
-      "name": "workflow-tools-preview",
+      "name": "human-workflow",
       "source": {
         "source": "local",
-        "path": "./plugins/workflow-tools-preview"
+        "path": "./plugins/human-workflow"
       },
       "policy": {
         "installation": "AVAILABLE",

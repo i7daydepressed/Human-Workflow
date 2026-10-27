@@ -6,6 +6,8 @@ The layout retains A4 geometry, measured margins, Times New Roman declarations, 
 
 Choose layout and cover separately before Word work. `unselected` remains a missing choice. The built-in IDs are `base-layout-i02` and `base-cover-i02`; record the choice in task state and use a private profile only when explicitly selected. Neither workspace initialization nor a product update selects these resources or changes a user's profile. Accompaniment without a report needs no Word files.
 
+When requirements permit, an explicit task-level `none` means no separate cover and needs no title-page fields; choose body layout independently. This is distinct from `unselected`. Skip `word_cover.py` rather than passing an unsupported none value. The neutral base contains a cover section: use available document editing on a task copy to omit actual cover blocks/section and verify pagination, headers/footers and fields in the body-only result. Keep canonical Word binaries and schema-1 profile choices unchanged; do not silently persist this task override.
+
 For the neutral cover, request the assignment's actual fields. Department, programme, chair, teacher, group and work number can be omitted when irrelevant; a student-record number is not required. Replace the placeholders and remove unused rows while preserving their surrounding layout. Also offer the user's cover, including a cover already present in a full sample. The helper below merges covers; it does not fill placeholders or convert Markdown.
 
 Run these commands from the source directory, replacing the example paths. Outputs must be new files outside the source/installation:

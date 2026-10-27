@@ -17,3 +17,11 @@ Cover relevant scenarios:
 Include missing images/explanation, path escape, false acceptance and rating/header mismatch. Current `tests/` checks local helper/package contracts; it does not replace these behavior/host/visual checks. Old private eval fixtures were not copied as public historical evidence.
 
 Trace source → reproduction → smallest relevant correction → original-failure/nearby-success checks → new version. Distinguish missing/ignored instructions, scripts, environment and task-specific requirements. Keep development results outside runtime references. Measure time/tokens only under named comparable conditions; auditors test auditors, not the full workflow. No background observer, automatic rule rewriting or model-weight training follows. For paired wording and cost limits see [language maintenance](language-and-maintenance.md).
+
+## Approval, authority and persistence scenarios
+
+Use fresh task contexts and raw requirements without diagnosis or expected answers. Observe staged MD presentation and saved pending approval before conversion; reuse approval of the shown revision or an explicitly sourced direct/waived path. Material content changes need renewed approval; formatting-only DOCX patches preserve current content authority. Check same-agent core execution without a redundant mode loop and PREPARE versus explicitly assigned EXECUTE.
+
+Stop normally after verified state/event/MD save, then resume from selected files without inventing approval or preferring a remote timestamp. Test actual body-only output for task-level none, manual DOCX changes with stale MD, an alternate document capability, missing renderer and unavailable save destination. Record visual QA, synchronization and missing traces honestly. Use synthetic external schema-1 profiles; task overrides must not mutate them or invent ratings.
+
+Separate ordinary selection, explicit invocation and negative controls (short concept question or isolated line edit). Record availability, selection, loading, execution, checks, approval, persistence and delivery separately. Installation rename/migration requires a separately authorized real-client trial; static metadata/tests cannot pass it.

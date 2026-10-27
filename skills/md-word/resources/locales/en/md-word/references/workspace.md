@@ -9,7 +9,7 @@ For accompaniment without a report, keep current requirements/specification, cor
 | `project.md` or equivalent | Requirements/specification, deliverables, core/report state, versions, checks, decisions, next step |
 | Actual specification/map path | Required outcome, limits, criteria, explanation evidence; separate from execution facts |
 | `agent-logs/<run-id>.md` | Individual executor log; applicable AGENTS.md takes precedence |
-| `report.md` | Single working text; fresh remote working revision takes precedence on resumption |
+| `report.md` | Selected working text; reconcile local and remote versions and the recorded content authority on resumption |
 | `sources/` | Guide, assignment, source materials |
 | `assets/cards/` | Educational illustrations, diagrams, cards |
 | `assets/code/` | Actual source-code excerpts |
@@ -47,9 +47,13 @@ Separate `user-final` and `teacher-accepted`. A final “not yet accepted by the
 
 Restore only on request after saving current unfinished work as a draft. Restore text with its illustrations and retain other snapshots.
 
+After a significant core or draft result and before costly or interruptible conversion/rendering, save proportionate state and an attributable event while tools are available. Include actual checks/results, selected MD/DOCX authorities, approval state, unresolved issues and next action; verify the write. If the agreed remote destination is unavailable, record pending synchronization and any permitted local copy. Do not initialize all report folders or save before every trivial operation.
+
 ## Resume
 
 Read current state and requirements for the next stage, plus selected MD if a report exists. Do not reread all code on every “next.” Preserve exact paths/commits; inspect relevant source before new claims. Do not restore a user-deleted section from an old snapshot.
+
+Compare the relevant selected local/remote versions and recorded content/layout authority before overwriting. Merge non-overlapping changes; show concrete semantic conflicts. Neither remote location nor modification time alone establishes authority. Preserve manual DOCX changes, selected layout/cover and known MD/DOCX divergence, including pending or revision-bound approved content.
 
 The standard `checks/` folder is included in snapshots. Explicitly include necessary evidence elsewhere; do not claim arbitrary paths were included automatically. MD audit does not decode images.
 

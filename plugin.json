@@ -1,12 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "workflow-tools-preview",
-  "version": "0.0.0-i06",
+  "name": "human-workflow",
+  "version": "0.0.7",
   "description": "Preview: exact step packets and task accompaniment, with independent English and Russian instructions.",
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Human Workflow",
+        "displayName": "Human-workflow-v0.0.7",
         "shortDescription": "Exact steps and task accompaniment",
         "longDescription": "Accompany assignments and projects, prepare exact handoff steps, and preserve state and evidence. Includes paired EN/RU instructions, optional external profiles, and a neutral Word preset. Runtime resources are bundled inside each skill; actual client validation remains scoped in the documentation.",
         "category": "Productivity",
@@ -17,5 +17,5 @@
       }
     }
   },
-  "license": "PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial"
+  "license": "Apache-2.0"
 }

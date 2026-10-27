@@ -19,3 +19,7 @@ Take theoretical questions, extra files, and demonstrations from the current ass
 For execution-result requests map clause → action/query → actual result → evidence → limit. A row count differs from the visible table portion. PREPARE does not establish EXECUTE. A separate calculation is not a target-app screenshot. Obtain/reproduce missing mandatory frames within available access and state gaps; do not hide them behind a calculated table.
 
 Source external facts, rules, and ranges; distinguish authored formalization from expert assertions. Follow project preferences for language/punctuation/formatting; see user-profile.md.
+
+## Present the selected content
+
+For staged MD-to-Word work, show the actual current Markdown or an accessible link, identify its revision/hash and save pending approval in the existing state before conversion. Reuse approval covering the selected revision; record the source of explicit direct conversion or waiver instead of inventing approval. Material changes invalidate affected approval. For byte changes without a material content change, record reviewed equivalence and the revision relationship. Formatting-only changes to the authoritative DOCX preserve this content decision unless requirements or content change. See the [MD_APPROVAL contract](../workflow.md).

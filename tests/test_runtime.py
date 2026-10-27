@@ -2,6 +2,7 @@
 import hashlib
 import json
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -149,6 +150,132 @@ class Runtime(unittest.TestCase):
         out = self.root / 'index.md'; self.link(out, outside, directory=False)
         call('case_catalog.py', 'index', path, '--out', out, code=2)
         self.assertEqual(outside.read_text(), 'Keep')
+
+
+class InstallationWrites(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.area = Path(self.temporary.name).resolve()
+        self.source = self.area / 'product-copy'
+        shutil.copytree(SOURCE / 'shared', self.source / 'shared',
+                        ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+        self.scripts = self.source / 'shared/scripts'
+        self.identity = self.area / 'identity.json'
+        write_json(self.identity, {key: 'synthetic' for key in
+                   ['agent', 'agent_id', 'id_source', 'model', 'model_source',
+                    'user', 'task', 'skill_version', 'timezone']})
+        self.entry = self.area / 'entry.json'
+        write_json(self.entry, {'goal': 'Synthetic regression', 'result': 'Checked'})
+        self.catalog = write_catalog(self.area, 'en')
+
+    def snapshot(self):
+        return {p.relative_to(self.source).as_posix():
+                ('symlink', str(p.readlink())) if p.is_symlink() else
+                ('file', p.read_bytes()) if p.is_file() else ('directory', None)
+                for p in self.source.rglob('*')}
+
+    def run_cli(self, script, *args, expected=0):
+        result = subprocess.run([sys.executable, '-B', str(self.scripts / script),
+                                 *map(str, args)], cwd=self.area, capture_output=True, text=True)
+        self.assertEqual(result.returncode, expected, result.stdout + result.stderr)
+        return result
+
+    def imported(self, expression, *args):
+        code = ('import sys\nfrom pathlib import Path\n'
+                'sys.path.insert(0, sys.argv[1])\n'
+                'import report_workspace, agent_journal\n'
+                'args = [Path(p) for p in sys.argv[2:]]\n' + expression)
+        return subprocess.run([sys.executable, '-B', '-c', code, str(self.scripts),
+                               *map(str, args)], cwd=self.area, capture_output=True, text=True)
+
+    def assert_import_rejected(self, expression, *args):
+        before = self.snapshot()
+        result = self.imported(expression, *args)
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+        self.assertIn('outside the product source/installation', result.stderr)
+        self.assertEqual(self.snapshot(), before)
+
+    def test_imported_workspace_and_journal_reject_internal_roots_before_writes(self):
+        target = self.source / 'task'
+        self.assert_import_rejected("report_workspace.initialize(args[0], 'Test', 'accompany')", target)
+        target.mkdir()
+        (target / 'project.md').write_text('Keep state')
+        self.assert_import_rejected("report_workspace.checkpoint(args[0], 'draft', mode='accompany')", target)
+        self.assert_import_rejected('agent_journal.start(args[0], args[1])', target, self.identity)
+        self.assert_import_rejected("agent_journal.append(args[0], 'synthetic', args[1])", target, self.entry)
+        logs = target / 'agent-logs'; logs.mkdir()
+        (logs / 'synthetic.md').write_text('Keep original log')
+        (logs / 'synthetic.identity.json').write_text('{}')
+        self.assert_import_rejected("agent_journal.append(args[0], 'synthetic', args[1])", target, self.entry)
+
+    def test_equal_root_and_symlink_alias_into_installation_are_rejected(self):
+        self.assert_import_rejected("report_workspace.initialize(args[0], 'Test')", self.source)
+        alias = self.area / 'alias'
+        try:
+            alias.symlink_to(self.source, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest('symlink unavailable')
+        self.assert_import_rejected("report_workspace.initialize(args[0], 'Test')", alias / 'task')
+        self.assert_import_rejected('agent_journal.start(args[0], args[1])', alias, self.identity)
+
+    def test_internal_output_guards_preserve_bundled_reads(self):
+        sample = self.source / 'shared/assets/word/base.docx'
+        before = self.snapshot()
+        for out in [self.source / 'new/inventory.json', self.source]:
+            result = self.run_cli('inspect_word_sample.py', sample, '--out', out, expected=1)
+            self.assertIn('outside the product source/installation', result.stderr)
+        result = self.run_cli('case_catalog.py', 'index', self.catalog,
+                              '--out', self.source / 'new/index.md', expected=2)
+        self.assertIn('outside the product source/installation', result.stdout)
+        self.assertEqual(self.snapshot(), before)
+        inspected = json.loads(self.run_cli('inspect_word_sample.py', sample).stdout)
+        self.assertEqual(inspected['sha256'], hashlib.sha256(sample.read_bytes()).hexdigest())
+        self.assertTrue(inspected['blocks'])
+        self.assertIn('Accepted work and ratings',
+                      self.run_cli('case_catalog.py', 'index', self.catalog, '--language', 'en').stdout)
+        self.assertEqual(self.snapshot(), before)
+
+    def test_external_similar_prefix_and_repeat_operations_preserve_work(self):
+        root = self.area / 'product-copy-next'
+        initial = self.imported("report_workspace.initialize(args[0], 'Test', 'accompany', 'en')", root)
+        self.assertEqual(initial.returncode, 0, initial.stderr)
+        (root / 'project.md').write_text('Manual state')
+        repeated = self.imported("report_workspace.initialize(args[0], 'Changed', 'accompany', 'en')", root)
+        self.assertEqual(repeated.returncode, 0, repeated.stderr)
+        self.assertEqual((root / 'project.md').read_text(), 'Manual state')
+        checkpoint = self.imported("report_workspace.checkpoint(args[0], 'draft', mode='accompany')", root)
+        self.assertEqual(checkpoint.returncode, 0, checkpoint.stderr)
+        saved = Path(json.loads(checkpoint.stdout)['checkpoint'])
+        self.assertEqual((saved / 'project.md').read_text(), 'Manual state')
+        started = json.loads(self.run_cli('agent_journal.py', 'start', root, '--identity', self.identity).stdout)
+        journal = Path(started['journal']); old = journal.read_bytes()
+        self.run_cli('agent_journal.py', 'append', root, '--run-id', started['run_id'], '--entry', self.entry)
+        self.assertTrue(journal.read_bytes().startswith(old))
+        self.assertIn(b'Synthetic regression', journal.read_bytes())
+        sample = self.source / 'shared/assets/word/base.docx'
+        inventory = root / 'inventory.json'
+        self.run_cli('inspect_word_sample.py', sample, '--out', inventory)
+        self.assertEqual(json.loads(inventory.read_text())['sha256'], hashlib.sha256(sample.read_bytes()).hexdigest())
+        index = root / 'index.md'
+        self.run_cli('case_catalog.py', 'index', self.catalog, '--language', 'en', '--out', index)
+        self.assertIn('Accepted work and ratings', index.read_text())
+
+    def test_output_leaf_symlinks_remain_rejected(self):
+        outside = self.area / 'preserve.txt'; outside.write_text('Keep')
+        sample = self.source / 'shared/assets/word/base.docx'
+        for script, arguments, code in [
+                ('inspect_word_sample.py', [sample], 1),
+                ('case_catalog.py', ['index', self.catalog], 2)]:
+            with self.subTest(script=script):
+                output = self.area / (script + '.out')
+                try:
+                    output.symlink_to(outside)
+                except (OSError, NotImplementedError):
+                    self.skipTest('symlink unavailable')
+                result = self.run_cli(script, *arguments, '--out', output, expected=code)
+                self.assertIn('symlink', result.stdout + result.stderr)
+                self.assertEqual(outside.read_text(), 'Keep')
 
 
 class Profiles(unittest.TestCase):

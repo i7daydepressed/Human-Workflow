@@ -9,6 +9,12 @@ Human-step-workflow packet, if prepared:
 Check criteria and report evidence to return:
 Return destination:
 
+Selected report mode and sourced direct/waiver exception, if any:
+Selected MD/DOCX content/layout authorities, revision/hash and known divergence:
+Content approval status, actual source and approved revision; unresolved gate:
+Task-level cover choice (none distinct from unselected):
+Persistence destination/version, verified write result and pending synchronization:
+
 ## Return
 
 Done / already done / not done / blocked:

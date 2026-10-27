@@ -2,8 +2,8 @@
 
 ID, user, subject/task:
 Acceptance evidence, quote/source, message date, known actual acceptance date:
-Current user report rating: **VALUE OR не сообщена**
-Teacher rating reported by the user: **VALUE OR не сообщена**
+Current user report rating: **VALUE OR not reported**
+Teacher rating reported by the user: **VALUE OR not reported**
 Each rating: rater, scope, original scale, date/source, clarification history:
 Case author/ID/model and identity source:
 Original executors and known models:

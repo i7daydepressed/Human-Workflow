@@ -13,7 +13,7 @@ from urllib.parse import unquote, urlsplit
 import uuid
 from i18n import message
 
-from safe_paths import destination as checked_destination, directory as checked_directory
+from safe_paths import destination as checked_destination, directory as checked_directory, external_path
 
 SHARED = Path(__file__).resolve().parents[1]
 
@@ -31,6 +31,7 @@ def emit(value):
 
 
 def initialize(root, title, mode='report', language='ru'):
+    root = external_path(root, __file__)
     templates = SHARED / 'templates' / language
     files = {'project.md': (templates / f'project-{mode}.md').read_text(encoding='utf-8').replace('{{title}}', title)}
     folders = ['agent-logs']
@@ -176,6 +177,7 @@ def audit(root, name='report.md', language='ru'):
 
 
 def checkpoint(root, label, name='report.md', confirmation=None, mode='report', includes=None):
+    root = external_path(root, __file__)
     if not re.fullmatch(r'[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}', label):
         raise ValueError('label: только буквы ASCII, цифры, _ и -; длина 1–64')
     report = selected_report(root, name) if mode == 'report' else None

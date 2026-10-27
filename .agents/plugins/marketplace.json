@@ -1,11 +1,11 @@
 {
   "name": "workflow-tools",
   "interface": {
-    "displayName": "Human Workflow"
+    "displayName": "Human-workflow-v0.0.7"
   },
   "plugins": [
     {
-      "name": "workflow-tools-preview",
+      "name": "human-workflow",
       "source": {
         "source": "local",
         "path": "./"

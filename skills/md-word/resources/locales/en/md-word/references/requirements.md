@@ -4,7 +4,7 @@
 
 Establish what to perform, deliver, and preserve for explanation/continuation. Read the methodical guide, variant, data, selected limits, and current user decisions. Do not infer mandatory DOCX or a separate SQL file merely from familiar lab conventions. Do not add domain requirements to fill a universal template.
 
-Select the actual mode: completed core → explanation; core/report together; another human/agent owns the core; accompaniment without a final report. Roles may overlap. Explain skill boundaries when first distributing work, not at every step.
+Select the actual mode: completed core → explanation; core/report together; another human/agent owns the core; accompaniment without a final report. Roles may overlap. When feasible small core work and its report are assigned here, execute and verify that core here; no separate executor or generic mode question is required. Explain skill boundaries when first distributing work, not at every step.
 
 Honestly assess readiness after reading sources. Distinguish domain-knowledge, input-data, and tool/access gaps. Continue independent accessible work under partial limits and specify the result needed from another executor. Do not invent required work history from a final file.
 
@@ -27,3 +27,7 @@ Derive requirements by task: an application may need theory and a working demons
 Derive deliverables from current sources: code/data, additional answers, launch/demo files, report, defense preparation. Prepare defense materials when assigned/required; keep working history out of the submitted text unless needed.
 
 Track core, report, checks, user approval, sending, and teacher acceptance separately. “I like it” does not mean submitted. A task without a required report can finish; a report without the mandatory core does not prove task completion.
+
+## Content approval and selected mode
+
+For a newly authored report proceeding through Markdown to Word, select staged content approval by default. A final-DOCX request alone does not waive it. Record staged, explicitly sourced direct/waived, or no-report mode in existing task state. Present the selected MD revision and wait for content approval before dependent conversion; reuse approval already covering it. Continue independent authorized core work. A task-specific mandatory gate remains binding. See the MD_APPROVAL contract in the [workflow](../workflow.md).
