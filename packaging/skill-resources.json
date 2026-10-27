@@ -1,0 +1,711 @@
+{
+  "schema_version": 1,
+  "canonical_roots": [
+    "locales/",
+    "shared/",
+    "docs/"
+  ],
+  "policy": "Edit canonical sources; regenerate skill-local copies. No private profiles or task files.",
+  "files": {
+    "skills/human-step/resources/COMMERCIAL-LICENSE.md": {
+      "source": "COMMERCIAL-LICENSE.md",
+      "sha256": "d96c6e64283b7c47efb4c30300695c085fa208280e61dcd2598a7d3d1ce630dd"
+    },
+    "skills/human-step/resources/COMMERCIAL-LICENSE.ru.md": {
+      "source": "COMMERCIAL-LICENSE.ru.md",
+      "sha256": "7c15e2c40f7a4ebbff148d404483f6f784bf2d7c190859ce5805e44d08e164ba"
+    },
+    "skills/human-step/resources/LICENSE": {
+      "source": "LICENSE",
+      "sha256": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8"
+    },
+    "skills/human-step/resources/docs/claude-preview.en.md": {
+      "source": "docs/claude-preview.en.md",
+      "sha256": "428ddffb5e49687da370893dd909a32770568e1ea88c23546b5c20f65ffb228b"
+    },
+    "skills/human-step/resources/docs/claude-preview.ru.md": {
+      "source": "docs/claude-preview.ru.md",
+      "sha256": "fe674699224a30b45d05f5d6254a5ee25770834d4f923ee635710874e82d2a87"
+    },
+    "skills/human-step/resources/docs/client-checks.en.md": {
+      "source": "docs/client-checks.en.md",
+      "sha256": "f2f363beb56ca82be48949750aff408a6cee3265ae3f313ca1226dddb0ad5396"
+    },
+    "skills/human-step/resources/docs/client-checks.ru.md": {
+      "source": "docs/client-checks.ru.md",
+      "sha256": "6394a0bd149fa91adcb42137ebdc73b251774dfa62a9b090f64900b228f819c1"
+    },
+    "skills/human-step/resources/docs/installation.en.md": {
+      "source": "docs/installation.en.md",
+      "sha256": "701b2d557a6a4c02da6139da1080de1c01d511b7f15cd0aab792c44c4ce3b569"
+    },
+    "skills/human-step/resources/docs/installation.ru.md": {
+      "source": "docs/installation.ru.md",
+      "sha256": "2f1c45b09437351939174d0847cd1395e3eacee882bccbd33a21107b55fae29c"
+    },
+    "skills/human-step/resources/docs/licensing.en.md": {
+      "source": "docs/licensing.en.md",
+      "sha256": "43ad165720b9038c98378a96172bfa97e2aa9155d891ba88ee1dc4447b04aa7d"
+    },
+    "skills/human-step/resources/docs/licensing.ru.md": {
+      "source": "docs/licensing.ru.md",
+      "sha256": "673fb56f3056b924c0519df707b0ed64c438c4f35762702ff14c41de849b07e6"
+    },
+    "skills/human-step/resources/docs/profile.en.md": {
+      "source": "docs/profile.en.md",
+      "sha256": "6fbd3a9e2d9ec0795d657634104b7b5cfa81f27fb72cebd6ae7cfeffdf90380c"
+    },
+    "skills/human-step/resources/docs/profile.ru.md": {
+      "source": "docs/profile.ru.md",
+      "sha256": "4eff496c6b892c383946c6d879ce63555a6682803cc6c41bb766dd785bd91b0f"
+    },
+    "skills/human-step/resources/docs/skill-resources.en.md": {
+      "source": "docs/skill-resources.en.md",
+      "sha256": "088c61a0a6654707293d80ad1b66c64dc2bd03f218103cf30aca8b840ac93651"
+    },
+    "skills/human-step/resources/docs/skill-resources.ru.md": {
+      "source": "docs/skill-resources.ru.md",
+      "sha256": "70c9dfc6413abd1ad15bccae9b8a46fd92b009376248e3f095947d34579e150e"
+    },
+    "skills/human-step/resources/docs/word-preset.en.md": {
+      "source": "docs/word-preset.en.md",
+      "sha256": "bad644fdf010fdb07784ea24bdddc6f16672d8633077a51e76aab70b2628f880"
+    },
+    "skills/human-step/resources/docs/word-preset.ru.md": {
+      "source": "docs/word-preset.ru.md",
+      "sha256": "8d62039f1c89287c9b0754dfe07f6a0c64b6897867a5da4f58ad38f3fb2aafab"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/author.md": {
+      "source": "locales/en/human-step/references/author.md",
+      "sha256": "f2a504dd6ca8fea7b96dff2f83b361e33acc64d3b48da81ca0f1536f32f1ab26"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/code.md": {
+      "source": "locales/en/human-step/references/code.md",
+      "sha256": "304f6ebc7d7549a60943d62440ca16dc0a76b2b18b99ddc02c63c9eb9acf49f8"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/commit-examples.md": {
+      "source": "locales/en/human-step/references/commit-examples.md",
+      "sha256": "3c61295854a70fec8fa67d07ea6e3508323ab076074d5752cb4fccd12f4aa60c"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/coordination.md": {
+      "source": "locales/en/human-step/references/coordination.md",
+      "sha256": "c35fb85ddd9e40d812dd051f5a220b108fa16d6cd9bf7f6788f90799cd5c06ae"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/executor.md": {
+      "source": "locales/en/human-step/references/executor.md",
+      "sha256": "c46f579f1c4b4a9c20f41bb2edef6186ba956230eeba213b2ee2124c38470fa9"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/experience.md": {
+      "source": "locales/en/human-step/references/experience.md",
+      "sha256": "0a5951bf0a48b44e522d69bed412b06a4bf97a2e669a2071882423f3d996aeb3"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/language-and-maintenance.md": {
+      "source": "locales/en/human-step/references/language-and-maintenance.md",
+      "sha256": "b2bf46e5672fb5c3259686e891efcfc90cf774d34225826d7c24824ed40f62ee"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/lessons.md": {
+      "source": "locales/en/human-step/references/lessons.md",
+      "sha256": "e2835831bf9aa90fede39f5d5b43ed8faf3134f98c53e926186fbf0aa2b5cca1"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/non-code.md": {
+      "source": "locales/en/human-step/references/non-code.md",
+      "sha256": "4a8e0a0f92116d79d2953bdd1c87f8d011103c91782e627c6ecd35c8aba493d9"
+    },
+    "skills/human-step/resources/locales/en/human-step/references/packet-example.md": {
+      "source": "locales/en/human-step/references/packet-example.md",
+      "sha256": "9468321624d2df7d71a06088ebb48fbd8bc60ec86df93d0f683e11ac30d90995"
+    },
+    "skills/human-step/resources/locales/en/human-step/workflow.md": {
+      "source": "locales/en/human-step/workflow.md",
+      "sha256": "8754abc4c245dc8aba9b30375b8fa5125c815bd5bb2fc5aacdeee6f803b97c55"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/author.md": {
+      "source": "locales/ru/human-step/references/author.md",
+      "sha256": "626cd376fc774893cc5df63423b6fbef4627bb23cb43de5425a0fe19b331b989"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/code.md": {
+      "source": "locales/ru/human-step/references/code.md",
+      "sha256": "f107e57b5d044d25a7b66df870194a7d870f1e9e561359ec7bc664d53fb0718c"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/commit-examples.md": {
+      "source": "locales/ru/human-step/references/commit-examples.md",
+      "sha256": "c0265209f796d8b7275f6db98b65190570b8a7f904cb940acc6181b86793d3fc"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/coordination.md": {
+      "source": "locales/ru/human-step/references/coordination.md",
+      "sha256": "1722a652a240554a33b6214d654466ad75413e4545b1485acfff5fbf9d71577c"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/executor.md": {
+      "source": "locales/ru/human-step/references/executor.md",
+      "sha256": "2385711cdb9ef4eee695d718119bc3a420bb629fcd7703de47e88eadb31099f7"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/experience.md": {
+      "source": "locales/ru/human-step/references/experience.md",
+      "sha256": "b13f2b2a8a49cd40657c4139d787965da2bf5bb170626ea05f02cbae57f8c4e7"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/language-and-maintenance.md": {
+      "source": "locales/ru/human-step/references/language-and-maintenance.md",
+      "sha256": "92bbd3fbef1c22e4a44570c42bc4ce76096070892106e4d4f4f6bd163d6a8aa5"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/lessons.md": {
+      "source": "locales/ru/human-step/references/lessons.md",
+      "sha256": "26e56792ddc4a2b4afa3cb90f9785d4b23129b31d015f8e8b99731ae9b495d43"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/non-code.md": {
+      "source": "locales/ru/human-step/references/non-code.md",
+      "sha256": "4bbe2e10749c7d2cef641fff1bbec36266d54d705f25ffe48f6ba6ddbf4de082"
+    },
+    "skills/human-step/resources/locales/ru/human-step/references/packet-example.md": {
+      "source": "locales/ru/human-step/references/packet-example.md",
+      "sha256": "78e0e64283271811237a7b43c553f460ced1f4241bbf64ba63c20e7a9d18312f"
+    },
+    "skills/human-step/resources/locales/ru/human-step/workflow.md": {
+      "source": "locales/ru/human-step/workflow.md",
+      "sha256": "cef2e8d4ebe7147154720c75023653ca090b5b578299729e8e80a265e791aad4"
+    },
+    "skills/human-step/resources/shared/assets/word/base.docx": {
+      "source": "shared/assets/word/base.docx",
+      "sha256": "5c021525adacd92134feef244ef6ec1576e55484ee50d5316087612374a5ba61"
+    },
+    "skills/human-step/resources/shared/assets/word/catalog.json": {
+      "source": "shared/assets/word/catalog.json",
+      "sha256": "63fc45f509c20589721f8871ea0994390262c1fea1704a5ddb8f5b685db1e8a4"
+    },
+    "skills/human-step/resources/shared/assets/word/cover.docx": {
+      "source": "shared/assets/word/cover.docx",
+      "sha256": "75c8d7a311d937c7716b47142136cd2e2fe8da427d72265f748102aabd6c61d3"
+    },
+    "skills/human-step/resources/shared/schemas/profile.schema.json": {
+      "source": "shared/schemas/profile.schema.json",
+      "sha256": "002f13840dc5d6893986379f34c67f444fbc0f3f821cb21a9eb79f642dd38e79"
+    },
+    "skills/human-step/resources/shared/scripts/agent_journal.py": {
+      "source": "shared/scripts/agent_journal.py",
+      "sha256": "0f67f13f3e0fee9d0a5422a854f8f0e48f3ca7b48fc377eae58649c549a99a64"
+    },
+    "skills/human-step/resources/shared/scripts/case_catalog.py": {
+      "source": "shared/scripts/case_catalog.py",
+      "sha256": "5e9ff43a6141ef80b9354996d3cd2d7193f78ebdcdb67f36123484a260c2b5b0"
+    },
+    "skills/human-step/resources/shared/scripts/docx_guard.py": {
+      "source": "shared/scripts/docx_guard.py",
+      "sha256": "8236bf6c246401ce4c6a1d1df09d2e4b5422a0b9d750b3a8a8cd1cfbd1343a6c"
+    },
+    "skills/human-step/resources/shared/scripts/docx_package.py": {
+      "source": "shared/scripts/docx_package.py",
+      "sha256": "af02a54ac297ab5af8b55da1b37e6e90fbbd408ebbcdbeb5a1cee3ae545c99bb"
+    },
+    "skills/human-step/resources/shared/scripts/i18n.py": {
+      "source": "shared/scripts/i18n.py",
+      "sha256": "32d9cc5dff653358a22734d32c1f24797b4eac002a6d2d184e3ae54f41dfe2db"
+    },
+    "skills/human-step/resources/shared/scripts/inspect_word_sample.py": {
+      "source": "shared/scripts/inspect_word_sample.py",
+      "sha256": "5a91238b8d075ac1286eabb24e10a5b73394549025e480420076cc5edcb463d3"
+    },
+    "skills/human-step/resources/shared/scripts/profile.py": {
+      "source": "shared/scripts/profile.py",
+      "sha256": "e1742aa530d6770738277b1debf40c8a8075d8f11be10dc166dcbe97c48ee681"
+    },
+    "skills/human-step/resources/shared/scripts/report_workspace.py": {
+      "source": "shared/scripts/report_workspace.py",
+      "sha256": "67423696728834e6ebfdcff870d6e4c306121b1bd20c586975340d179696bb02"
+    },
+    "skills/human-step/resources/shared/scripts/safe_paths.py": {
+      "source": "shared/scripts/safe_paths.py",
+      "sha256": "eb3505779c73d2645d676bb00ec74245d26d1ae571e407c75309acc277d45539"
+    },
+    "skills/human-step/resources/shared/scripts/word_cover.py": {
+      "source": "shared/scripts/word_cover.py",
+      "sha256": "bd1e02c254c2769fe1cb24df5e46730e21b6f4f0afff858834e31c6ddea174fb"
+    },
+    "skills/human-step/resources/shared/templates/en/accepted-case.md": {
+      "source": "shared/templates/en/accepted-case.md",
+      "sha256": "b143b897d0a055de9349ad9f696c89c6fb25590b526cf3952b2b1f27333c160b"
+    },
+    "skills/human-step/resources/shared/templates/en/feedback.md": {
+      "source": "shared/templates/en/feedback.md",
+      "sha256": "a7274a41157ac31c277540534576e493e012479123714ce7b4b02698e3e7d8de"
+    },
+    "skills/human-step/resources/shared/templates/en/figure-index.md": {
+      "source": "shared/templates/en/figure-index.md",
+      "sha256": "1a0b8597bd97038b2238203e772f0ccef28ea152af31f79c4835e24d7cb089f9"
+    },
+    "skills/human-step/resources/shared/templates/en/handoff.md": {
+      "source": "shared/templates/en/handoff.md",
+      "sha256": "40cec08088304c57dab22e44d482cbeb8be3251f5a1b354895e5d1023b0b6444"
+    },
+    "skills/human-step/resources/shared/templates/en/human-step-feedback.md": {
+      "source": "shared/templates/en/human-step-feedback.md",
+      "sha256": "b1b3976a8e6ec4e3c0b1f3f5441256ecf23c73e240547f588f174e430d72f657"
+    },
+    "skills/human-step/resources/shared/templates/en/human-step-packet.md": {
+      "source": "shared/templates/en/human-step-packet.md",
+      "sha256": "623983a1ac3bb62f82e6023b8e0a0212dc6cd0760abc6a7ebe652f828558a211"
+    },
+    "skills/human-step/resources/shared/templates/en/human-step-result.md": {
+      "source": "shared/templates/en/human-step-result.md",
+      "sha256": "066609c026d6ba3848c0090523aaa7f62aa7e1939ae614994f3d0b4c639525e4"
+    },
+    "skills/human-step/resources/shared/templates/en/layout-catalog.md": {
+      "source": "shared/templates/en/layout-catalog.md",
+      "sha256": "9e26904e285dc12eccd2f8e0fe720a1d243fd1c2dc4c10f2828d147057208dec"
+    },
+    "skills/human-step/resources/shared/templates/en/project-accompany.md": {
+      "source": "shared/templates/en/project-accompany.md",
+      "sha256": "80efafb4e498b0feae1c14837f11c16cf099d560d3abebf8c7cebb21f4f5febf"
+    },
+    "skills/human-step/resources/shared/templates/en/project-report.md": {
+      "source": "shared/templates/en/project-report.md",
+      "sha256": "82b7472239d8b6ea728d88f6da66e743dd653a36934e1a3610c5f4a10bb6bb24"
+    },
+    "skills/human-step/resources/shared/templates/en/report.md": {
+      "source": "shared/templates/en/report.md",
+      "sha256": "ddfd8dbc4037385fed2e33b4b997f55eef64f98806c617c00ccc883f339bba10"
+    },
+    "skills/human-step/resources/shared/templates/en/task-spec.md": {
+      "source": "shared/templates/en/task-spec.md",
+      "sha256": "79e6f076b81830cf0789bab41ee7d5cb600fa95a19a5899f507c07a4fabf185a"
+    },
+    "skills/human-step/resources/shared/templates/en/task-state.md": {
+      "source": "shared/templates/en/task-state.md",
+      "sha256": "21a27ddd88398a45ed832615a48e025cfa593b8c48b0b4be99eac6bf323fcda9"
+    },
+    "skills/human-step/resources/shared/templates/ru/accepted-case.md": {
+      "source": "shared/templates/ru/accepted-case.md",
+      "sha256": "4ebfb6b40f198b1ded3424c5d0be72a58e6879890c40066e2470bb2fc9f6942c"
+    },
+    "skills/human-step/resources/shared/templates/ru/feedback.md": {
+      "source": "shared/templates/ru/feedback.md",
+      "sha256": "1da1718f532ccb54548c79133417ea19c33aff212bbb55ccc80b5780a2b6c59e"
+    },
+    "skills/human-step/resources/shared/templates/ru/figure-index.md": {
+      "source": "shared/templates/ru/figure-index.md",
+      "sha256": "d647841836edceb14f675407d8d16f4b40070b89eded5379d4f7f8e825e10ae5"
+    },
+    "skills/human-step/resources/shared/templates/ru/handoff.md": {
+      "source": "shared/templates/ru/handoff.md",
+      "sha256": "3148b09165902848774a4297cca8dfebf80196972ba39cf072461fe972c7fe80"
+    },
+    "skills/human-step/resources/shared/templates/ru/human-step-feedback.md": {
+      "source": "shared/templates/ru/human-step-feedback.md",
+      "sha256": "3b5185ea3be16b8d5360814bc3527e1f91bdb4a1fc7973d63157c961fb030a5e"
+    },
+    "skills/human-step/resources/shared/templates/ru/human-step-packet.md": {
+      "source": "shared/templates/ru/human-step-packet.md",
+      "sha256": "29ee7892e0e22e1307ff2f3a84ffe4798a532672657fd3861fcbfab28d6990b4"
+    },
+    "skills/human-step/resources/shared/templates/ru/human-step-result.md": {
+      "source": "shared/templates/ru/human-step-result.md",
+      "sha256": "6e09d8be2b19adba067085a0bb6c2eb32c7b8ac9f9502352c6559bd157231956"
+    },
+    "skills/human-step/resources/shared/templates/ru/layout-catalog.md": {
+      "source": "shared/templates/ru/layout-catalog.md",
+      "sha256": "96b410ed5707fd7714c47bf48d92c10a4104a66099c9330f86381c41b7b2ee72"
+    },
+    "skills/human-step/resources/shared/templates/ru/project-accompany.md": {
+      "source": "shared/templates/ru/project-accompany.md",
+      "sha256": "ea1cfff5422a079ab72fba4198a52e74dd96d1b50a6021d732adcde93af46a61"
+    },
+    "skills/human-step/resources/shared/templates/ru/project-report.md": {
+      "source": "shared/templates/ru/project-report.md",
+      "sha256": "67602a73b665b2e5f40deaf638a4d31174a0cc7cd0258fb8acd6903102a4e493"
+    },
+    "skills/human-step/resources/shared/templates/ru/report.md": {
+      "source": "shared/templates/ru/report.md",
+      "sha256": "0d47dcfa167ae64d019d9f3abaad820d75818f3d32b688e989235573173da248"
+    },
+    "skills/human-step/resources/shared/templates/ru/task-spec.md": {
+      "source": "shared/templates/ru/task-spec.md",
+      "sha256": "643793c0b3e1d514f06a68ea48657317f4486537fcd6f6e6c4c12a93ba22e280"
+    },
+    "skills/human-step/resources/shared/templates/ru/task-state.md": {
+      "source": "shared/templates/ru/task-state.md",
+      "sha256": "92d771af79ffe102b68e515ec17bfced3fb5c7c75f62f7d8c07aa2f29b0be2af"
+    },
+    "skills/md-word/resources/COMMERCIAL-LICENSE.md": {
+      "source": "COMMERCIAL-LICENSE.md",
+      "sha256": "d96c6e64283b7c47efb4c30300695c085fa208280e61dcd2598a7d3d1ce630dd"
+    },
+    "skills/md-word/resources/COMMERCIAL-LICENSE.ru.md": {
+      "source": "COMMERCIAL-LICENSE.ru.md",
+      "sha256": "7c15e2c40f7a4ebbff148d404483f6f784bf2d7c190859ce5805e44d08e164ba"
+    },
+    "skills/md-word/resources/LICENSE": {
+      "source": "LICENSE",
+      "sha256": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8"
+    },
+    "skills/md-word/resources/docs/claude-preview.en.md": {
+      "source": "docs/claude-preview.en.md",
+      "sha256": "428ddffb5e49687da370893dd909a32770568e1ea88c23546b5c20f65ffb228b"
+    },
+    "skills/md-word/resources/docs/claude-preview.ru.md": {
+      "source": "docs/claude-preview.ru.md",
+      "sha256": "fe674699224a30b45d05f5d6254a5ee25770834d4f923ee635710874e82d2a87"
+    },
+    "skills/md-word/resources/docs/client-checks.en.md": {
+      "source": "docs/client-checks.en.md",
+      "sha256": "f2f363beb56ca82be48949750aff408a6cee3265ae3f313ca1226dddb0ad5396"
+    },
+    "skills/md-word/resources/docs/client-checks.ru.md": {
+      "source": "docs/client-checks.ru.md",
+      "sha256": "6394a0bd149fa91adcb42137ebdc73b251774dfa62a9b090f64900b228f819c1"
+    },
+    "skills/md-word/resources/docs/installation.en.md": {
+      "source": "docs/installation.en.md",
+      "sha256": "701b2d557a6a4c02da6139da1080de1c01d511b7f15cd0aab792c44c4ce3b569"
+    },
+    "skills/md-word/resources/docs/installation.ru.md": {
+      "source": "docs/installation.ru.md",
+      "sha256": "2f1c45b09437351939174d0847cd1395e3eacee882bccbd33a21107b55fae29c"
+    },
+    "skills/md-word/resources/docs/licensing.en.md": {
+      "source": "docs/licensing.en.md",
+      "sha256": "43ad165720b9038c98378a96172bfa97e2aa9155d891ba88ee1dc4447b04aa7d"
+    },
+    "skills/md-word/resources/docs/licensing.ru.md": {
+      "source": "docs/licensing.ru.md",
+      "sha256": "673fb56f3056b924c0519df707b0ed64c438c4f35762702ff14c41de849b07e6"
+    },
+    "skills/md-word/resources/docs/profile.en.md": {
+      "source": "docs/profile.en.md",
+      "sha256": "6fbd3a9e2d9ec0795d657634104b7b5cfa81f27fb72cebd6ae7cfeffdf90380c"
+    },
+    "skills/md-word/resources/docs/profile.ru.md": {
+      "source": "docs/profile.ru.md",
+      "sha256": "4eff496c6b892c383946c6d879ce63555a6682803cc6c41bb766dd785bd91b0f"
+    },
+    "skills/md-word/resources/docs/skill-resources.en.md": {
+      "source": "docs/skill-resources.en.md",
+      "sha256": "088c61a0a6654707293d80ad1b66c64dc2bd03f218103cf30aca8b840ac93651"
+    },
+    "skills/md-word/resources/docs/skill-resources.ru.md": {
+      "source": "docs/skill-resources.ru.md",
+      "sha256": "70c9dfc6413abd1ad15bccae9b8a46fd92b009376248e3f095947d34579e150e"
+    },
+    "skills/md-word/resources/docs/word-preset.en.md": {
+      "source": "docs/word-preset.en.md",
+      "sha256": "bad644fdf010fdb07784ea24bdddc6f16672d8633077a51e76aab70b2628f880"
+    },
+    "skills/md-word/resources/docs/word-preset.ru.md": {
+      "source": "docs/word-preset.ru.md",
+      "sha256": "8d62039f1c89287c9b0754dfe07f6a0c64b6897867a5da4f58ad38f3fb2aafab"
+    },
+    "skills/md-word/resources/locales/en/md-word/examples/case-a.md": {
+      "source": "locales/en/md-word/examples/case-a.md",
+      "sha256": "e4e1f27857717733bea70abe0f4c53810a327d292baeae7834c1200d7e1dc173"
+    },
+    "skills/md-word/resources/locales/en/md-word/examples/case-b.md": {
+      "source": "locales/en/md-word/examples/case-b.md",
+      "sha256": "97272ed4c3a9b31ae976a3610168126fb61c9d5ac93ce7c74999c6db82fcb006"
+    },
+    "skills/md-word/resources/locales/en/md-word/examples/index.md": {
+      "source": "locales/en/md-word/examples/index.md",
+      "sha256": "9a0a9a9ef8092a80b5f154d5b82f4417e81dfbec40b7a2c5fdddcd46c48b49e6"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/agent-log.md": {
+      "source": "locales/en/md-word/references/agent-log.md",
+      "sha256": "143d15462fece876e704db6692eaca7240714665d3065b3235f9aa5617a2b65f"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/authoring.md": {
+      "source": "locales/en/md-word/references/authoring.md",
+      "sha256": "9ed83a3d991dfa906a4c164a7eef386738832cf8de45219d0505cfd34365f9c7"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/coordination.md": {
+      "source": "locales/en/md-word/references/coordination.md",
+      "sha256": "8b460cde1a44a5fe5c3c3705883da35475ba99885b182d0cf2c88c8b980cafa9"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/evaluation.md": {
+      "source": "locales/en/md-word/references/evaluation.md",
+      "sha256": "1fba10928a02982293309ff8535b183dadd00e391bc3c3b014cc14251e90ef0a"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/feedback.md": {
+      "source": "locales/en/md-word/references/feedback.md",
+      "sha256": "e42546ba1ac7464beae5bb193bbc56a661cabbe29b078d6cd89ab3e469a3db62"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/illustrations.md": {
+      "source": "locales/en/md-word/references/illustrations.md",
+      "sha256": "259b1cc327f6c3429bf28ca38cdb67223bf6af35493419755ab7b88aec93f256"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/language-and-maintenance.md": {
+      "source": "locales/en/md-word/references/language-and-maintenance.md",
+      "sha256": "7fc0b3ad46d65a0ca71b2e3c45f8275a96279495d0d862efcaab2de2f15c1ef8"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/lessons.md": {
+      "source": "locales/en/md-word/references/lessons.md",
+      "sha256": "95d29a6bdcf4857985263ed3192d7fc63015a38bd238db3f9eabb20ecf720e24"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/ratings-and-cases.md": {
+      "source": "locales/en/md-word/references/ratings-and-cases.md",
+      "sha256": "4c95b43371271f093b236f41c8e48c3593b8079965f99d72fb9af86a866a4c8c"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/requirements.md": {
+      "source": "locales/en/md-word/references/requirements.md",
+      "sha256": "3f4e2a9a0bebb9d86f9876cfc0e7b5977babd3b336e7addeefcf90cb73beebb6"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/subagents.md": {
+      "source": "locales/en/md-word/references/subagents.md",
+      "sha256": "9c09b6b985167c89d1c46df97dcbe829fe75a8b34b8ed4dc73395d7db9c0572b"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/user-profile.md": {
+      "source": "locales/en/md-word/references/user-profile.md",
+      "sha256": "556a4b8fec9f33e37c74131c636f018ba2308b9090ea42af2142c01a2e7657fc"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/word-examples.md": {
+      "source": "locales/en/md-word/references/word-examples.md",
+      "sha256": "061889a45cd0b611009741b11dea82e5ece27c6594aac53e5556ac5ecbc4a74d"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/word-layout.md": {
+      "source": "locales/en/md-word/references/word-layout.md",
+      "sha256": "7e54115bf4c46f71a34c971be62f6514cdc7eda16e24cb640413fdf1e06ce390"
+    },
+    "skills/md-word/resources/locales/en/md-word/references/workspace.md": {
+      "source": "locales/en/md-word/references/workspace.md",
+      "sha256": "8e04cd703bafe84795d311651b46ee25bd5a322b75533d00caab498cb8e5fa6e"
+    },
+    "skills/md-word/resources/locales/en/md-word/workflow.md": {
+      "source": "locales/en/md-word/workflow.md",
+      "sha256": "ff5cf7cc4bbf1b25f21974f37da39a4afb6fae90466ef0bbd35cdaa66d0c95d7"
+    },
+    "skills/md-word/resources/locales/ru/md-word/examples/case-a.md": {
+      "source": "locales/ru/md-word/examples/case-a.md",
+      "sha256": "95c876f0b6e107c4bef09f19d399abfd50b918cadca37313238a08cae63596a6"
+    },
+    "skills/md-word/resources/locales/ru/md-word/examples/case-b.md": {
+      "source": "locales/ru/md-word/examples/case-b.md",
+      "sha256": "3be12b8b533b4da2b23277bc08f8d6c547b1e9a6511845c5e78d80cd1786b430"
+    },
+    "skills/md-word/resources/locales/ru/md-word/examples/index.md": {
+      "source": "locales/ru/md-word/examples/index.md",
+      "sha256": "012b8549134e5e622e2841b109e2812d1d1cb5f23cfbacf58687ffbd3ba22332"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/agent-log.md": {
+      "source": "locales/ru/md-word/references/agent-log.md",
+      "sha256": "c299b3e40950c848c266fe1da5cedbc160c919e8fe9dbc37a22b439be6afe06f"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/authoring.md": {
+      "source": "locales/ru/md-word/references/authoring.md",
+      "sha256": "385a064aa5c3af7982356049e54b46eba74d8d070982659c15ba9102b1ebf00b"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/coordination.md": {
+      "source": "locales/ru/md-word/references/coordination.md",
+      "sha256": "57f7724af4babbdac7ec483aafbefd57f2e749c553d004847ed707b760852dc1"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/evaluation.md": {
+      "source": "locales/ru/md-word/references/evaluation.md",
+      "sha256": "7b4c7f9c79a3b8996f571d924f8fcc2f9a2355c29d6410c116edaec26edb3abc"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/feedback.md": {
+      "source": "locales/ru/md-word/references/feedback.md",
+      "sha256": "61087bcf36993984da45ddf90b6044b78293ebfef0809ffb1d009eb62ea05815"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/illustrations.md": {
+      "source": "locales/ru/md-word/references/illustrations.md",
+      "sha256": "fa244643d09ade2ba65ed62f87779c3643efc88985ca4797d1d3c06445a93f01"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/language-and-maintenance.md": {
+      "source": "locales/ru/md-word/references/language-and-maintenance.md",
+      "sha256": "21e90c68239a28cc2c4703506ce2db0cd1062529e1dcce39ba8c0583adc9a29f"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/lessons.md": {
+      "source": "locales/ru/md-word/references/lessons.md",
+      "sha256": "b877b034af242737bdc5b0c9a62761735167ca67e47f10fb6ff9c563e4044020"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/ratings-and-cases.md": {
+      "source": "locales/ru/md-word/references/ratings-and-cases.md",
+      "sha256": "73bdb17411d1523ca92691c43e616f712eac5430d21e13f85dfa64f5b846e600"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/requirements.md": {
+      "source": "locales/ru/md-word/references/requirements.md",
+      "sha256": "6f64c48729d3ae2230be44b152284889a715c6157546507f86337785f13b29ec"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/subagents.md": {
+      "source": "locales/ru/md-word/references/subagents.md",
+      "sha256": "41c0f489794bf5724a2a7a6ccfaff723c2382759fa075837f973b9b181eb4620"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/user-profile.md": {
+      "source": "locales/ru/md-word/references/user-profile.md",
+      "sha256": "3ea42ee81645108aedc6313b44c18fcd597317503ac90c8f188d430287051494"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/word-examples.md": {
+      "source": "locales/ru/md-word/references/word-examples.md",
+      "sha256": "cad78eae02e9bd061ef717d02dbb78bc49939feb545feef7aa701390d66f0def"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/word-layout.md": {
+      "source": "locales/ru/md-word/references/word-layout.md",
+      "sha256": "ff4e40432df247e856101045c0d77257f89b9e26822642bfdfb55bbd3e092462"
+    },
+    "skills/md-word/resources/locales/ru/md-word/references/workspace.md": {
+      "source": "locales/ru/md-word/references/workspace.md",
+      "sha256": "aeba5240377911578295de7de0cb22e70ae8de8170b033ce5c25a2d66a405202"
+    },
+    "skills/md-word/resources/locales/ru/md-word/workflow.md": {
+      "source": "locales/ru/md-word/workflow.md",
+      "sha256": "1b4e0059ed0eeae65a67d1039f8f45b146f7f43ccb08273c1949ea5ebf501d47"
+    },
+    "skills/md-word/resources/shared/assets/word/base.docx": {
+      "source": "shared/assets/word/base.docx",
+      "sha256": "5c021525adacd92134feef244ef6ec1576e55484ee50d5316087612374a5ba61"
+    },
+    "skills/md-word/resources/shared/assets/word/catalog.json": {
+      "source": "shared/assets/word/catalog.json",
+      "sha256": "63fc45f509c20589721f8871ea0994390262c1fea1704a5ddb8f5b685db1e8a4"
+    },
+    "skills/md-word/resources/shared/assets/word/cover.docx": {
+      "source": "shared/assets/word/cover.docx",
+      "sha256": "75c8d7a311d937c7716b47142136cd2e2fe8da427d72265f748102aabd6c61d3"
+    },
+    "skills/md-word/resources/shared/examples/historical-candidates.json": {
+      "source": "shared/examples/historical-candidates.json",
+      "sha256": "f78e5a924617e5c7ae8cfcc1f09506901ee7b3a2d75692ecf824e29872efbe9a"
+    },
+    "skills/md-word/resources/shared/schemas/profile.schema.json": {
+      "source": "shared/schemas/profile.schema.json",
+      "sha256": "002f13840dc5d6893986379f34c67f444fbc0f3f821cb21a9eb79f642dd38e79"
+    },
+    "skills/md-word/resources/shared/scripts/agent_journal.py": {
+      "source": "shared/scripts/agent_journal.py",
+      "sha256": "0f67f13f3e0fee9d0a5422a854f8f0e48f3ca7b48fc377eae58649c549a99a64"
+    },
+    "skills/md-word/resources/shared/scripts/case_catalog.py": {
+      "source": "shared/scripts/case_catalog.py",
+      "sha256": "5e9ff43a6141ef80b9354996d3cd2d7193f78ebdcdb67f36123484a260c2b5b0"
+    },
+    "skills/md-word/resources/shared/scripts/docx_guard.py": {
+      "source": "shared/scripts/docx_guard.py",
+      "sha256": "8236bf6c246401ce4c6a1d1df09d2e4b5422a0b9d750b3a8a8cd1cfbd1343a6c"
+    },
+    "skills/md-word/resources/shared/scripts/docx_package.py": {
+      "source": "shared/scripts/docx_package.py",
+      "sha256": "af02a54ac297ab5af8b55da1b37e6e90fbbd408ebbcdbeb5a1cee3ae545c99bb"
+    },
+    "skills/md-word/resources/shared/scripts/i18n.py": {
+      "source": "shared/scripts/i18n.py",
+      "sha256": "32d9cc5dff653358a22734d32c1f24797b4eac002a6d2d184e3ae54f41dfe2db"
+    },
+    "skills/md-word/resources/shared/scripts/inspect_word_sample.py": {
+      "source": "shared/scripts/inspect_word_sample.py",
+      "sha256": "5a91238b8d075ac1286eabb24e10a5b73394549025e480420076cc5edcb463d3"
+    },
+    "skills/md-word/resources/shared/scripts/profile.py": {
+      "source": "shared/scripts/profile.py",
+      "sha256": "e1742aa530d6770738277b1debf40c8a8075d8f11be10dc166dcbe97c48ee681"
+    },
+    "skills/md-word/resources/shared/scripts/report_workspace.py": {
+      "source": "shared/scripts/report_workspace.py",
+      "sha256": "67423696728834e6ebfdcff870d6e4c306121b1bd20c586975340d179696bb02"
+    },
+    "skills/md-word/resources/shared/scripts/safe_paths.py": {
+      "source": "shared/scripts/safe_paths.py",
+      "sha256": "eb3505779c73d2645d676bb00ec74245d26d1ae571e407c75309acc277d45539"
+    },
+    "skills/md-word/resources/shared/scripts/word_cover.py": {
+      "source": "shared/scripts/word_cover.py",
+      "sha256": "bd1e02c254c2769fe1cb24df5e46730e21b6f4f0afff858834e31c6ddea174fb"
+    },
+    "skills/md-word/resources/shared/templates/en/accepted-case.md": {
+      "source": "shared/templates/en/accepted-case.md",
+      "sha256": "b143b897d0a055de9349ad9f696c89c6fb25590b526cf3952b2b1f27333c160b"
+    },
+    "skills/md-word/resources/shared/templates/en/feedback.md": {
+      "source": "shared/templates/en/feedback.md",
+      "sha256": "a7274a41157ac31c277540534576e493e012479123714ce7b4b02698e3e7d8de"
+    },
+    "skills/md-word/resources/shared/templates/en/figure-index.md": {
+      "source": "shared/templates/en/figure-index.md",
+      "sha256": "1a0b8597bd97038b2238203e772f0ccef28ea152af31f79c4835e24d7cb089f9"
+    },
+    "skills/md-word/resources/shared/templates/en/handoff.md": {
+      "source": "shared/templates/en/handoff.md",
+      "sha256": "40cec08088304c57dab22e44d482cbeb8be3251f5a1b354895e5d1023b0b6444"
+    },
+    "skills/md-word/resources/shared/templates/en/human-step-feedback.md": {
+      "source": "shared/templates/en/human-step-feedback.md",
+      "sha256": "b1b3976a8e6ec4e3c0b1f3f5441256ecf23c73e240547f588f174e430d72f657"
+    },
+    "skills/md-word/resources/shared/templates/en/human-step-packet.md": {
+      "source": "shared/templates/en/human-step-packet.md",
+      "sha256": "623983a1ac3bb62f82e6023b8e0a0212dc6cd0760abc6a7ebe652f828558a211"
+    },
+    "skills/md-word/resources/shared/templates/en/human-step-result.md": {
+      "source": "shared/templates/en/human-step-result.md",
+      "sha256": "066609c026d6ba3848c0090523aaa7f62aa7e1939ae614994f3d0b4c639525e4"
+    },
+    "skills/md-word/resources/shared/templates/en/layout-catalog.md": {
+      "source": "shared/templates/en/layout-catalog.md",
+      "sha256": "9e26904e285dc12eccd2f8e0fe720a1d243fd1c2dc4c10f2828d147057208dec"
+    },
+    "skills/md-word/resources/shared/templates/en/project-accompany.md": {
+      "source": "shared/templates/en/project-accompany.md",
+      "sha256": "80efafb4e498b0feae1c14837f11c16cf099d560d3abebf8c7cebb21f4f5febf"
+    },
+    "skills/md-word/resources/shared/templates/en/project-report.md": {
+      "source": "shared/templates/en/project-report.md",
+      "sha256": "82b7472239d8b6ea728d88f6da66e743dd653a36934e1a3610c5f4a10bb6bb24"
+    },
+    "skills/md-word/resources/shared/templates/en/report.md": {
+      "source": "shared/templates/en/report.md",
+      "sha256": "ddfd8dbc4037385fed2e33b4b997f55eef64f98806c617c00ccc883f339bba10"
+    },
+    "skills/md-word/resources/shared/templates/en/task-spec.md": {
+      "source": "shared/templates/en/task-spec.md",
+      "sha256": "79e6f076b81830cf0789bab41ee7d5cb600fa95a19a5899f507c07a4fabf185a"
+    },
+    "skills/md-word/resources/shared/templates/en/task-state.md": {
+      "source": "shared/templates/en/task-state.md",
+      "sha256": "21a27ddd88398a45ed832615a48e025cfa593b8c48b0b4be99eac6bf323fcda9"
+    },
+    "skills/md-word/resources/shared/templates/ru/accepted-case.md": {
+      "source": "shared/templates/ru/accepted-case.md",
+      "sha256": "4ebfb6b40f198b1ded3424c5d0be72a58e6879890c40066e2470bb2fc9f6942c"
+    },
+    "skills/md-word/resources/shared/templates/ru/feedback.md": {
+      "source": "shared/templates/ru/feedback.md",
+      "sha256": "1da1718f532ccb54548c79133417ea19c33aff212bbb55ccc80b5780a2b6c59e"
+    },
+    "skills/md-word/resources/shared/templates/ru/figure-index.md": {
+      "source": "shared/templates/ru/figure-index.md",
+      "sha256": "d647841836edceb14f675407d8d16f4b40070b89eded5379d4f7f8e825e10ae5"
+    },
+    "skills/md-word/resources/shared/templates/ru/handoff.md": {
+      "source": "shared/templates/ru/handoff.md",
+      "sha256": "3148b09165902848774a4297cca8dfebf80196972ba39cf072461fe972c7fe80"
+    },
+    "skills/md-word/resources/shared/templates/ru/human-step-feedback.md": {
+      "source": "shared/templates/ru/human-step-feedback.md",
+      "sha256": "3b5185ea3be16b8d5360814bc3527e1f91bdb4a1fc7973d63157c961fb030a5e"
+    },
+    "skills/md-word/resources/shared/templates/ru/human-step-packet.md": {
+      "source": "shared/templates/ru/human-step-packet.md",
+      "sha256": "29ee7892e0e22e1307ff2f3a84ffe4798a532672657fd3861fcbfab28d6990b4"
+    },
+    "skills/md-word/resources/shared/templates/ru/human-step-result.md": {
+      "source": "shared/templates/ru/human-step-result.md",
+      "sha256": "6e09d8be2b19adba067085a0bb6c2eb32c7b8ac9f9502352c6559bd157231956"
+    },
+    "skills/md-word/resources/shared/templates/ru/layout-catalog.md": {
+      "source": "shared/templates/ru/layout-catalog.md",
+      "sha256": "96b410ed5707fd7714c47bf48d92c10a4104a66099c9330f86381c41b7b2ee72"
+    },
+    "skills/md-word/resources/shared/templates/ru/project-accompany.md": {
+      "source": "shared/templates/ru/project-accompany.md",
+      "sha256": "ea1cfff5422a079ab72fba4198a52e74dd96d1b50a6021d732adcde93af46a61"
+    },
+    "skills/md-word/resources/shared/templates/ru/project-report.md": {
+      "source": "shared/templates/ru/project-report.md",
+      "sha256": "67602a73b665b2e5f40deaf638a4d31174a0cc7cd0258fb8acd6903102a4e493"
+    },
+    "skills/md-word/resources/shared/templates/ru/report.md": {
+      "source": "shared/templates/ru/report.md",
+      "sha256": "0d47dcfa167ae64d019d9f3abaad820d75818f3d32b688e989235573173da248"
+    },
+    "skills/md-word/resources/shared/templates/ru/task-spec.md": {
+      "source": "shared/templates/ru/task-spec.md",
+      "sha256": "643793c0b3e1d514f06a68ea48657317f4486537fcd6f6e6c4c12a93ba22e280"
+    },
+    "skills/md-word/resources/shared/templates/ru/task-state.md": {
+      "source": "shared/templates/ru/task-state.md",
+      "sha256": "92d771af79ffe102b68e515ec17bfced3fb5c7c75f62f7d8c07aa2f29b0be2af"
+    }
+  }
+}

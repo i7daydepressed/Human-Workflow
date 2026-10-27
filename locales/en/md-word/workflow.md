@@ -15,6 +15,8 @@ Use an explicitly selected profile outside the installation. Task requirements a
 <!-- contract:CORE -->
 Establish the core executor and boundaries. Use human-step for transferable exact instructions and returned evidence. A bounded executor receives only relevant requirements, base version, actions, checks, and return materials. Optional subagents require actual availability and authorization. Without an assigned report, preserve proportionate state and explanation for continuation.
 
+For work and a report from a guide or sample, combine this workflow with available document, spreadsheet, PDF, or coding skills. Those skills handle format-specific operations; this workflow coordinates requirements, state, evidence, and handoff. Check actual availability rather than assuming a named skill is installed.
+
 <!-- contract:EVIDENCE -->
 Inspect actual artifacts and versions. Separate planned action, executed action, passed check, user approval, sending, and teacher acceptance. Calculation, library behavior, build, headless run, GUI, and a person's report establish distinct properties. Do not invent absent runs, dates, models, ratings, paths, or approvals. State tool/data/knowledge limitations before dependent work and continue independent work.
 

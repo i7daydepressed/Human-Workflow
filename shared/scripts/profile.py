@@ -10,10 +10,10 @@ import sys
 import tempfile
 import uuid
 
-from safe_paths import destination
+from safe_paths import destination, installation_root
 
 SCHEMA = 1
-CODE_ROOT = Path(__file__).resolve().parents[2]
+CODE_ROOT = installation_root(__file__)
 TOP_KEYS = {'schema_version', 'profile_id', 'instruction_language', 'output_language',
             'log_language', 'workspace', 'word', 'style', 'rating_scales', 'history_ref'}
 

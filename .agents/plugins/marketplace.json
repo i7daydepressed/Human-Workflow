@@ -1,7 +1,7 @@
 {
   "name": "workflow-tools",
   "interface": {
-    "displayName": "Workflow Tools"
+    "displayName": "Human Workflow"
   },
   "plugins": [
     {

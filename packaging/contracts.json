@@ -1,5 +1,5 @@
 {
-  "stage": "I05",
+  "stage": "I06",
   "release_version": null,
   "origins": {
     "human-step": "0.1.5",
@@ -34,6 +34,6 @@
       "FEEDBACK"
     ]
   },
-  "semantic_parity": "Task contracts retained from I04; paired client-status documentation updated during I05. The I04 base has scoped Codex CLI evidence; the I05 candidate has not been installed on the client.",
+  "semantic_parity": "Paired task contracts retain the I04 scope, with an explicit clarification that available format skills cooperate with md-word. I06 changes resource delivery, path guards, and selection/documentation metadata. Actual new host installation remains unverified.",
   "complete_reference_migration": true
 }

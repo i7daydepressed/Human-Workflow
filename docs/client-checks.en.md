@@ -1,4 +1,20 @@
-# Client evidence — I05 review candidate
+# Client evidence — I06
+
+Updated 2026-10-27. The public I05 source tree was read at GitHub commit `23a57e765494ab2480461e62843ed6c4c8716d37`. License terms and prices have been selected; commercial sales remain closed. The I06 changes are being applied to the owner's Drive source copy; this record does not claim a new GitHub push, host installation, or Mac upgrade.
+
+I06 adds generated skill-local resources, clearer md-word selection metadata and cooperation with available format skills, paired human-facing documentation, and profile/output protection for isolated resource paths. Canonical Word files and profile schema are preserved.
+
+Two distinct Claude observations were supplied by the owner: one executor reported missing parent-tree resources after opening the entry files; another saw the skill descriptions but completed a task with format skills without reading md-word. Their exact host/install path and complete selection trace are unavailable. The second executor's later explanation is a self-report, not independent evidence that description wording caused the omission. Successful files from a run that did not use the plugin do not validate it. No exact model ID, subscription eligibility, or guaranteed automatic selection is inferred.
+
+Local regression checks cover isolated folder links, helpers, resource provenance/freshness, and preservation of a synthetic external profile. These are file/runtime checks, not real Claude account execution or an actual client upgrade. Claude Code validation and a fresh I06 run in the intended Claude surface remain separate checks. See [resource layout](skill-resources.en.md).
+
+Local I06 validation: 92 tests passed (baseline: 85). An additional synthetic run by a separate agent with explicitly assigned, isolated md-word read bundled instructions and saved a checked result, continuation state, and log without a final Word report. The returned files were inspected by the main agent. This does not test automatic selection or an actual Claude host.
+
+## Historical evidence retained with its original scope
+
+The following I05-era record describes its historical state. Its statements about pending publication/licensing are not the current release summary above.
+
+### Historical I05 review record
 
 Recorded 2026-10-26. This package is `0.0.0-i05`; the client exercised its `0.0.0-i04` base. I05 changes review/status documentation, temporary package version and matching builder/test constants. Runtime scripts, schemas, Word files, entry descriptions, language routing and task contracts are unchanged. No install or update of I05 on the Mac is claimed.
 

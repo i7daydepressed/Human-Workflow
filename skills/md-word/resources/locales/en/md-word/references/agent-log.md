@@ -1,0 +1,11 @@
+# Agent work log and continuation
+
+Use the project's applicable AGENTS.md and existing attribution/log format. Otherwise use `agent-logs/<run-id>.md`, one owner per executor record. On handoff link the predecessor and start the new executor's record; do not duplicate an adequate common journal. Keep working logs outside the submitted report.
+
+Record author app/role/ID, model and source/precision of identity, task/user, instruction edition/version actually read, observed start time and timezone. Unknown is valid. A UI family label or self-assigned name is not an exact API model ID. Use an already known user name only when needed; do not collect additional identity for a log.
+
+After significant packets record goal, actual actions, files/IDs/versions, observations, checks/limits, decisions and next step. Exclude credentials, unnecessary personal data, hidden reasoning and full transcripts. Preserve literal quotes/commands and one chosen log language independently of instruction language. Mark reconstructed entries retrospective with their sources. Report tokens/time only when measured.
+
+Optional local helper: prepare identity.json using `agent`, `agent_id`, `id_source`, `model`, `model_source`, `user`, `task`, `skill_version`, `timezone`; explicitly mark missing identity unknown. Run `agent_journal.py start <project> --identity identity.json` from shared/scripts, retain the returned run ID/path, then use `append <project> --run-id RUN --entry entry.json`. Entries use `goal`, `actions`, `files`, `checks`, `result`, `user_decision`, `next_step`. The helper is local and does not synchronize. Generated prose supports RU/EN; some diagnostics remain Russian.
+
+Resume from current state/relevant recent entries, not the whole archive. Update concise state with current revisions/acceptance/divergence/log/checkpoint/next step; leave history in the log. Attribute packet author, core executor, explanation author and verifier to actual evidence. A later skill update does not retroactively alter the recorded version. Save state/log normally and check every write. If synchronization fails, preserve local work and state the unfinished save. Separate self-review, user reply and acceptance.

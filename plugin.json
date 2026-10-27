@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "workflow-tools-preview",
-  "version": "0.0.0-i05",
+  "version": "0.0.0-i06",
   "description": "Preview: exact step packets and task accompaniment, with independent English and Russian instructions.",
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Workflow Tools Preview",
+        "displayName": "Human Workflow",
         "shortDescription": "Exact steps and task accompaniment",
-        "longDescription": "A local review candidate with two workflows, paired EN/RU instructions, an external private profile, and a neutral Word preset. Technical identity and version are temporary. The I04 base was exercised on Codex CLI; see the packaged validation scope for this candidate.",
+        "longDescription": "Accompany assignments and projects, prepare exact handoff steps, and preserve state and evidence. Includes paired EN/RU instructions, optional external profiles, and a neutral Word preset. Runtime resources are bundled inside each skill; actual client validation remains scoped in the documentation.",
         "category": "Productivity",
         "defaultPrompt": [
           "Prepare an exact handoff packet for the attached task; write the result in my language.",

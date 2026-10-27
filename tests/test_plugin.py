@@ -59,7 +59,7 @@ class PortablePlugin(unittest.TestCase):
             self.assertEqual(set(archive.namelist()), set(mapping) | {'PACKAGE-MANIFEST.json'})
             manifest = json.loads(archive.read('plugin.json'))
             self.assertEqual(manifest['name'], 'workflow-tools-preview')
-            self.assertEqual(manifest['version'], '0.0.0-i05')
+            self.assertEqual(manifest['version'], '0.0.0-i06')
             self.assertTrue(manifest['$schema'].endswith('/1.0.0/plugin.schema.json'))
             self.assertEqual(manifest['license'], 'PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial')
             for name in ['LICENSE', 'COMMERCIAL-LICENSE.md', 'COMMERCIAL-LICENSE.ru.md',
@@ -76,7 +76,9 @@ class PortablePlugin(unittest.TestCase):
             for name in archive.namelist():
                 self.assertFalse(name.startswith(('tests/', 'tools/', 'packaging/', 'entrypoints/')))
             self.assertEqual(len([n for n in archive.namelist() if n.endswith('/SKILL.md')]), 2)
-            self.assertEqual(len([n for n in archive.namelist() if n.endswith('/report_workspace.py')]), 1)
+            for skill in ('human-step', 'md-word'):
+                self.assertEqual(archive.read('skills/' + skill + '/resources/shared/scripts/report_workspace.py'),
+                                 archive.read('shared/scripts/report_workspace.py'))
 
     def test_plugin_and_marketplace_are_reproducible(self):
         a = self.run_builder(name='a.zip', marketplace='ma.zip')

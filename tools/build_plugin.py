@@ -11,6 +11,7 @@ import tempfile
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 from build_source import ROOT, FORBIDDEN, allowed_files
+from sync_skill_resources import require_current
 
 
 def encoded(value):
@@ -28,6 +29,7 @@ def safe_name(name):
 
 
 def payload(root):
+    require_current(root)
     source = allowed_files(root)
     mapping = json.loads(source['packaging/plugin-files.json'])
     if not isinstance(mapping, dict) or not mapping:
@@ -44,8 +46,8 @@ def payload(root):
         provenance[target] = {'source': origin, 'sha256': hashlib.sha256(source[origin]).hexdigest()}
     manifest = json.loads(files['plugin.json'])
     identity = manifest['name']
-    if identity != 'workflow-tools-preview' or manifest['version'] != '0.0.0-i05':
-        raise ValueError('I05 builder supports only the recorded temporary preview identity')
+    if identity != 'workflow-tools-preview' or manifest['version'] != '0.0.0-i06':
+        raise ValueError('I06 builder supports only the recorded preview identity')
     if manifest.get('$schema') != 'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json':
         raise ValueError('Expected the portable Agent Plugins manifest')
     if set(manifest) != {'$schema', 'name', 'version', 'description', 'extensions', 'license'}:
@@ -56,8 +58,8 @@ def payload(root):
     if entries != ['skills/human-step/SKILL.md', 'skills/md-word/SKILL.md']:
         raise ValueError('Expected exactly two workflow entrypoints')
     files['PACKAGE-MANIFEST.json'] = encoded({
-        'kind': 'portable_plugin_preview', 'stage': 'I05',
-        'identity_status': 'temporary technical identity, not approved public branding/version',
+        'kind': 'portable_plugin_preview', 'stage': 'I06',
+        'identity_status': 'Human Workflow display name; retained technical ID; preview version',
         'host_installation_verified': False, 'published': False,
         'files': provenance})
     return files, identity
@@ -123,7 +125,8 @@ def build(root, output, marketplace_output=None):
             raise ValueError('Marketplace must point to the isolated preview package')
         repo = {'plugins/' + identity + '/' + name: content for name, content in files.items()}
         repo['.agents/plugins/marketplace.json'] = source['packaging/marketplace.json']
-        repo['README.md'] = source['packaging/marketplace-readme.en.md']
+        repo['README.md'] = source['packaging/marketplace-readme.ru.md']
+        repo['README.en.md'] = source['packaging/marketplace-readme.en.md']
         repo['README.ru.md'] = source['packaging/marketplace-readme.ru.md']
         artifacts.append((outputs[1], zip_bytes(repo), 'isolated_repo_marketplace_preview', len(repo)))
     results = []

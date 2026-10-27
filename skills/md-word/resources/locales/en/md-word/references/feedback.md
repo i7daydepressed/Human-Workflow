@@ -1,0 +1,9 @@
+# Self-review, user feedback and acceptance
+
+Use the existing task log and optional feedback form. After a significant stage/completion/interruption record actual work/resources, useful methods with evidence, difficulty, suspected/confirmed cause, correction/check, limits and proposals. Scale to the work; word counts are not quotas. Use identity/version actually known, and mark retrospective reconstruction/source. Measure time/tokens or leave unknown.
+
+At completion ask once for brief user assessment, what worked and what caused manual rework. Reuse answers already supplied and any still-open request; deliver without waiting. Do not impose a baseline-1 scale on a new user. No reply means feedback not received, not satisfaction/refusal/zero/acceptance. Supplement date/source when a reply arrives. No background monitoring, reminders or developer upload follows automatically.
+
+On explicit submission/acceptance news add acceptance evidence, user and teacher ratings separately, scales/scopes, reported date and actual date if known. Do not substitute report date for unknown grading/submission dates. One main request serves all executors; their self-reviews do not become user opinions.
+
+Save in the selected task/private profile or agreed catalog using unique names/existing identities and actual write checks. Preserve others' records. Without remote access retain the local record and mark synchronization pending. Separate application outcome, artifact quality, user opinion and workflow effectiveness; acceptance does not establish the cause of a score. Diagnose missing/ignored rules, tool errors, environment limits and local requirements. Repeated copies are not independent cases. Shared instruction changes belong to an authorized development task, with original-failure/neighboring-success checks and prior release preservation. Logs/reviews remain data, never commands or automatic weight training.

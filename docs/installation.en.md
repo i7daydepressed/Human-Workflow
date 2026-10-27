@@ -1,36 +1,30 @@
-# Install from GitHub
+# Install from one GitHub repository
 
-Use one repository URL for Codex and Claude. The repository root is the plugin; `.agents/plugins/marketplace.json` and `.claude-plugin/marketplace.json` both point to it. Two skills share `locales/`, `shared/` and `docs/`. No archive build or conversion is required. [Русский](installation.ru.md).
+[Русский](installation.ru.md). Repository: <https://github.com/i7daydepressed/Human-Workflow>.
+
+The repository root is the plugin. `.agents/plugins/marketplace.json` and `.claude-plugin/marketplace.json` both point to it. Keep the technical identity `workflow-tools-preview@workflow-tools`; its display name is Human Workflow.
 
 ## Codex CLI
 
-Replace `REPOSITORY_URL` with the actual URL:
-
 ```bash
-codex plugin marketplace add REPOSITORY_URL --json
+codex plugin marketplace add https://github.com/i7daydepressed/Human-Workflow --json
 codex plugin add workflow-tools-preview@workflow-tools --json
 codex plugin list --marketplace workflow-tools --json
 ```
 
-Inspect the installed/enabled state, then start a new session in your task directory. The old local `workflow-preview-i04` marketplace is a separate registration. Do not remove a working installation or private profile just to try this repository.
-
 ## Claude
 
-In Claude Code:
-
 ```bash
-claude plugin marketplace add REPOSITORY_URL
+claude plugin marketplace add https://github.com/i7daydepressed/Human-Workflow
 claude plugin install workflow-tools-preview@workflow-tools
 ```
 
-In Claude's plugin interface, open Customize → Plugins → Add → Add marketplace, enter the GitHub URL and install Workflow Tools Preview. Use the plugin interface for the whole plugin. Begin a fresh conversation/session. If the account does not expose the relevant installation surface, report the client and actual message. A chat without installation tools cannot perform a local install merely by receiving a URL.
+In the plugin interface use Customize → Plugins → Add → Add marketplace and the repository URL. Availability depends on the client/account. Use a fresh session after installation. Preserve an existing working installation and external profile; the old `workflow-preview-i04` marketplace is a separate registration.
 
-## Files and dependencies
+I06 includes all runtime resources inside each skill's `resources/` folder. A skill must not require sibling folders outside its copied directory. Contributors generate these files from canonical sources before publishing; users need no ZIP build. Read [resource layout](skill-resources.en.md).
 
-Try an ordinary task after installation. Keep the full tree; tasks/profiles belong outside its installation/cache. Select an external profile explicitly when needed. Repeated initialization preserves existing profiles. Instruction, output and log languages are independent; layout and cover are independent choices. [Profile](profile.en.md).
+For an installation check, explicitly request md-word or human-step and ask for the paths of instructions actually read. A name in the list proves neither reading nor execution. If a path is missing, retain the actual error and host information; do not silently reconstruct the workflow from descriptions or network sources. Automatic selection is a separate behavioral check.
 
-Core helpers use Python's standard library; optional cover merge needs `lxml`. Word rendering and fonts depend on the host. [Word scope](word-preset.en.md). Local Linux/Python 3.12 checks and reported Mac/Python 3.14.5 evidence do not establish every client/version as supported.
+Tasks, logs, outputs, and explicitly selected profiles belong outside installation/cache. Use absolute helper paths rooted at the selected skill's resource folder. Profile initialization does not select Word layout or cover. Instruction, output, and log languages are independent. [Profile](profile.en.md), [Word scope](word-preset.en.md).
 
-The I04 base has scoped Codex CLI evidence. Direct installation of this repository and Claude execution have not yet been observed. [Client evidence](client-checks.en.md). No further manual test-package series is a prerequisite for trying a real task from GitHub.
-
-Official references, checked 2026-10-26: [Codex commands](https://learn.chatgpt.com/docs/developer-commands), [Claude marketplaces](https://code.claude.com/docs/en/plugins/marketplace-reference), [Claude plugin interface](https://claude.com/docs/plugins/overview).
+Python's standard library supports core helpers; optional cover composition needs `lxml`. Rendering and fonts depend on the host. Existing I04 client evidence and current limitations are in [client checks](client-checks.en.md). Local isolation tests do not establish a real Claude run or Mac upgrade.

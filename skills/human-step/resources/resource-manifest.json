@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "kind": "workflow_skill_resources",
+  "skill": "human-step",
+  "generated": true,
+  "files": {
+    "COMMERCIAL-LICENSE.md": {
+      "source": "COMMERCIAL-LICENSE.md",
+      "sha256": "d96c6e64283b7c47efb4c30300695c085fa208280e61dcd2598a7d3d1ce630dd"
+    },
+    "COMMERCIAL-LICENSE.ru.md": {
+      "source": "COMMERCIAL-LICENSE.ru.md",
+      "sha256": "7c15e2c40f7a4ebbff148d404483f6f784bf2d7c190859ce5805e44d08e164ba"
+    },
+    "LICENSE": {
+      "source": "LICENSE",
+      "sha256": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8"
+    },
+    "docs/claude-preview.en.md": {
+      "source": "docs/claude-preview.en.md",
+      "sha256": "428ddffb5e49687da370893dd909a32770568e1ea88c23546b5c20f65ffb228b"
+    },
+    "docs/claude-preview.ru.md": {
+      "source": "docs/claude-preview.ru.md",
+      "sha256": "fe674699224a30b45d05f5d6254a5ee25770834d4f923ee635710874e82d2a87"
+    },
+    "docs/client-checks.en.md": {
+      "source": "docs/client-checks.en.md",
+      "sha256": "f2f363beb56ca82be48949750aff408a6cee3265ae3f313ca1226dddb0ad5396"
+    },
+    "docs/client-checks.ru.md": {
+      "source": "docs/client-checks.ru.md",
+      "sha256": "6394a0bd149fa91adcb42137ebdc73b251774dfa62a9b090f64900b228f819c1"
+    },
+    "docs/installation.en.md": {
+      "source": "docs/installation.en.md",
+      "sha256": "701b2d557a6a4c02da6139da1080de1c01d511b7f15cd0aab792c44c4ce3b569"
+    },
+    "docs/installation.ru.md": {
+      "source": "docs/installation.ru.md",
+      "sha256": "2f1c45b09437351939174d0847cd1395e3eacee882bccbd33a21107b55fae29c"
+    },
+    "docs/licensing.en.md": {
+      "source": "docs/licensing.en.md",
+      "sha256": "43ad165720b9038c98378a96172bfa97e2aa9155d891ba88ee1dc4447b04aa7d"
+    },
+    "docs/licensing.ru.md": {
+      "source": "docs/licensing.ru.md",
+      "sha256": "673fb56f3056b924c0519df707b0ed64c438c4f35762702ff14c41de849b07e6"
+    },
+    "docs/profile.en.md": {
+      "source": "docs/profile.en.md",
+      "sha256": "6fbd3a9e2d9ec0795d657634104b7b5cfa81f27fb72cebd6ae7cfeffdf90380c"
+    },
+    "docs/profile.ru.md": {
+      "source": "docs/profile.ru.md",
+      "sha256": "4eff496c6b892c383946c6d879ce63555a6682803cc6c41bb766dd785bd91b0f"
+    },
+    "docs/skill-resources.en.md": {
+      "source": "docs/skill-resources.en.md",
+      "sha256": "088c61a0a6654707293d80ad1b66c64dc2bd03f218103cf30aca8b840ac93651"
+    },
+    "docs/skill-resources.ru.md": {
+      "source": "docs/skill-resources.ru.md",
+      "sha256": "70c9dfc6413abd1ad15bccae9b8a46fd92b009376248e3f095947d34579e150e"
+    },
+    "docs/word-preset.en.md": {
+      "source": "docs/word-preset.en.md",
+      "sha256": "bad644fdf010fdb07784ea24bdddc6f16672d8633077a51e76aab70b2628f880"
+    },
+    "docs/word-preset.ru.md": {
+      "source": "docs/word-preset.ru.md",
+      "sha256": "8d62039f1c89287c9b0754dfe07f6a0c64b6897867a5da4f58ad38f3fb2aafab"
+    },
+    "locales/en/human-step/references/author.md": {
+      "source": "locales/en/human-step/references/author.md",
+      "sha256": "f2a504dd6ca8fea7b96dff2f83b361e33acc64d3b48da81ca0f1536f32f1ab26"
+    },
+    "locales/en/human-step/references/code.md": {
+      "source": "locales/en/human-step/references/code.md",
+      "sha256": "304f6ebc7d7549a60943d62440ca16dc0a76b2b18b99ddc02c63c9eb9acf49f8"
+    },
+    "locales/en/human-step/references/commit-examples.md": {
+      "source": "locales/en/human-step/references/commit-examples.md",
+      "sha256": "3c61295854a70fec8fa67d07ea6e3508323ab076074d5752cb4fccd12f4aa60c"
+    },
+    "locales/en/human-step/references/coordination.md": {
+      "source": "locales/en/human-step/references/coordination.md",
+      "sha256": "c35fb85ddd9e40d812dd051f5a220b108fa16d6cd9bf7f6788f90799cd5c06ae"
+    },
+    "locales/en/human-step/references/executor.md": {
+      "source": "locales/en/human-step/references/executor.md",
+      "sha256": "c46f579f1c4b4a9c20f41bb2edef6186ba956230eeba213b2ee2124c38470fa9"
+    },
+    "locales/en/human-step/references/experience.md": {
+      "source": "locales/en/human-step/references/experience.md",
+      "sha256": "0a5951bf0a48b44e522d69bed412b06a4bf97a2e669a2071882423f3d996aeb3"
+    },
+    "locales/en/human-step/references/language-and-maintenance.md": {
+      "source": "locales/en/human-step/references/language-and-maintenance.md",
+      "sha256": "b2bf46e5672fb5c3259686e891efcfc90cf774d34225826d7c24824ed40f62ee"
+    },
+    "locales/en/human-step/references/lessons.md": {
+      "source": "locales/en/human-step/references/lessons.md",
+      "sha256": "e2835831bf9aa90fede39f5d5b43ed8faf3134f98c53e926186fbf0aa2b5cca1"
+    },
+    "locales/en/human-step/references/non-code.md": {
+      "source": "locales/en/human-step/references/non-code.md",
+      "sha256": "4a8e0a0f92116d79d2953bdd1c87f8d011103c91782e627c6ecd35c8aba493d9"
+    },
+    "locales/en/human-step/references/packet-example.md": {
+      "source": "locales/en/human-step/references/packet-example.md",
+      "sha256": "9468321624d2df7d71a06088ebb48fbd8bc60ec86df93d0f683e11ac30d90995"
+    },
+    "locales/en/human-step/workflow.md": {
+      "source": "locales/en/human-step/workflow.md",
+      "sha256": "8754abc4c245dc8aba9b30375b8fa5125c815bd5bb2fc5aacdeee6f803b97c55"
+    },
+    "locales/ru/human-step/references/author.md": {
+      "source": "locales/ru/human-step/references/author.md",
+      "sha256": "626cd376fc774893cc5df63423b6fbef4627bb23cb43de5425a0fe19b331b989"
+    },
+    "locales/ru/human-step/references/code.md": {
+      "source": "locales/ru/human-step/references/code.md",
+      "sha256": "f107e57b5d044d25a7b66df870194a7d870f1e9e561359ec7bc664d53fb0718c"
+    },
+    "locales/ru/human-step/references/commit-examples.md": {
+      "source": "locales/ru/human-step/references/commit-examples.md",
+      "sha256": "c0265209f796d8b7275f6db98b65190570b8a7f904cb940acc6181b86793d3fc"
+    },
+    "locales/ru/human-step/references/coordination.md": {
+      "source": "locales/ru/human-step/references/coordination.md",
+      "sha256": "1722a652a240554a33b6214d654466ad75413e4545b1485acfff5fbf9d71577c"
+    },
+    "locales/ru/human-step/references/executor.md": {
+      "source": "locales/ru/human-step/references/executor.md",
+      "sha256": "2385711cdb9ef4eee695d718119bc3a420bb629fcd7703de47e88eadb31099f7"
+    },
+    "locales/ru/human-step/references/experience.md": {
+      "source": "locales/ru/human-step/references/experience.md",
+      "sha256": "b13f2b2a8a49cd40657c4139d787965da2bf5bb170626ea05f02cbae57f8c4e7"
+    },
+    "locales/ru/human-step/references/language-and-maintenance.md": {
+      "source": "locales/ru/human-step/references/language-and-maintenance.md",
+      "sha256": "92bbd3fbef1c22e4a44570c42bc4ce76096070892106e4d4f4f6bd163d6a8aa5"
+    },
+    "locales/ru/human-step/references/lessons.md": {
+      "source": "locales/ru/human-step/references/lessons.md",
+      "sha256": "26e56792ddc4a2b4afa3cb90f9785d4b23129b31d015f8e8b99731ae9b495d43"
+    },
+    "locales/ru/human-step/references/non-code.md": {
+      "source": "locales/ru/human-step/references/non-code.md",
+      "sha256": "4bbe2e10749c7d2cef641fff1bbec36266d54d705f25ffe48f6ba6ddbf4de082"
+    },
+    "locales/ru/human-step/references/packet-example.md": {
+      "source": "locales/ru/human-step/references/packet-example.md",
+      "sha256": "78e0e64283271811237a7b43c553f460ced1f4241bbf64ba63c20e7a9d18312f"
+    },
+    "locales/ru/human-step/workflow.md": {
+      "source": "locales/ru/human-step/workflow.md",
+      "sha256": "cef2e8d4ebe7147154720c75023653ca090b5b578299729e8e80a265e791aad4"
+    },
+    "shared/assets/word/base.docx": {
+      "source": "shared/assets/word/base.docx",
+      "sha256": "5c021525adacd92134feef244ef6ec1576e55484ee50d5316087612374a5ba61"
+    },
+    "shared/assets/word/catalog.json": {
+      "source": "shared/assets/word/catalog.json",
+      "sha256": "63fc45f509c20589721f8871ea0994390262c1fea1704a5ddb8f5b685db1e8a4"
+    },
+    "shared/assets/word/cover.docx": {
+      "source": "shared/assets/word/cover.docx",
+      "sha256": "75c8d7a311d937c7716b47142136cd2e2fe8da427d72265f748102aabd6c61d3"
+    },
+    "shared/schemas/profile.schema.json": {
+      "source": "shared/schemas/profile.schema.json",
+      "sha256": "002f13840dc5d6893986379f34c67f444fbc0f3f821cb21a9eb79f642dd38e79"
+    },
+    "shared/scripts/agent_journal.py": {
+      "source": "shared/scripts/agent_journal.py",
+      "sha256": "0f67f13f3e0fee9d0a5422a854f8f0e48f3ca7b48fc377eae58649c549a99a64"
+    },
+    "shared/scripts/case_catalog.py": {
+      "source": "shared/scripts/case_catalog.py",
+      "sha256": "5e9ff43a6141ef80b9354996d3cd2d7193f78ebdcdb67f36123484a260c2b5b0"
+    },
+    "shared/scripts/docx_guard.py": {
+      "source": "shared/scripts/docx_guard.py",
+      "sha256": "8236bf6c246401ce4c6a1d1df09d2e4b5422a0b9d750b3a8a8cd1cfbd1343a6c"
+    },
+    "shared/scripts/docx_package.py": {
+      "source": "shared/scripts/docx_package.py",
+      "sha256": "af02a54ac297ab5af8b55da1b37e6e90fbbd408ebbcdbeb5a1cee3ae545c99bb"
+    },
+    "shared/scripts/i18n.py": {
+      "source": "shared/scripts/i18n.py",
+      "sha256": "32d9cc5dff653358a22734d32c1f24797b4eac002a6d2d184e3ae54f41dfe2db"
+    },
+    "shared/scripts/inspect_word_sample.py": {
+      "source": "shared/scripts/inspect_word_sample.py",
+      "sha256": "5a91238b8d075ac1286eabb24e10a5b73394549025e480420076cc5edcb463d3"
+    },
+    "shared/scripts/profile.py": {
+      "source": "shared/scripts/profile.py",
+      "sha256": "e1742aa530d6770738277b1debf40c8a8075d8f11be10dc166dcbe97c48ee681"
+    },
+    "shared/scripts/report_workspace.py": {
+      "source": "shared/scripts/report_workspace.py",
+      "sha256": "67423696728834e6ebfdcff870d6e4c306121b1bd20c586975340d179696bb02"
+    },
+    "shared/scripts/safe_paths.py": {
+      "source": "shared/scripts/safe_paths.py",
+      "sha256": "eb3505779c73d2645d676bb00ec74245d26d1ae571e407c75309acc277d45539"
+    },
+    "shared/scripts/word_cover.py": {
+      "source": "shared/scripts/word_cover.py",
+      "sha256": "bd1e02c254c2769fe1cb24df5e46730e21b6f4f0afff858834e31c6ddea174fb"
+    },
+    "shared/templates/en/accepted-case.md": {
+      "source": "shared/templates/en/accepted-case.md",
+      "sha256": "b143b897d0a055de9349ad9f696c89c6fb25590b526cf3952b2b1f27333c160b"
+    },
+    "shared/templates/en/feedback.md": {
+      "source": "shared/templates/en/feedback.md",
+      "sha256": "a7274a41157ac31c277540534576e493e012479123714ce7b4b02698e3e7d8de"
+    },
+    "shared/templates/en/figure-index.md": {
+      "source": "shared/templates/en/figure-index.md",
+      "sha256": "1a0b8597bd97038b2238203e772f0ccef28ea152af31f79c4835e24d7cb089f9"
+    },
+    "shared/templates/en/handoff.md": {
+      "source": "shared/templates/en/handoff.md",
+      "sha256": "40cec08088304c57dab22e44d482cbeb8be3251f5a1b354895e5d1023b0b6444"
+    },
+    "shared/templates/en/human-step-feedback.md": {
+      "source": "shared/templates/en/human-step-feedback.md",
+      "sha256": "b1b3976a8e6ec4e3c0b1f3f5441256ecf23c73e240547f588f174e430d72f657"
+    },
+    "shared/templates/en/human-step-packet.md": {
+      "source": "shared/templates/en/human-step-packet.md",
+      "sha256": "623983a1ac3bb62f82e6023b8e0a0212dc6cd0760abc6a7ebe652f828558a211"
+    },
+    "shared/templates/en/human-step-result.md": {
+      "source": "shared/templates/en/human-step-result.md",
+      "sha256": "066609c026d6ba3848c0090523aaa7f62aa7e1939ae614994f3d0b4c639525e4"
+    },
+    "shared/templates/en/layout-catalog.md": {
+      "source": "shared/templates/en/layout-catalog.md",
+      "sha256": "9e26904e285dc12eccd2f8e0fe720a1d243fd1c2dc4c10f2828d147057208dec"
+    },
+    "shared/templates/en/project-accompany.md": {
+      "source": "shared/templates/en/project-accompany.md",
+      "sha256": "80efafb4e498b0feae1c14837f11c16cf099d560d3abebf8c7cebb21f4f5febf"
+    },
+    "shared/templates/en/project-report.md": {
+      "source": "shared/templates/en/project-report.md",
+      "sha256": "82b7472239d8b6ea728d88f6da66e743dd653a36934e1a3610c5f4a10bb6bb24"
+    },
+    "shared/templates/en/report.md": {
+      "source": "shared/templates/en/report.md",
+      "sha256": "ddfd8dbc4037385fed2e33b4b997f55eef64f98806c617c00ccc883f339bba10"
+    },
+    "shared/templates/en/task-spec.md": {
+      "source": "shared/templates/en/task-spec.md",
+      "sha256": "79e6f076b81830cf0789bab41ee7d5cb600fa95a19a5899f507c07a4fabf185a"
+    },
+    "shared/templates/en/task-state.md": {
+      "source": "shared/templates/en/task-state.md",
+      "sha256": "21a27ddd88398a45ed832615a48e025cfa593b8c48b0b4be99eac6bf323fcda9"
+    },
+    "shared/templates/ru/accepted-case.md": {
+      "source": "shared/templates/ru/accepted-case.md",
+      "sha256": "4ebfb6b40f198b1ded3424c5d0be72a58e6879890c40066e2470bb2fc9f6942c"
+    },
+    "shared/templates/ru/feedback.md": {
+      "source": "shared/templates/ru/feedback.md",
+      "sha256": "1da1718f532ccb54548c79133417ea19c33aff212bbb55ccc80b5780a2b6c59e"
+    },
+    "shared/templates/ru/figure-index.md": {
+      "source": "shared/templates/ru/figure-index.md",
+      "sha256": "d647841836edceb14f675407d8d16f4b40070b89eded5379d4f7f8e825e10ae5"
+    },
+    "shared/templates/ru/handoff.md": {
+      "source": "shared/templates/ru/handoff.md",
+      "sha256": "3148b09165902848774a4297cca8dfebf80196972ba39cf072461fe972c7fe80"
+    },
+    "shared/templates/ru/human-step-feedback.md": {
+      "source": "shared/templates/ru/human-step-feedback.md",
+      "sha256": "3b5185ea3be16b8d5360814bc3527e1f91bdb4a1fc7973d63157c961fb030a5e"
+    },
+    "shared/templates/ru/human-step-packet.md": {
+      "source": "shared/templates/ru/human-step-packet.md",
+      "sha256": "29ee7892e0e22e1307ff2f3a84ffe4798a532672657fd3861fcbfab28d6990b4"
+    },
+    "shared/templates/ru/human-step-result.md": {
+      "source": "shared/templates/ru/human-step-result.md",
+      "sha256": "6e09d8be2b19adba067085a0bb6c2eb32c7b8ac9f9502352c6559bd157231956"
+    },
+    "shared/templates/ru/layout-catalog.md": {
+      "source": "shared/templates/ru/layout-catalog.md",
+      "sha256": "96b410ed5707fd7714c47bf48d92c10a4104a66099c9330f86381c41b7b2ee72"
+    },
+    "shared/templates/ru/project-accompany.md": {
+      "source": "shared/templates/ru/project-accompany.md",
+      "sha256": "ea1cfff5422a079ab72fba4198a52e74dd96d1b50a6021d732adcde93af46a61"
+    },
+    "shared/templates/ru/project-report.md": {
+      "source": "shared/templates/ru/project-report.md",
+      "sha256": "67602a73b665b2e5f40deaf638a4d31174a0cc7cd0258fb8acd6903102a4e493"
+    },
+    "shared/templates/ru/report.md": {
+      "source": "shared/templates/ru/report.md",
+      "sha256": "0d47dcfa167ae64d019d9f3abaad820d75818f3d32b688e989235573173da248"
+    },
+    "shared/templates/ru/task-spec.md": {
+      "source": "shared/templates/ru/task-spec.md",
+      "sha256": "643793c0b3e1d514f06a68ea48657317f4486537fcd6f6e6c4c12a93ba22e280"
+    },
+    "shared/templates/ru/task-state.md": {
+      "source": "shared/templates/ru/task-state.md",
+      "sha256": "92d771af79ffe102b68e515ec17bfced3fb5c7c75f62f7d8c07aa2f29b0be2af"
+    }
+  }
+}

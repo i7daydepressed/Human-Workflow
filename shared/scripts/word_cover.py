@@ -17,7 +17,7 @@ from zipfile import BadZipFile, ZipFile, ZipInfo, ZIP_DEFLATED
 from lxml import etree as E
 
 from docx_package import read_package, audit, edges, rels_name, R, REL, CT, W
-from safe_paths import destination
+from safe_paths import destination, installation_root
 
 WN = '{' + W + '}'
 RN = '{' + R + '}'
@@ -451,7 +451,7 @@ def main():
         output = destination(raw_out.parent.resolve(), raw_out.name)
         if output.exists():
             raise ValueError('Output already exists; preserve it and select a new result path')
-        if output.is_relative_to(SHARED.parent):
+        if output.is_relative_to(installation_root(__file__)):
             raise ValueError('Task output must be outside the product installation/source')
         cover = args.cover or SHARED / 'assets/word/cover.docx'
         result = apply(args.layout.expanduser().resolve(), cover.expanduser().resolve(), output, args.cover_source)

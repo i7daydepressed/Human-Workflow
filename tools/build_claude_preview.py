@@ -20,8 +20,9 @@ def claude_payload(root):
         del provenance[name]
     replacements = {
         '.claude-plugin/plugin.json': '.claude-plugin/plugin.json',
-        'README.md': 'packaging/claude-readme.en.md',
-        'README.ru.md': 'packaging/claude-readme.ru.md',
+        'README.md': 'README.md',
+        'README.en.md': 'README.en.md',
+        'README.ru.md': 'README.ru.md',
         'docs/claude-preview.en.md': 'docs/claude-preview.en.md',
         'docs/claude-preview.ru.md': 'docs/claude-preview.ru.md',
     }
@@ -30,14 +31,14 @@ def claude_payload(root):
         provenance[target] = {'source': origin, 'sha256': hashlib.sha256(files[target]).hexdigest()}
     manifest = json.loads(files['.claude-plugin/plugin.json'])
     if (set(manifest) != {'name', 'displayName', 'version', 'description', 'license'}
-            or manifest['name'] != identity or manifest['version'] != '0.0.0-i05'
+            or manifest['name'] != identity or manifest['version'] != '0.0.0-i06'
             or manifest['license'] != json.loads(source['plugin.json'])['license']
             or not all(isinstance(v, str) and v for v in manifest.values())):
         raise ValueError('Expected the recorded temporary Claude preview identity')
     files['PACKAGE-MANIFEST.json'] = encoded({
-        'kind': 'claude_plugin_preview', 'stage': 'I06', 'base_package_version': '0.0.0-i05',
+        'kind': 'claude_plugin_preview', 'stage': 'I06', 'base_package_version': '0.0.0-i06',
         'claude_host_validation': 'not run', 'installed': False, 'published': False,
-        'public_identity': 'undecided', 'license': manifest['license'],
+        'public_identity': 'Human Workflow; retained technical ID; preview version', 'license': manifest['license'],
         'commercial_sales_open': False, 'files': provenance})
     return files
 

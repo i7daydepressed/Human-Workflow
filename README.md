@@ -1,43 +1,74 @@
-# Workflow Tools — preview
+# Human Workflow
 
-Two workflows in one plugin: **human-step** prepares, executes and reviews exact step packets; **md-word** accompanies tasks, preserves state and prepares reports when requested. Both use paired English/Russian instructions, one shared runtime, an external private profile and a neutral Word preset. [Русский](README.ru.md).
+[English](README.en.md)
 
-## Install from GitHub
+Human Workflow — плагин для работы с ИИ-агентом над заданиями, проектами и отчётами. Он помогает сохранить требования, понять, что действительно сделано и проверено, получить объяснение результата и продолжить работу после паузы или передачи другому исполнителю.
 
-Give an agent this repository's GitHub URL and ask: “Install Workflow Tools from this repository using its README for my client.” An agent with terminal access can use the commands below. Replace `REPOSITORY_URL` with the actual GitHub URL.
+Например, можно передать агенту методичку, исходные данные и образец отчёта. Workflow связывает поручение, выполненную работу, проверки и документ, а доступные навыки для Word, Excel, PDF или кода помогают выполнить операции с конкретными форматами. Качество результата зависит также от исходников, возможностей среды и фактических проверок.
+
+## Два скила
+
+| Скил | Для каких задач |
+| --- | --- |
+| `md-word` | Выполнить и сопровождать практическую или проект, подготовить отчёт по методичке и образцу, продолжить работу, сохранить состояние, материалы и решения |
+| `human-step` | Подготовить точные шаги для человека или агента, выполнить порученный пакет, проверить изменения и передать результат |
+
+Оба скила можно использовать вместе. Подготовка инструкции не означает разрешения выполнить её. Сопровождение задачи возможно без итогового отчёта; общий вопрос или отдельная обычная правка не должны запускать весь процесс.
+
+## Что предоставить
+
+Для начала нужны само поручение, исходные материалы и требования к результату. Для учебной работы это могут быть методичка, вариант и данные; для проекта — задача и актуальные файлы. Сведения, которых нет, агент не должен придумывать.
+
+Свой Word-шаблон **необязателен**. Если нужно оформление вашего вуза или организации, приложите актуальный DOCX-образец и требования. Можно явно выбрать встроенный нейтральный пресет. Оформление основной части и титульник выбираются отдельно: свой титул, титул из полного образца либо нейтральный. Встроенный пресет не является универсальным стандартом учреждения. Для сопровождения без Word-отчёта шаблон не нужен. [Оформление и титульник](docs/word-preset.ru.md).
+
+## Установка
+
+Один репозиторий для Codex и Claude: <https://github.com/i7daydepressed/Human-Workflow>.
 
 Claude Code:
 
 ```bash
-claude plugin marketplace add REPOSITORY_URL
+claude plugin marketplace add https://github.com/i7daydepressed/Human-Workflow
 claude plugin install workflow-tools-preview@workflow-tools
 ```
 
 Codex CLI:
 
 ```bash
-codex plugin marketplace add REPOSITORY_URL --json
+codex plugin marketplace add https://github.com/i7daydepressed/Human-Workflow --json
 codex plugin add workflow-tools-preview@workflow-tools --json
 ```
 
-In Claude's plugin interface, use **Customize → Plugins → Add → Add marketplace**, enter the repository URL and install Workflow Tools Preview. Availability depends on account/client settings. Start a new conversation/session after installation. [Installation details](docs/installation.en.md).
+В интерфейсе плагинов Claude: **Customize → Plugins → Add → Add marketplace**, затем ссылка на репозиторий и установка Human Workflow. Наличие этого интерфейса зависит от клиента и настроек аккаунта. После установки используйте новую сессию. Чат без инструментов установки не может установить плагин только по ссылке.
 
-No ZIP build is needed. Both marketplace catalogs point to this repository root with the same two skills and shared resources. Keep the full plugin tree. Store tasks and private profiles outside the installation/cache; see the [profile contract](docs/profile.en.md).
+Технические имена `workflow-tools-preview` и `workflow-tools` сохранены для совместимости существующих установок. Отображаемое имя — Human Workflow. Пользователю не требуется собирать отдельный архив. [Подробности установки](docs/installation.ru.md).
 
-## Use
+## Как начать
 
-Ask for an exact handoff packet, execution of an approved packet, or task accompaniment with preserved state. Accompaniment does not require a final report. Ordinary questions and isolated code edits should not start the full workflow. English instructions are the default; an explicit task/profile setting can select Russian. Output and log languages are independent.
+Можно попросить: «Используй md-word, выполни практическую по приложенной методичке и подготовь отчёт по образцу». При проверке установки полезно явно назвать `workflow-tools-preview:md-word` и попросить сообщить пути прочитанных инструкций. Видимость названия в списке ещё не подтверждает чтение workflow. Автоматический выбор скила не гарантирован.
 
-The [Word preset](docs/word-preset.en.md) provides cleaned example formatting. Users can select their own samples and preferences. Rendering, fonts and optional dependencies depend on the host; installation does not provide them. Core helpers use Python's standard library; the optional bounded cover merge needs `lxml`.
+Другие примеры: «Сопровождай задачу и сохрани состояние, отдельный отчёт не нужен»; «Используй human-step: подготовь проверяемые шаги для исполнителя, пока ничего не изменяй».
 
-## Licensing and prices
+Рабочие инструкции доступны на английском и русском. По умолчанию выбираются английские; `instruction_language: ru` явно выбирает русские. Языки результата и журнала задаются независимо.
 
-The public license is [PolyForm Noncommercial 1.0.0](LICENSE), including its express organizational permissions. Commercial uses outside those permissions need a separate commercial grant: **USD 10 once for one human user**, or **USD 50 once for up to five users**, covering the confirmed purchased major version. Devices, agents, runs, projects and resulting reports are not separate billing units. See [licensing details](docs/licensing.en.md) and [prepared commercial terms](COMMERCIAL-LICENSE.md).
+## Состояние, журналы и личные настройки
 
-**Commercial sales are not open:** the public licensor identity, purchase contact and payment method have not been supplied. Downloading this preview does not create a purchase or a paid grant. The prepared terms require final sales documents and legal review before payments. This is a source-available project with a noncommercial public license.
+Агент сохраняет существенные действия, проверки, решения и следующий шаг в выбранной рабочей папке, используя существующие правила проекта. Иначе предусмотрен `agent-logs/<run-id>.md`. Журналы не входят в сдаваемый отчёт; полные диалоги, секреты и лишние личные сведения записывать не следует. Запрет на изменение файлов распространяется и на журнал.
 
-## Status
+Необязательный приватный профиль хранит выбранные языки, предпочтения и собственные Word-ресурсы **вне установки и кеша плагина**. Профиль нужно явно указать. Обновление продукта не должно его перезаписывать; перенос профиля исключает историю и локальный путь рабочей папки. [Профиль](docs/profile.ru.md).
 
-The base was exercised on Mac with Codex CLI 0.162.1. [Client evidence](docs/client-checks.en.md) records the actual scope. The direct GitHub layout is prepared; installation from the future GitHub URL and actual Claude behavior have not yet been observed. The technical identity `workflow-tools-preview` / `0.0.0-i05` is retained for preview use. The owner selected the licensing model below. Public upload, permanent identity and opening commercial sales remain separate steps.
+Плагин не запускает фоновый сбор данных и автоматически не отправляет журналы разработчику. Собственная облачная синхронизация и постоянная память между чатами не предоставляются: продолжение зависит от сохранённых файлов и доступа среды. Обработка данных самим клиентом регулируется его настройками и условиями.
 
-Personal originals, private profiles and personal logs are excluded. Anonymized historical examples are reference material, not live user history. Development tests and optional archive builders remain in `tests/` and `tools/`; users do not need them to install from GitHub. [Release status](packaging/release-status.json).
+## Возможности среды и проверки
+
+Предварительная версия `0.0.0-i06` содержит ресурсы внутри каждой папки скила. Они автоматически формируются из общей базы исходников. Это исправление доставки файлов; реальный прогон новой версии в Claude и обновление клиента на Mac ещё не подтверждены. [Область проверок](docs/client-checks.ru.md).
+
+Основные помощники используют стандартную библиотеку Python; дополнительная сборка титула требует `lxml`. Плагин не устанавливает Word, Excel, шрифты или универсальный рендерер. Наличие файла или успешный расчёт не заменяют проверку в нужном приложении и визуальный просмотр.
+
+## Лицензия и поддержка разработки
+
+Публичная лицензия — [PolyForm Noncommercial 1.0.0](LICENSE), с указанными в ней разрешениями для организаций. Для коммерческого использования за пределами этих разрешений подготовлены отдельные условия: **$10 разово за одного человека**, **$50 разово за команду до пяти**, на подтверждённую приобретённую основную версию. Устройства, агенты, запуски, проекты и готовые отчёты отдельно не оплачиваются. [Подробности](docs/licensing.ru.md), [коммерческие условия](COMMERCIAL-LICENSE.ru.md).
+
+Коммерческие лицензии предусмотрены как мера поддержки разработки. **Продажи пока не открыты:** данные лицензиара, контакт и способ оплаты не заполнены. Скачивание плагина не создает платное разрешение. Это проект с доступными исходниками и некоммерческой публичной лицензией.
+
+Для разработчиков: [общие исходники и генерация ресурсов](docs/skill-resources.ru.md).

@@ -44,7 +44,7 @@ class ClaudePreview(unittest.TestCase):
             for name in z.namelist():
                 self.assertFalse(name.startswith(('tests/','tools/','private/','originals/','bin/')))
 
-    def test_relocated_links_resolve_with_one_shared_runtime(self):
+    def test_relocated_links_resolve_with_generated_runtime_copies(self):
         target = self.area/'plugin.zip'
         self.build(target)
         folder = self.area/'relocated'
@@ -57,7 +57,9 @@ class ClaudePreview(unittest.TestCase):
                 resolved = (path.parent/value.split('#',1)[0]).resolve()
                 self.assertTrue(resolved.is_relative_to(folder.resolve()))
                 self.assertTrue(resolved.is_file(), str(path)+': '+value)
-        self.assertEqual(len(list(folder.rglob('report_workspace.py'))), 1)
+        for skill in ('human-step', 'md-word'):
+            self.assertEqual((folder / 'skills' / skill / 'resources/shared/scripts/report_workspace.py').read_bytes(),
+                             (folder / 'shared/scripts/report_workspace.py').read_bytes())
         self.assertEqual((folder/'shared/assets/word/base.docx').read_bytes(), (ROOT/'shared/assets/word/base.docx').read_bytes())
 
     def test_build_is_byte_reproducible(self):

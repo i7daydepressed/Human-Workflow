@@ -1,6 +1,6 @@
 {
-  "stage": "github-ready",
-  "product_name": null,
+  "stage": "resource-isolation-preview",
+  "product_name": "Human Workflow",
   "public_author": null,
   "license": "PolyForm-Noncommercial-1.0.0 OR LicenseRef-Workflow-Tools-Commercial",
   "release_version": null,
@@ -27,21 +27,21 @@
   ],
   "public_case_publication_approved": false,
   "temporary_package_name": "workflow-tools-preview",
-  "temporary_package_version": "0.0.0-i05",
+  "temporary_package_version": "0.0.0-i06",
   "local_marketplace_prepared": true,
   "current_candidate_host_installation_tested": false,
   "base_client_checks": "docs/client-checks.en.md",
-  "runtime_unchanged_since": "I04",
+  "runtime_unchanged_since": null,
   "task_contracts_unchanged_since": "I04",
   "mac_new_version_update_tested": false,
   "repository_installation_prepared": true,
-  "github_uploaded": false,
+  "github_uploaded": true,
   "repository_marketplace_name": "workflow-tools",
   "claude_repository": {
-    "version": "0.0.0-i05",
+    "version": "0.0.0-i06",
     "prepared": true,
     "host_validated": false,
-    "core_base": "I05",
+    "core_base": "I06",
     "public_release": false
   },
   "historical_claude_archive": {
@@ -71,5 +71,40 @@
     "seller_jurisdiction": null,
     "legal_review": "not performed",
     "runtime_enforcement": "none added"
+  },
+  "github_uploaded_version": "0.0.0-i05",
+  "current_candidate_github_uploaded": false,
+  "runtime_change_scope": "Skill-local generated resources; installation-root detection for profile/output guards",
+  "generated_skill_resources": {
+    "canonical_source": "locales/, shared/, docs/",
+    "physical_copies": "generated per skill",
+    "generator": "tools/sync_skill_resources.py",
+    "actual_host_validation": "not run"
+  },
+  "claude_observations": [
+    {
+      "case": "resource-access",
+      "source": "owner-supplied executor report",
+      "result": "required parent-tree resources unavailable",
+      "surface": "unknown",
+      "package_version": "reported I05"
+    },
+    {
+      "case": "implicit-selection",
+      "source": "owner-supplied executor report",
+      "result": "descriptions visible; md-word not read or used",
+      "cause": "not independently established"
+    }
+  ],
+  "local_validation": {
+    "date": "2026-10-27",
+    "baseline_tests_passed": 85,
+    "candidate_tests_passed": 92,
+    "isolated_skills": "passed",
+    "independent_synthetic_explicit_md_word": "passed; returned artifacts inspected",
+    "implicit_skill_selection": "not tested",
+    "claude_code_validation": "not run: CLI unavailable",
+    "actual_claude_host": "not run",
+    "real_mac_update": "not run"
   }
 }

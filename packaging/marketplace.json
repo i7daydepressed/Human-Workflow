@@ -1,7 +1,7 @@
 {
   "name": "workflow-preview-i04",
   "interface": {
-    "displayName": "Workflow Preview I04"
+    "displayName": "Human Workflow"
   },
   "plugins": [
     {
