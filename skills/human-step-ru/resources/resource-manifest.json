@@ -11,6 +11,10 @@
     "source_sha256": "074a2ebdf34548ca2ecc59226132ad0c0b000aa507a28f8c5cb4ab917a0e9ce2"
   },
   "files": {
+    "../SKILL.md": {
+      "source": "locales/ru/human-step/workflow.md",
+      "sha256": "0598a421d038950211dc0270c390b0013ea557e2877e1b16ef3708544ade56f7"
+    },
     "../references/author.md": {
       "source": "locales/ru/human-step/references/author.md",
       "sha256": "52ff285bda1167ed434837a5d2706ea381e0297bf1311c7377f960e6e31bdf9f"
@@ -91,10 +95,6 @@
       "source": "shared/scripts/word_cover.py",
       "sha256": "e6960a4f008e77368d404069adf1c407e39d9f08ef62025ff46c2ff189a2c45d"
     },
-    "../workflow.md": {
-      "source": "locales/ru/human-step/workflow.md",
-      "sha256": "e86dd08f9623798b387d12cd49803d0ddf3c59bca6cee7153454a51a1f8113a9"
-    },
     "LICENSE": {
       "source": "LICENSE",
       "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
@@ -137,7 +137,7 @@
     },
     "docs/skill-resources.ru.md": {
       "source": "docs/skill-resources.ru.md",
-      "sha256": "d735f2b666a3c157472780ec7739a01cf5f47a79b5d1236902b6ce3911cb7ea8"
+      "sha256": "90031893305bd92f7236f3a94f87ace0d7230d40b4a3fb35f1f118b3143fb4e3"
     },
     "docs/word-preset.ru.md": {
       "source": "docs/word-preset.ru.md",
