@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "stage": "I02",
+  "layout": {
+    "file": "base.docx",
+    "preset_id": "base-layout-i02",
+    "sha256": "5c021525adacd92134feef244ef6ec1576e55484ee50d5316087612374a5ba61",
+    "classification": "neutral-derived-preset",
+    "cover_boundary_body_block_count": 44,
+    "page_size_twips": {
+      "width": 11906,
+      "height": 16838
+    },
+    "margins_twips": {
+      "top": 1134,
+      "bottom": 1134,
+      "left": 1701,
+      "right": 851
+    },
+    "declared_font": "Times New Roman",
+    "body_size_pt": 14,
+    "body_line_spacing": 1.5,
+    "body_first_line_twips": 709,
+    "heading_style_ids": [
+      "1",
+      "2",
+      "3"
+    ],
+    "heading_sizes_pt": [
+      16,
+      14,
+      14
+    ],
+    "heading_numbering_id": "11",
+    "table_style_id": "af8",
+    "table_grid_twips": [
+      1242,
+      3119,
+      5209
+    ],
+    "image_size_emu": [
+      5939790,
+      3563874
+    ],
+    "toc_style_ids": [
+      "13",
+      "21",
+      "30"
+    ],
+    "toc_size_pt": 11,
+    "live_fields": [
+      "TOC",
+      "PAGEREF",
+      "PAGE"
+    ],
+    "media_origin": "Three newly drawn neutral pixel figures; no source images retained",
+    "toc_cache": [
+      {
+        "bookmark": "wf_intro",
+        "display": "Введение",
+        "level": 0,
+        "page": 3
+      },
+      {
+        "bookmark": "wf_main",
+        "display": "1. Основная часть",
+        "level": 0,
+        "page": 4
+      },
+      {
+        "bookmark": "wf_structure",
+        "display": "1.1. Структура текста",
+        "level": 1,
+        "page": 4
+      },
+      {
+        "bookmark": "wf_nested",
+        "display": "1.1.1. Вложенный подраздел",
+        "level": 2,
+        "page": 4
+      },
+      {
+        "bookmark": "wf_figures",
+        "display": "2. Иллюстрации",
+        "level": 0,
+        "page": 5
+      },
+      {
+        "bookmark": "wf_chart",
+        "display": "2.1. Сравнение значений",
+        "level": 1,
+        "page": 5
+      },
+      {
+        "bookmark": "wf_gradient",
+        "display": "2.2. Градации серого",
+        "level": 1,
+        "page": 6
+      },
+      {
+        "bookmark": "wf_matrix",
+        "display": "2.3. Матрица",
+        "level": 1,
+        "page": 7
+      },
+      {
+        "bookmark": "wf_conclusion",
+        "display": "Заключение",
+        "level": 0,
+        "page": 8
+      },
+      {
+        "bookmark": "wf_sources",
+        "display": "Список использованных источников",
+        "level": 0,
+        "page": 9
+      }
+    ]
+  },
+  "cover": {
+    "file": "cover.docx",
+    "preset_id": "base-cover-i02",
+    "sha256": "75c8d7a311d937c7716b47142136cd2e2fe8da427d72265f748102aabd6c61d3",
+    "classification": "neutral-derived-preset",
+    "optional_fields": [
+      "division",
+      "programme",
+      "chair",
+      "teacher",
+      "group",
+      "work_number"
+    ],
+    "requires_student_record_number": false
+  },
+  "validation": {
+    "date": "2026-10-26",
+    "environment": "Linux / LibreOfficeDev 26.8.0.0.alpha0 / pdftoppm",
+    "python": "3.12.14",
+    "lxml": "6.1.1",
+    "layout_pages": 9,
+    "cover_pages": 1,
+    "all_final_pages_visually_reviewed": true,
+    "toc_cached_rows_verified": 10,
+    "actual_rendered_fonts": [
+      "LiberationSerif",
+      "LiberationSerif-Bold"
+    ],
+    "font_substitution": true,
+    "merge_modes_checked": [
+      "builtin",
+      "uploaded",
+      "from_sample"
+    ],
+    "merge_body_raster_comparison": "All body pages equal for each recorded fixture",
+    "reopen_save": "LibreOffice round-trip retained neutral content, fields and 9 pages; some block positions shifted",
+    "microsoft_word_tested": false,
+    "institutional_acceptance": null
+  },
+  "limits": [
+    "Formatting example, not universal institutional requirements",
+    "No general Markdown-to-Word converter",
+    "Render and inspect each actual task result",
+    "No source submission acceptance inherited"
+  ]
+}

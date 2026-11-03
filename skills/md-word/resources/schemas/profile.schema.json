@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Private workflow profile, schema 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "instruction_language",
+    "output_language",
+    "log_language",
+    "word"
+  ],
+  "$defs": {
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Relative path within the private profile root; no .. or symlinks. Runtime checks existence and hash."
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "profile_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,80}$"
+    },
+    "instruction_language": {
+      "enum": [
+        "en",
+        "ru"
+      ]
+    },
+    "output_language": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$"
+    },
+    "log_language": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$"
+    },
+    "workspace": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "locator"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "local",
+                "provider"
+              ]
+            },
+            "locator": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "word": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "layout",
+        "cover"
+      ],
+      "properties": {
+        "layout": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source"
+              ],
+              "properties": {
+                "source": {
+                  "const": "unselected"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source",
+                "preset_id"
+              ],
+              "properties": {
+                "source": {
+                  "const": "builtin"
+                },
+                "preset_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source",
+                "resource"
+              ],
+              "properties": {
+                "source": {
+                  "enum": [
+                    "file"
+                  ]
+                },
+                "resource": {
+                  "$ref": "#/$defs/resource"
+                }
+              }
+            }
+          ]
+        },
+        "cover": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source"
+              ],
+              "properties": {
+                "source": {
+                  "const": "unselected"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source",
+                "preset_id"
+              ],
+              "properties": {
+                "source": {
+                  "const": "builtin"
+                },
+                "preset_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source",
+                "resource"
+              ],
+              "properties": {
+                "source": {
+                  "enum": [
+                    "uploaded",
+                    "from_sample"
+                  ]
+                },
+                "resource": {
+                  "$ref": "#/$defs/resource"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style": {
+      "type": "object"
+    },
+    "rating_scales": {
+      "type": "object"
+    },
+    "history_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

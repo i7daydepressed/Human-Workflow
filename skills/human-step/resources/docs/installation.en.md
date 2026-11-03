@@ -1,6 +1,6 @@
 # Installation and client surfaces
 
-[Русский](installation.ru.md). Repository: <https://github.com/i7daydepressed/Human-Workflow>.
+Repository: <https://github.com/i7daydepressed/Human-Workflow>.
 
 The candidate is `human-workflow` `0.0.7`, displayed as Human-workflow-v0.0.7. Both repository catalogs point to the plugin root `./` and retain `workflow-tools`. These source changes do not publish the candidate: confirm the actual distributed revision before installation. Existing installations need the [migration guide](migration.en.md), not blind duplicate installation.
 

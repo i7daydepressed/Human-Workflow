@@ -1,6 +1,6 @@
 # Identity migration and rollback
 
-[Русский](migration.ru.md). Target: `human-workflow` `0.0.7`, display Human-workflow-v0.0.7, Apache-2.0. Skills `human-step`/`md-word`, repository catalog `workflow-tools`, profile schema 1 and i02 Word preset IDs remain unchanged. This is a guide for a later explicitly authorized migration; no real installation, cache, profile or account is changed by preparing the candidate.
+Target: `human-workflow` `0.0.7`, display Human-workflow-v0.0.7, Apache-2.0. Skills `human-step`/`md-word`, repository catalog `workflow-tools`, profile schema 1 and i02 Word preset IDs remain unchanged. This is a guide for a later explicitly authorized migration; no real installation, cache, profile or account is changed by preparing the candidate.
 
 ## Establish actual state
 

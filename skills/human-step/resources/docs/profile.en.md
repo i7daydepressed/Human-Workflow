@@ -1,8 +1,8 @@
 # Local private profile — I02
 
-Keep the profile outside the product and its installation/cache. Select its location explicitly; the helper does not search accounts or create cloud storage. One profile serves both instruction languages. Schema: [profile.schema.json](../shared/schemas/profile.schema.json). Runtime additionally checks relative resource paths, existence, and SHA-256.
+Keep the profile outside the product and its installation/cache. Select its location explicitly; the helper does not search accounts or create cloud storage. One profile serves both instruction languages. Schema: [profile.schema.json](../schemas/profile.schema.json). Runtime additionally checks relative resource paths, existence, and SHA-256.
 
-Use `python3 shared/scripts/profile.py init <private-directory> --instruction-language en --output-language ru --log-language ru`. Output/log choices are optional; null means derive them from the actual task/context. Repeating init validates and preserves the existing bytes, including existing language choices. Unknown future schema versions fail without rewriting. There is one new supported format; no fictional historical schema migration is claimed.
+Use `python3 scripts/profile.py init <private-directory> --instruction-language en --output-language ru --log-language ru`. Output/log choices are optional; null means derive them from the actual task/context. Repeating init validates and preserves the existing bytes, including existing language choices. Unknown future schema versions fail without rewriting. There is one new supported format; no fictional historical schema migration is claimed.
 
 Use `validate <private-directory>` to check an existing profile. Layout and cover have independent `source` values. Both initially are `unselected`; this is not consent to builtin. A builtin choice records `preset_id`, without claiming that the preset is already installed. User resources record a relative `path` and SHA-256 under the profile. Cover choices are `builtin`, `uploaded`, and `from_sample`; layout choices are `builtin` and `file`.
 

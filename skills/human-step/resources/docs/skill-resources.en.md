@@ -1,6 +1,6 @@
 # Canonical sources and skill-local resources
 
-[Русский](skill-resources.ru.md).
+In this English edition, workflow.md, references/, and scripts/ sit beside SKILL.md. Data is in resources/assets/, resources/schemas/, resources/templates/, and resources/docs/; md-word also has historical data in resources/examples/. Resolve helper commands from the skill root. Local manifest paths are relative to resources/resource-manifest.json: ../ entries point to root-level instructions and scripts while remaining inside the skill. source retains the former origin; generated=false marks manual adaptation. The old root generator described below does not support this layout.
 
 Edit the canonical `locales/`, `shared/`, and `docs/` sources. Run `python3 tools/sync_skill_resources.py` from the repository root to regenerate `skills/<name>/resources/`. Commit the generated files with the source change when publication is authorized: direct GitHub installation must already contain the required bytes. Users need no build step.
 

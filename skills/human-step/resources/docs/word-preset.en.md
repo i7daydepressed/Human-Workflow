@@ -1,6 +1,6 @@
 # Word preset and independent cover — I02
 
-[Русская редакция](word-preset.ru.md). The neutral [layout](../shared/assets/word/base.docx) and [cover](../shared/assets/word/cover.docx) are derived from preserved formatted blocks of a supplied sample. This is a formatting demonstration, not a submitted report or an institution-wide standard. Its Russian demonstration text does not select the report language. English and Russian workflow instructions share these same binary assets and [format catalog](../shared/assets/word/catalog.json).
+The neutral [layout](../assets/word/base.docx) and [cover](../assets/word/cover.docx) are derived from preserved formatted blocks of a supplied sample. This is a formatting demonstration, not a submitted report or an institution-wide standard. Its Russian demonstration text does not select the report language. English and Russian workflow instructions share these same binary assets and [format catalog](../assets/word/catalog.json).
 
 The layout retains A4 geometry, measured margins, Times New Roman declarations, justified body paragraphs, three real heading levels, one shared multilevel heading list, live TOC/PAGEREF and PAGE fields, a plain grid table, and image/caption blocks. Heading 3 is corrected to the actual third level. Neutral charts and a matrix replace all source images. A slightly oversized image was fitted to the text width; header repetition, table spacing and heading tabs were made explicit. No historical acceptance or rating transfers to this derivative.
 
@@ -13,10 +13,10 @@ For the neutral cover, request the assignment's actual fields. Department, progr
 Run these commands from the source directory, replacing the example paths. Outputs must be new files outside the source/installation:
 
 ```bash
-python3 shared/scripts/word_cover.py --layout <task-layout.docx> --cover-source builtin --out <new-result.docx>
-python3 shared/scripts/word_cover.py --layout <task-layout.docx> --cover-source uploaded --cover <standalone-cover.docx> --out <new-result.docx>
-python3 shared/scripts/word_cover.py --layout <task-layout.docx> --cover-source from_sample --cover <full-sample.docx> --out <new-result.docx>
-python3 shared/scripts/docx_package.py <new-result.docx>
+python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source builtin --out <new-result.docx>
+python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source uploaded --cover <standalone-cover.docx> --out <new-result.docx>
+python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source from_sample --cover <full-sample.docx> --out <new-result.docx>
+python3 scripts/docx_package.py <new-result.docx>
 ```
 
 If `--layout` is omitted, the helper uses the neutral base. A layout needs an explicit first cover section. `uploaded` accepts a standalone single-section cover; `from_sample` takes the first explicit section of a sample, or its only section. A section is not necessarily one page: check the selected cover's actual extent. A full sample without a cover-section boundary is not automatically separable.

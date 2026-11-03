@@ -2,7 +2,7 @@
   "schema_version": 1,
   "kind": "workflow_skill_resources",
   "skill": "md-word",
-  "generated": true,
+  "generated": false,
   "package": {
     "name": "human-workflow",
     "version": "0.0.7",
@@ -11,389 +11,229 @@
     "source_sha256": "074a2ebdf34548ca2ecc59226132ad0c0b000aa507a28f8c5cb4ab917a0e9ce2"
   },
   "files": {
+    "../examples/case-a.md": {
+      "source": "locales/en/md-word/examples/case-a.md",
+      "sha256": "e4e1f27857717733bea70abe0f4c53810a327d292baeae7834c1200d7e1dc173"
+    },
+    "../examples/case-b.md": {
+      "source": "locales/en/md-word/examples/case-b.md",
+      "sha256": "97272ed4c3a9b31ae976a3610168126fb61c9d5ac93ce7c74999c6db82fcb006"
+    },
+    "../examples/index.md": {
+      "source": "locales/en/md-word/examples/index.md",
+      "sha256": "82ea57e68d5a5f43d50d22c71a64a457f81b099ee0df97ed3dec428e854dcc47"
+    },
+    "../references/agent-log.md": {
+      "source": "locales/en/md-word/references/agent-log.md",
+      "sha256": "af8f02767022104932c2c34fcb079ea8056fb369bf5aea622e4b1cd47fd99664"
+    },
+    "../references/authoring.md": {
+      "source": "locales/en/md-word/references/authoring.md",
+      "sha256": "fe679f1d5fdf430bc7c60f41d60b971cf3df74c2bdb402d849e8f0a02df29d3a"
+    },
+    "../references/coordination.md": {
+      "source": "locales/en/md-word/references/coordination.md",
+      "sha256": "ec40df050e3627d81d26de249b21094e11667bc789b4f1a52591cc31a00869a4"
+    },
+    "../references/evaluation.md": {
+      "source": "locales/en/md-word/references/evaluation.md",
+      "sha256": "b98536263446abf6b15235416c7d51f61e268f47fbd248ee506cf4d7365da5e2"
+    },
+    "../references/feedback.md": {
+      "source": "locales/en/md-word/references/feedback.md",
+      "sha256": "e42546ba1ac7464beae5bb193bbc56a661cabbe29b078d6cd89ab3e469a3db62"
+    },
+    "../references/illustrations.md": {
+      "source": "locales/en/md-word/references/illustrations.md",
+      "sha256": "259b1cc327f6c3429bf28ca38cdb67223bf6af35493419755ab7b88aec93f256"
+    },
+    "../references/language-and-maintenance.md": {
+      "source": "locales/en/md-word/references/language-and-maintenance.md",
+      "sha256": "0aca1e5945af903fd17bc98085dc6383221d447d52c594d6d23bc7e1b865f31a"
+    },
+    "../references/lessons.md": {
+      "source": "locales/en/md-word/references/lessons.md",
+      "sha256": "95d29a6bdcf4857985263ed3192d7fc63015a38bd238db3f9eabb20ecf720e24"
+    },
+    "../references/ratings-and-cases.md": {
+      "source": "locales/en/md-word/references/ratings-and-cases.md",
+      "sha256": "29a1652bfa5ef4fb6f08f9b4c1f7258650456414635d69bcd3fee9706ffd3765"
+    },
+    "../references/requirements.md": {
+      "source": "locales/en/md-word/references/requirements.md",
+      "sha256": "823db75f4c1ac00c34b5f20238c8d015d1bfb04940a608e31e84797e10ebeeb9"
+    },
+    "../references/subagents.md": {
+      "source": "locales/en/md-word/references/subagents.md",
+      "sha256": "9c09b6b985167c89d1c46df97dcbe829fe75a8b34b8ed4dc73395d7db9c0572b"
+    },
+    "../references/user-profile.md": {
+      "source": "locales/en/md-word/references/user-profile.md",
+      "sha256": "55f78612ef644292555e2fa19567872c7d8b7602ce75a4fe00eb7d20ebbc1949"
+    },
+    "../references/word-examples.md": {
+      "source": "locales/en/md-word/references/word-examples.md",
+      "sha256": "9f6b8e279884dd7f2b4edc9e160607e9cc4120aeb180efa6bc2e7a493b3ddb35"
+    },
+    "../references/word-layout.md": {
+      "source": "locales/en/md-word/references/word-layout.md",
+      "sha256": "c97f924cc4f53b173fd3aa4a50c20204452d49b7c10c8e66828331bf6956ac44"
+    },
+    "../references/workspace.md": {
+      "source": "locales/en/md-word/references/workspace.md",
+      "sha256": "1a2e15e3e8a2433669e2b396ecf9618fd03eacb028cdb296ed21f9ac29d0dcaf"
+    },
+    "../scripts/agent_journal.py": {
+      "source": "shared/scripts/agent_journal.py",
+      "sha256": "ae99e59ead9d5dd72fb2bd46951fc491fcbe8ad4b53e261c0feb2018046bebaf"
+    },
+    "../scripts/case_catalog.py": {
+      "source": "shared/scripts/case_catalog.py",
+      "sha256": "dc13287fb7ba03bfd826f22cdeea00c2474c80e3ff8282f2508d6d50908315a9"
+    },
+    "../scripts/docx_guard.py": {
+      "source": "shared/scripts/docx_guard.py",
+      "sha256": "8236bf6c246401ce4c6a1d1df09d2e4b5422a0b9d750b3a8a8cd1cfbd1343a6c"
+    },
+    "../scripts/docx_package.py": {
+      "source": "shared/scripts/docx_package.py",
+      "sha256": "af02a54ac297ab5af8b55da1b37e6e90fbbd408ebbcdbeb5a1cee3ae545c99bb"
+    },
+    "../scripts/i18n.py": {
+      "source": "shared/scripts/i18n.py",
+      "sha256": "32d9cc5dff653358a22734d32c1f24797b4eac002a6d2d184e3ae54f41dfe2db"
+    },
+    "../scripts/inspect_word_sample.py": {
+      "source": "shared/scripts/inspect_word_sample.py",
+      "sha256": "1671b793a177dd6b739b999c2acf8f118fd0eacfb7dd84c5ecce3293a55c2421"
+    },
+    "../scripts/profile.py": {
+      "source": "shared/scripts/profile.py",
+      "sha256": "e1742aa530d6770738277b1debf40c8a8075d8f11be10dc166dcbe97c48ee681"
+    },
+    "../scripts/report_workspace.py": {
+      "source": "shared/scripts/report_workspace.py",
+      "sha256": "298d4c03472d0ede522399514d8f96ff3491f67d7dfe15f7df9df29d7e6122aa"
+    },
+    "../scripts/safe_paths.py": {
+      "source": "shared/scripts/safe_paths.py",
+      "sha256": "d6749d7ca4a7ea0877882f200a93de2f9d04d7185f2d0d88c83220e710502025"
+    },
+    "../scripts/word_cover.py": {
+      "source": "shared/scripts/word_cover.py",
+      "sha256": "e6960a4f008e77368d404069adf1c407e39d9f08ef62025ff46c2ff189a2c45d"
+    },
+    "../workflow.md": {
+      "source": "locales/en/md-word/workflow.md",
+      "sha256": "da1786acffb56724231452b0c413ac3ab2d5a61f2ad256cd7b6862de6a06061f"
+    },
     "LICENSE": {
       "source": "LICENSE",
       "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
     },
+    "assets/word/base.docx": {
+      "source": "shared/assets/word/base.docx",
+      "sha256": "5c021525adacd92134feef244ef6ec1576e55484ee50d5316087612374a5ba61"
+    },
+    "assets/word/catalog.json": {
+      "source": "shared/assets/word/catalog.json",
+      "sha256": "63fc45f509c20589721f8871ea0994390262c1fea1704a5ddb8f5b685db1e8a4"
+    },
+    "assets/word/cover.docx": {
+      "source": "shared/assets/word/cover.docx",
+      "sha256": "75c8d7a311d937c7716b47142136cd2e2fe8da427d72265f748102aabd6c61d3"
+    },
     "docs/claude-preview.en.md": {
       "source": "docs/claude-preview.en.md",
-      "sha256": "9af3a7da98336c7c753b4c7a0eaac75f80aec6b8ffa027c9a8655a8fb811e1c0"
-    },
-    "docs/claude-preview.ru.md": {
-      "source": "docs/claude-preview.ru.md",
-      "sha256": "1699129d8a6c59a6455a58b79bda658746870655c104bba784e808a7c283a98b"
+      "sha256": "630cce8df0ebae9045345634c7f0c405de902d9739cb5abe8db2df0dc3ace81f"
     },
     "docs/client-checks.en.md": {
       "source": "docs/client-checks.en.md",
       "sha256": "1c344ee0eb40b2ce1eecff4d5efc2da1871963fbeb591617e8fe03aa724af2ba"
     },
-    "docs/client-checks.ru.md": {
-      "source": "docs/client-checks.ru.md",
-      "sha256": "1d5033f67a3fa745539bd1da3f5c3b4ba026f1535137f437f569fb90d5cf59b1"
-    },
     "docs/installation.en.md": {
       "source": "docs/installation.en.md",
-      "sha256": "8b6e563bf3934be9060c64cb0afd80cf99677833c722593e0e269dd72b2a7074"
-    },
-    "docs/installation.ru.md": {
-      "source": "docs/installation.ru.md",
-      "sha256": "c5f79c592c5f1aab1628caf1510fb1d5d0b14f29d84fd57725e8db33367b6a47"
+      "sha256": "64e0584fcf2aecc1c955810b16096f85d33740b25226028ee7b4a98bb5b9e094"
     },
     "docs/licensing.en.md": {
       "source": "docs/licensing.en.md",
-      "sha256": "76783d7cd9ea9afafbdb7d8f7f7896e1a8019e66d2c88f109db7ed36f2f30528"
-    },
-    "docs/licensing.ru.md": {
-      "source": "docs/licensing.ru.md",
-      "sha256": "9baa515456b2685eba53d1ffbb9c9a61696da4e9f0c93e7552f7e20d5e7ac4c2"
+      "sha256": "da44b44941439cae0aa0fabb78b7273a90378a44ce5b5300146bb404e5906de3"
     },
     "docs/migration.en.md": {
       "source": "docs/migration.en.md",
-      "sha256": "6f3bbb7799cd7ab0bc2452ae9850d826eeb201295714a20a8c237d2f0b500f83"
-    },
-    "docs/migration.ru.md": {
-      "source": "docs/migration.ru.md",
-      "sha256": "cbcc854fdfd677d0e263cef2e9f5344e6c9505f13f236aaf459f33804d63dc20"
+      "sha256": "0e01ae92b82a1e1bb8a5a457cf7bccb9cecc0d36c2b0bc6687b3e87f3775978f"
     },
     "docs/profile.en.md": {
       "source": "docs/profile.en.md",
-      "sha256": "174d10c3e586e962e6a6231d73ee77333c01f1882dfeaaf7c46574e2e695f3b9"
-    },
-    "docs/profile.ru.md": {
-      "source": "docs/profile.ru.md",
-      "sha256": "2f00abd2268e0d44a555e8d4bdcd65b47bf3e645b339d602a29c24d5e6dfa825"
+      "sha256": "1aee45f45bc18aab1f4f7b4a3eb5e4af8be35b7c7aabd5f356761f079253297e"
     },
     "docs/skill-resources.en.md": {
       "source": "docs/skill-resources.en.md",
-      "sha256": "0b7b3828d112534e688d6638c751d570ac1aa2fd505d6fd42de7a0974262fc49"
-    },
-    "docs/skill-resources.ru.md": {
-      "source": "docs/skill-resources.ru.md",
-      "sha256": "b8b62d61003e0e459295ed52001c19384900369089b4db7d4585d55d99d7fa42"
+      "sha256": "b9759fd8a02cffdec2b71b384d73c5205f89865382027ce7c2f8cf5338d997db"
     },
     "docs/word-preset.en.md": {
       "source": "docs/word-preset.en.md",
-      "sha256": "4b820c9088961f8b880b78c875d63e90ca4c42920b31f97c3599618951fec69f"
+      "sha256": "5c3645f505913d6ffec401d47a44a0f23ecb19d9828c0ea04407546bdf46449e"
     },
-    "docs/word-preset.ru.md": {
-      "source": "docs/word-preset.ru.md",
-      "sha256": "37788809490caa92ce286d46679629c2a7e250d3c93349c3f23823b2c835b4fe"
-    },
-    "locales/en/md-word/examples/case-a.md": {
-      "source": "locales/en/md-word/examples/case-a.md",
-      "sha256": "e4e1f27857717733bea70abe0f4c53810a327d292baeae7834c1200d7e1dc173"
-    },
-    "locales/en/md-word/examples/case-b.md": {
-      "source": "locales/en/md-word/examples/case-b.md",
-      "sha256": "97272ed4c3a9b31ae976a3610168126fb61c9d5ac93ce7c74999c6db82fcb006"
-    },
-    "locales/en/md-word/examples/index.md": {
-      "source": "locales/en/md-word/examples/index.md",
-      "sha256": "9a0a9a9ef8092a80b5f154d5b82f4417e81dfbec40b7a2c5fdddcd46c48b49e6"
-    },
-    "locales/en/md-word/references/agent-log.md": {
-      "source": "locales/en/md-word/references/agent-log.md",
-      "sha256": "143d15462fece876e704db6692eaca7240714665d3065b3235f9aa5617a2b65f"
-    },
-    "locales/en/md-word/references/authoring.md": {
-      "source": "locales/en/md-word/references/authoring.md",
-      "sha256": "fe679f1d5fdf430bc7c60f41d60b971cf3df74c2bdb402d849e8f0a02df29d3a"
-    },
-    "locales/en/md-word/references/coordination.md": {
-      "source": "locales/en/md-word/references/coordination.md",
-      "sha256": "8b460cde1a44a5fe5c3c3705883da35475ba99885b182d0cf2c88c8b980cafa9"
-    },
-    "locales/en/md-word/references/evaluation.md": {
-      "source": "locales/en/md-word/references/evaluation.md",
-      "sha256": "b98536263446abf6b15235416c7d51f61e268f47fbd248ee506cf4d7365da5e2"
-    },
-    "locales/en/md-word/references/feedback.md": {
-      "source": "locales/en/md-word/references/feedback.md",
-      "sha256": "e42546ba1ac7464beae5bb193bbc56a661cabbe29b078d6cd89ab3e469a3db62"
-    },
-    "locales/en/md-word/references/illustrations.md": {
-      "source": "locales/en/md-word/references/illustrations.md",
-      "sha256": "259b1cc327f6c3429bf28ca38cdb67223bf6af35493419755ab7b88aec93f256"
-    },
-    "locales/en/md-word/references/language-and-maintenance.md": {
-      "source": "locales/en/md-word/references/language-and-maintenance.md",
-      "sha256": "7fc0b3ad46d65a0ca71b2e3c45f8275a96279495d0d862efcaab2de2f15c1ef8"
-    },
-    "locales/en/md-word/references/lessons.md": {
-      "source": "locales/en/md-word/references/lessons.md",
-      "sha256": "95d29a6bdcf4857985263ed3192d7fc63015a38bd238db3f9eabb20ecf720e24"
-    },
-    "locales/en/md-word/references/ratings-and-cases.md": {
-      "source": "locales/en/md-word/references/ratings-and-cases.md",
-      "sha256": "4c95b43371271f093b236f41c8e48c3593b8079965f99d72fb9af86a866a4c8c"
-    },
-    "locales/en/md-word/references/requirements.md": {
-      "source": "locales/en/md-word/references/requirements.md",
-      "sha256": "fdb15878d0172325437de920dd29faf120eaab8770ba92ab86eb9fc26f3fd864"
-    },
-    "locales/en/md-word/references/subagents.md": {
-      "source": "locales/en/md-word/references/subagents.md",
-      "sha256": "9c09b6b985167c89d1c46df97dcbe829fe75a8b34b8ed4dc73395d7db9c0572b"
-    },
-    "locales/en/md-word/references/user-profile.md": {
-      "source": "locales/en/md-word/references/user-profile.md",
-      "sha256": "556a4b8fec9f33e37c74131c636f018ba2308b9090ea42af2142c01a2e7657fc"
-    },
-    "locales/en/md-word/references/word-examples.md": {
-      "source": "locales/en/md-word/references/word-examples.md",
-      "sha256": "061889a45cd0b611009741b11dea82e5ece27c6594aac53e5556ac5ecbc4a74d"
-    },
-    "locales/en/md-word/references/word-layout.md": {
-      "source": "locales/en/md-word/references/word-layout.md",
-      "sha256": "a06a97c0fc60876496545b7229c920cdb45a420cae4ff6eaf944c7cecc53ba89"
-    },
-    "locales/en/md-word/references/workspace.md": {
-      "source": "locales/en/md-word/references/workspace.md",
-      "sha256": "1a2e15e3e8a2433669e2b396ecf9618fd03eacb028cdb296ed21f9ac29d0dcaf"
-    },
-    "locales/en/md-word/workflow.md": {
-      "source": "locales/en/md-word/workflow.md",
-      "sha256": "51e9e5540dfb82731f98c3417bead8b9911d07fae4f1c4a51d2e027296e85dfd"
-    },
-    "locales/ru/md-word/examples/case-a.md": {
-      "source": "locales/ru/md-word/examples/case-a.md",
-      "sha256": "95c876f0b6e107c4bef09f19d399abfd50b918cadca37313238a08cae63596a6"
-    },
-    "locales/ru/md-word/examples/case-b.md": {
-      "source": "locales/ru/md-word/examples/case-b.md",
-      "sha256": "3be12b8b533b4da2b23277bc08f8d6c547b1e9a6511845c5e78d80cd1786b430"
-    },
-    "locales/ru/md-word/examples/index.md": {
-      "source": "locales/ru/md-word/examples/index.md",
-      "sha256": "012b8549134e5e622e2841b109e2812d1d1cb5f23cfbacf58687ffbd3ba22332"
-    },
-    "locales/ru/md-word/references/agent-log.md": {
-      "source": "locales/ru/md-word/references/agent-log.md",
-      "sha256": "c299b3e40950c848c266fe1da5cedbc160c919e8fe9dbc37a22b439be6afe06f"
-    },
-    "locales/ru/md-word/references/authoring.md": {
-      "source": "locales/ru/md-word/references/authoring.md",
-      "sha256": "20d73789b5c6cd2b6e8d140e546b330749afa94b05237bc8148596c5a52955ae"
-    },
-    "locales/ru/md-word/references/coordination.md": {
-      "source": "locales/ru/md-word/references/coordination.md",
-      "sha256": "57f7724af4babbdac7ec483aafbefd57f2e749c553d004847ed707b760852dc1"
-    },
-    "locales/ru/md-word/references/evaluation.md": {
-      "source": "locales/ru/md-word/references/evaluation.md",
-      "sha256": "1b4b3dbc3baa740291a2cbedc09a07a88d5557d17d02aeabe5d65abf8c0a0a74"
-    },
-    "locales/ru/md-word/references/feedback.md": {
-      "source": "locales/ru/md-word/references/feedback.md",
-      "sha256": "61087bcf36993984da45ddf90b6044b78293ebfef0809ffb1d009eb62ea05815"
-    },
-    "locales/ru/md-word/references/illustrations.md": {
-      "source": "locales/ru/md-word/references/illustrations.md",
-      "sha256": "fa244643d09ade2ba65ed62f87779c3643efc88985ca4797d1d3c06445a93f01"
-    },
-    "locales/ru/md-word/references/language-and-maintenance.md": {
-      "source": "locales/ru/md-word/references/language-and-maintenance.md",
-      "sha256": "21e90c68239a28cc2c4703506ce2db0cd1062529e1dcce39ba8c0583adc9a29f"
-    },
-    "locales/ru/md-word/references/lessons.md": {
-      "source": "locales/ru/md-word/references/lessons.md",
-      "sha256": "b877b034af242737bdc5b0c9a62761735167ca67e47f10fb6ff9c563e4044020"
-    },
-    "locales/ru/md-word/references/ratings-and-cases.md": {
-      "source": "locales/ru/md-word/references/ratings-and-cases.md",
-      "sha256": "73bdb17411d1523ca92691c43e616f712eac5430d21e13f85dfa64f5b846e600"
-    },
-    "locales/ru/md-word/references/requirements.md": {
-      "source": "locales/ru/md-word/references/requirements.md",
-      "sha256": "b479bde4eaf5781633321de294316a1ece787fa08b263b246c24d70d7fc4252f"
-    },
-    "locales/ru/md-word/references/subagents.md": {
-      "source": "locales/ru/md-word/references/subagents.md",
-      "sha256": "41c0f489794bf5724a2a7a6ccfaff723c2382759fa075837f973b9b181eb4620"
-    },
-    "locales/ru/md-word/references/user-profile.md": {
-      "source": "locales/ru/md-word/references/user-profile.md",
-      "sha256": "3ea42ee81645108aedc6313b44c18fcd597317503ac90c8f188d430287051494"
-    },
-    "locales/ru/md-word/references/word-examples.md": {
-      "source": "locales/ru/md-word/references/word-examples.md",
-      "sha256": "cad78eae02e9bd061ef717d02dbb78bc49939feb545feef7aa701390d66f0def"
-    },
-    "locales/ru/md-word/references/word-layout.md": {
-      "source": "locales/ru/md-word/references/word-layout.md",
-      "sha256": "406e2c82faa5c390391e23253d2d6cac878f8016f80d372d47ae890e53a01d5e"
-    },
-    "locales/ru/md-word/references/workspace.md": {
-      "source": "locales/ru/md-word/references/workspace.md",
-      "sha256": "86ee5239d261a5f877d0b163cecc5ecd20e29784d74006960c19ff0bb91a55d6"
-    },
-    "locales/ru/md-word/workflow.md": {
-      "source": "locales/ru/md-word/workflow.md",
-      "sha256": "004fbef46d973f5de14611eb282aab14bb32369703b5bfabb13f388376e9d892"
-    },
-    "shared/assets/word/base.docx": {
-      "source": "shared/assets/word/base.docx",
-      "sha256": "5c021525adacd92134feef244ef6ec1576e55484ee50d5316087612374a5ba61"
-    },
-    "shared/assets/word/catalog.json": {
-      "source": "shared/assets/word/catalog.json",
-      "sha256": "63fc45f509c20589721f8871ea0994390262c1fea1704a5ddb8f5b685db1e8a4"
-    },
-    "shared/assets/word/cover.docx": {
-      "source": "shared/assets/word/cover.docx",
-      "sha256": "75c8d7a311d937c7716b47142136cd2e2fe8da427d72265f748102aabd6c61d3"
-    },
-    "shared/examples/historical-candidates.json": {
+    "examples/historical-candidates.json": {
       "source": "shared/examples/historical-candidates.json",
       "sha256": "f78e5a924617e5c7ae8cfcc1f09506901ee7b3a2d75692ecf824e29872efbe9a"
     },
-    "shared/schemas/profile.schema.json": {
+    "schemas/profile.schema.json": {
       "source": "shared/schemas/profile.schema.json",
       "sha256": "002f13840dc5d6893986379f34c67f444fbc0f3f821cb21a9eb79f642dd38e79"
     },
-    "shared/scripts/agent_journal.py": {
-      "source": "shared/scripts/agent_journal.py",
-      "sha256": "ae99e59ead9d5dd72fb2bd46951fc491fcbe8ad4b53e261c0feb2018046bebaf"
-    },
-    "shared/scripts/case_catalog.py": {
-      "source": "shared/scripts/case_catalog.py",
-      "sha256": "dc13287fb7ba03bfd826f22cdeea00c2474c80e3ff8282f2508d6d50908315a9"
-    },
-    "shared/scripts/docx_guard.py": {
-      "source": "shared/scripts/docx_guard.py",
-      "sha256": "8236bf6c246401ce4c6a1d1df09d2e4b5422a0b9d750b3a8a8cd1cfbd1343a6c"
-    },
-    "shared/scripts/docx_package.py": {
-      "source": "shared/scripts/docx_package.py",
-      "sha256": "af02a54ac297ab5af8b55da1b37e6e90fbbd408ebbcdbeb5a1cee3ae545c99bb"
-    },
-    "shared/scripts/i18n.py": {
-      "source": "shared/scripts/i18n.py",
-      "sha256": "32d9cc5dff653358a22734d32c1f24797b4eac002a6d2d184e3ae54f41dfe2db"
-    },
-    "shared/scripts/inspect_word_sample.py": {
-      "source": "shared/scripts/inspect_word_sample.py",
-      "sha256": "1671b793a177dd6b739b999c2acf8f118fd0eacfb7dd84c5ecce3293a55c2421"
-    },
-    "shared/scripts/profile.py": {
-      "source": "shared/scripts/profile.py",
-      "sha256": "e1742aa530d6770738277b1debf40c8a8075d8f11be10dc166dcbe97c48ee681"
-    },
-    "shared/scripts/report_workspace.py": {
-      "source": "shared/scripts/report_workspace.py",
-      "sha256": "3064dc665bd9f83c585991b32c17fb60da3dd6df757980fe402bce995d226d49"
-    },
-    "shared/scripts/safe_paths.py": {
-      "source": "shared/scripts/safe_paths.py",
-      "sha256": "a6570651505e5f236518f1df1066a563afe64773d7635eb7c33c6b2758f974ad"
-    },
-    "shared/scripts/word_cover.py": {
-      "source": "shared/scripts/word_cover.py",
-      "sha256": "bd1e02c254c2769fe1cb24df5e46730e21b6f4f0afff858834e31c6ddea174fb"
-    },
-    "shared/templates/en/accepted-case.md": {
+    "templates/accepted-case.md": {
       "source": "shared/templates/en/accepted-case.md",
       "sha256": "4da6a6b377461b517cae47472031eea27ece7950adb8eac0ca3b5a75512df6de"
     },
-    "shared/templates/en/feedback.md": {
+    "templates/feedback.md": {
       "source": "shared/templates/en/feedback.md",
       "sha256": "a7274a41157ac31c277540534576e493e012479123714ce7b4b02698e3e7d8de"
     },
-    "shared/templates/en/figure-index.md": {
+    "templates/figure-index.md": {
       "source": "shared/templates/en/figure-index.md",
       "sha256": "1a0b8597bd97038b2238203e772f0ccef28ea152af31f79c4835e24d7cb089f9"
     },
-    "shared/templates/en/handoff.md": {
+    "templates/handoff.md": {
       "source": "shared/templates/en/handoff.md",
       "sha256": "33ac09a8e1b9064d8c20af3798b484785b99c455024aee5609d31ce5fa4e24f2"
     },
-    "shared/templates/en/human-step-feedback.md": {
+    "templates/human-step-feedback.md": {
       "source": "shared/templates/en/human-step-feedback.md",
       "sha256": "b1b3976a8e6ec4e3c0b1f3f5441256ecf23c73e240547f588f174e430d72f657"
     },
-    "shared/templates/en/human-step-packet.md": {
+    "templates/human-step-packet.md": {
       "source": "shared/templates/en/human-step-packet.md",
       "sha256": "623983a1ac3bb62f82e6023b8e0a0212dc6cd0760abc6a7ebe652f828558a211"
     },
-    "shared/templates/en/human-step-result.md": {
+    "templates/human-step-result.md": {
       "source": "shared/templates/en/human-step-result.md",
       "sha256": "066609c026d6ba3848c0090523aaa7f62aa7e1939ae614994f3d0b4c639525e4"
     },
-    "shared/templates/en/layout-catalog.md": {
+    "templates/layout-catalog.md": {
       "source": "shared/templates/en/layout-catalog.md",
       "sha256": "9e26904e285dc12eccd2f8e0fe720a1d243fd1c2dc4c10f2828d147057208dec"
     },
-    "shared/templates/en/project-accompany.md": {
+    "templates/project-accompany.md": {
       "source": "shared/templates/en/project-accompany.md",
       "sha256": "80efafb4e498b0feae1c14837f11c16cf099d560d3abebf8c7cebb21f4f5febf"
     },
-    "shared/templates/en/project-report.md": {
+    "templates/project-report.md": {
       "source": "shared/templates/en/project-report.md",
       "sha256": "82b7472239d8b6ea728d88f6da66e743dd653a36934e1a3610c5f4a10bb6bb24"
     },
-    "shared/templates/en/report.md": {
+    "templates/report.md": {
       "source": "shared/templates/en/report.md",
       "sha256": "ddfd8dbc4037385fed2e33b4b997f55eef64f98806c617c00ccc883f339bba10"
     },
-    "shared/templates/en/task-spec.md": {
+    "templates/task-spec.md": {
       "source": "shared/templates/en/task-spec.md",
       "sha256": "79e6f076b81830cf0789bab41ee7d5cb600fa95a19a5899f507c07a4fabf185a"
     },
-    "shared/templates/en/task-state.md": {
+    "templates/task-state.md": {
       "source": "shared/templates/en/task-state.md",
       "sha256": "217066a87408d2b76c3d8102db3e3e30dad0d67c495a2b9bba5b6133f5d245ba"
-    },
-    "shared/templates/ru/accepted-case.md": {
-      "source": "shared/templates/ru/accepted-case.md",
-      "sha256": "4ebfb6b40f198b1ded3424c5d0be72a58e6879890c40066e2470bb2fc9f6942c"
-    },
-    "shared/templates/ru/feedback.md": {
-      "source": "shared/templates/ru/feedback.md",
-      "sha256": "1da1718f532ccb54548c79133417ea19c33aff212bbb55ccc80b5780a2b6c59e"
-    },
-    "shared/templates/ru/figure-index.md": {
-      "source": "shared/templates/ru/figure-index.md",
-      "sha256": "d647841836edceb14f675407d8d16f4b40070b89eded5379d4f7f8e825e10ae5"
-    },
-    "shared/templates/ru/handoff.md": {
-      "source": "shared/templates/ru/handoff.md",
-      "sha256": "2aff9adfe371a44fce1b5e29fa40c93f9a03fda7867361c58883371f528fb710"
-    },
-    "shared/templates/ru/human-step-feedback.md": {
-      "source": "shared/templates/ru/human-step-feedback.md",
-      "sha256": "3b5185ea3be16b8d5360814bc3527e1f91bdb4a1fc7973d63157c961fb030a5e"
-    },
-    "shared/templates/ru/human-step-packet.md": {
-      "source": "shared/templates/ru/human-step-packet.md",
-      "sha256": "29ee7892e0e22e1307ff2f3a84ffe4798a532672657fd3861fcbfab28d6990b4"
-    },
-    "shared/templates/ru/human-step-result.md": {
-      "source": "shared/templates/ru/human-step-result.md",
-      "sha256": "6e09d8be2b19adba067085a0bb6c2eb32c7b8ac9f9502352c6559bd157231956"
-    },
-    "shared/templates/ru/layout-catalog.md": {
-      "source": "shared/templates/ru/layout-catalog.md",
-      "sha256": "96b410ed5707fd7714c47bf48d92c10a4104a66099c9330f86381c41b7b2ee72"
-    },
-    "shared/templates/ru/project-accompany.md": {
-      "source": "shared/templates/ru/project-accompany.md",
-      "sha256": "ea1cfff5422a079ab72fba4198a52e74dd96d1b50a6021d732adcde93af46a61"
-    },
-    "shared/templates/ru/project-report.md": {
-      "source": "shared/templates/ru/project-report.md",
-      "sha256": "67602a73b665b2e5f40deaf638a4d31174a0cc7cd0258fb8acd6903102a4e493"
-    },
-    "shared/templates/ru/report.md": {
-      "source": "shared/templates/ru/report.md",
-      "sha256": "0d47dcfa167ae64d019d9f3abaad820d75818f3d32b688e989235573173da248"
-    },
-    "shared/templates/ru/task-spec.md": {
-      "source": "shared/templates/ru/task-spec.md",
-      "sha256": "643793c0b3e1d514f06a68ea48657317f4486537fcd6f6e6c4c12a93ba22e280"
-    },
-    "shared/templates/ru/task-state.md": {
-      "source": "shared/templates/ru/task-state.md",
-      "sha256": "5f14bd1602753af00581669db6c5588ffd60a79a80690fb64a5950f75d419210"
     }
   }
 }

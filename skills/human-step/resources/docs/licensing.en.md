@@ -1,6 +1,6 @@
 # Licensing — Apache-2.0 candidate
 
-[Русский](licensing.ru.md). Owner-selected policy for `human-workflow` `0.0.7`, 2026-10-27.
+Owner-selected policy for `human-workflow` `0.0.7`, 2026-10-27.
 
 The canonical [LICENSE](../LICENSE) is the complete unchanged English [Apache License 2.0 text](https://www.apache.org/licenses/LICENSE-2.0.txt). It governs publisher-controlled instructions, scripts, schemas, documentation, and supplied resources to the extent the publisher may license them. It permits commercial use without a separate paid grant, payment flow, or seat limit. Read the license for its exact permissions, conditions, patent terms, trademark limits, and warranty/liability exclusions; this guide is not a substitute or legal certification.
 
