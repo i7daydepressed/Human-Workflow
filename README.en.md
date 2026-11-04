@@ -8,7 +8,7 @@ For example, give the agent an assignment guide, source data, and a report sampl
 
 ## How it works
 
-Attach an assignment, source materials or an existing project and ask: “Let's begin working on the task.” To select the process explicitly, name Human Workflow and md-word. The sequence below applies after the agent has selected and loaded the relevant skill.
+Attach an assignment, source materials or an existing project and ask: “Let's begin working on the task.” To select the process explicitly, name Human Workflow and md-report. The sequence below applies after the agent has selected and loaded the relevant skill.
 
 This is the full workflow. The assignment determines which stages are needed: complete the core and prepare a report, obtain only step-by-step instructions, or accompany work without a final report.
 
@@ -82,7 +82,7 @@ In version 0.0.7, the explicit Markdown approval transition is defined for Word;
 
 | Skill | When to use it |
 | --- | --- |
-| `md-word` | Complete and accompany an assignment or project, prepare a report from a guide and sample, resume work, and preserve state, evidence, and decisions |
+| `md-report` | Complete and accompany an assignment or project, prepare a report from a guide and sample, resume work, and preserve state, evidence, and decisions |
 | `human-step` | Prepare exact instructions for a person or agent, execute an assigned packet, review changes, and hand off results |
 
 The skills can work together. Preparing instructions does not authorize execution. Accompaniment does not require a final report; general questions and isolated routine edits should not start the full process.
@@ -117,7 +117,7 @@ The technical plugin name is `human-workflow`, version `0.0.7`, displayed as Hum
 
 ## Start a task
 
-Ask: “Use md-word to complete this assignment from the attached guide and prepare a report using the sample.” When checking installation, explicitly name `human-workflow:md-word` and ask for the instruction paths actually read. Seeing a name in the skill list does not establish that its workflow was loaded. Automatic selection is not guaranteed.
+Ask: “Use md-report to complete this assignment from the attached guide and prepare a report using the sample.” When checking installation, explicitly name `human-workflow:md-report` and ask for the instruction paths actually read. Seeing a name in the skill list does not establish that its workflow was loaded. Automatic selection is not guaranteed.
 
 Other requests: “Accompany this task and preserve its state; no separate report is needed”; “Use human-step to prepare checkable steps for an executor; do not change anything yet.”
 

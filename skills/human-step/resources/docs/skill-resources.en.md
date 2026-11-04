@@ -1,15 +1,11 @@
-# Canonical sources and skill-local resources
+# Resources and report-skill dependency
 
-In this English edition, workflow.md, references/, and scripts/ sit beside SKILL.md. Data is in resources/assets/, resources/schemas/, resources/templates/, and resources/docs/; md-word also has historical data in resources/examples/. Resolve helper commands from the skill root. Local manifest paths are relative to resources/resource-manifest.json: ../ entries point to root-level instructions and scripts while remaining inside the skill. source retains the former origin; generated=false marks manual adaptation. The old root generator described below does not support this layout.
+human-step owns step packets, their execution and acceptance. Its references live in references/; forms and data live in resources/.
 
-Edit the canonical `locales/`, `shared/`, and `docs/` sources. Run `python3 tools/sync_skill_resources.py` from the repository root to regenerate `skills/<name>/resources/`. Commit the generated files with the source change when publication is authorized: direct GitHub installation must already contain the required bytes. Users need no build step.
+Reports and shared helpers belong to [md-report](../../../md-report/SKILL.md), installed together with human-step. human-step has no scripts directory. Run helpers by their absolute paths in md-report/scripts/. Follow the report skill for report preparation, the [profile contract](../../../md-report/resources/docs/profile.en.md) for profiles, and the [Word guide](../../../md-report/resources/docs/word-preset.en.md) for document formatting.
 
-Each entry links only to its own resource folder. Referenced instruction trees, templates, scripts, schemas, and Word assets stay available when a host copies one skill without the parent plugin. Resolve helper commands against that resource root, not the task's current directory. `resource-manifest.json` records source paths and hashes. `packaging/skill-resources.json` records the shared provenance for contributors.
+The local resource-manifest.json lists paths relative to resources/. Paths starting with ../ refer to root-level instructions. source preserves provenance; generated=false identifies manual adaptation. Helpers are inventoried by md-report.
 
-There is one maintained source set and multiple generated physical copies for distribution. This replaces the earlier requirement of exactly one physical runtime file in the package. Do not edit the copies manually or add private profiles, task files, logs, or secrets to them. The synchronizer reports unmanaged files instead of deleting them. `--check` verifies freshness without writing; plugin builders reject stale copies.
+Edit the current skills directly in skills/. The old root locales/, shared/, generator and builders describe the former layout and do not support the current four editions. Do not regenerate over these skills until that tooling has been adapted separately.
 
-Check isolated skills locally, including relative links, Python imports from a different working directory, external profile preservation, and rejection of outputs inside installation. These checks do not emulate every host or prove a Claude web installation. Preserve the separate scope recorded in [client checks](client-checks.en.md).
-
-## Containing-package diagnostics
-
-Schema-version-1 resource manifests and the registry include additive `package` metadata: name, version, display_name, source=`plugin.json`, and source_sha256 of the actual canonical manifest bytes. The generator reads that manifest once; it does not maintain a second version constant, copy a manually maintained manifest into each skill, add timestamps, or hash a containing manifest into itself. A root identity change makes freshness checks fail until regeneration. Metadata identifies this containing candidate; it does not prove host installation, selection, or execution. Preserve both skill identities, profile schema 1, and i02 Word resource IDs independently.
+Keep tasks, outputs, journals and private profiles outside the installation. Verify skill availability and actual operation results; file presence does not establish host loading or execution. See the scoped [client checks](client-checks.en.md).

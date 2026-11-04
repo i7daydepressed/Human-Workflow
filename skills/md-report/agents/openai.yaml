@@ -1,0 +1,4 @@
+interface:
+  display_name: "Task Accompaniment and Reports"
+  short_description: "Complete assignments and reports with preserved state"
+  default_prompt: "Use $md-report to complete this assignment from its guide, preserve state and evidence, and prepare the requested report with available format-specific skills."

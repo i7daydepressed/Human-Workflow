@@ -36,7 +36,7 @@ Use the supported client interface when CLI tools are unavailable. These command
 
 ## Verify actual use
 
-Start a fresh context. Separate available metadata, actual selection, loading of entry/body/resources, execution, checks, verified saves, and delivery. For an explicit check, name `human-workflow:md-word` or `human-workflow:human-step` and record paths actually read. A visible name or polished output alone proves neither loading nor coordinated execution. An automatic-selection test uses an ordinary prompt in another fresh context; explicit success is not its result. Missing traces are unassessed. A quota interruption is not evidence of missing entitlement or instruction compliance.
+Start a fresh context. Separate available metadata, actual selection, loading of entry/body/resources, execution, checks, verified saves, and delivery. For an explicit check, name `human-workflow:md-report` or `human-workflow:human-step` and record paths actually read. A visible name or polished output alone proves neither loading nor coordinated execution. An automatic-selection test uses an ordinary prompt in another fresh context; explicit success is not its result. Missing traces are unassessed. A quota interruption is not evidence of missing entitlement or instruction compliance.
 
 Each skill has generated `resources/`; resolve helpers by absolute paths from that resource root. Keep tasks, outputs, logs and explicitly selected profiles outside installation/cache. Instruction/output/log languages are independent. [Resources](skill-resources.en.md), [profile](profile.en.md), [Word scope](word-preset.en.md), [check scope](client-checks.en.md), [Apache-2.0](licensing.en.md).
 

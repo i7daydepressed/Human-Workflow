@@ -16,7 +16,7 @@ The main agent/person owns the task, agreed decisions, packet preparation, and r
 
 Author and executor modes share this contract. Treat old precise-code-workflow references as the predecessor process, without carrying over outdated sources. At a new start, name the current skill and role if the recipient does not know them.
 
-If the main agent uses md-word otchet workflow, give the executor the necessary requirements, scope, and report evidence to return. Do not make a bounded code executor read the whole report skill. Prefer the English companion when available; otherwise use the active edition and do not load both for the same task.
+If the main agent uses md-report otchet workflow, give the executor the necessary requirements, scope, and report evidence to return. Do not make a bounded code executor read the whole report skill. Prefer the English companion when available; otherwise use the active edition and do not load both for the same task.
 
 ## Minimum handoff
 
