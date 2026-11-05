@@ -121,7 +121,7 @@
     },
     "templates/human-step-packet.md": {
       "source": "shared/templates/ru/human-step-packet.md",
-      "sha256": "29ee7892e0e22e1307ff2f3a84ffe4798a532672657fd3861fcbfab28d6990b4"
+      "sha256": "bca411d3926e4968ed2a4eebe28f1e6519c7a9426bc138bd732e60c1405293fe"
     },
     "templates/human-step-result.md": {
       "source": "shared/templates/ru/human-step-result.md",
