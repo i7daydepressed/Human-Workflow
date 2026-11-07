@@ -21,7 +21,7 @@
     },
     "../references/code.md": {
       "source": "locales/ru/human-step/references/code.md",
-      "sha256": "f107e57b5d044d25a7b66df870194a7d870f1e9e561359ec7bc664d53fb0718c"
+      "sha256": "1625a69fe9b65d164c0be5f97b7fac81adef14c16289ca7055e8e3388c4e1b9b"
     },
     "../references/commit-examples.md": {
       "source": "locales/ru/human-step/references/commit-examples.md",
