@@ -13,15 +13,15 @@
   "files": {
     "../SKILL.md": {
       "source": "locales/ru/human-step/workflow.md",
-      "sha256": "b53d0730c755017a2b45dd6b2882de01f285945303a57cb9b97bb0fa0ba0103d"
+      "sha256": "24d39567e37ed0c9bc541e69a572d6d9019552328f6e37b66e7c2130f6237949"
     },
     "../references/author.md": {
       "source": "locales/ru/human-step/references/author.md",
-      "sha256": "629fe523123e09ef26443e411d7c2e8a68cc4963dac3f38deb6a41932c196fca"
+      "sha256": "2021513ee3622dd00909210aa3cd6efec9344f69a99e1353c3f96a57a9a7446e"
     },
     "../references/code.md": {
       "source": "locales/ru/human-step/references/code.md",
-      "sha256": "1625a69fe9b65d164c0be5f97b7fac81adef14c16289ca7055e8e3388c4e1b9b"
+      "sha256": "35909d8a41784219bd343a8564b618aff5faa5d55fdb55453cce91a181518603"
     },
     "../references/commit-examples.md": {
       "source": "locales/ru/human-step/references/commit-examples.md",
@@ -49,11 +49,15 @@
     },
     "../references/non-code.md": {
       "source": "locales/ru/human-step/references/non-code.md",
-      "sha256": "4bbe2e10749c7d2cef641fff1bbec36266d54d705f25ffe48f6ba6ddbf4de082"
+      "sha256": "1e0982c8c080806293ed58150cf8f39be884226640c996630fa3d50abbb9cf22"
     },
     "../references/packet-example.md": {
       "source": "locales/ru/human-step/references/packet-example.md",
       "sha256": "78e0e64283271811237a7b43c553f460ced1f4241bbf64ba63c20e7a9d18312f"
+    },
+    "../references/packet.md": {
+      "source": "skills/human-step-ru/references/packet.md",
+      "sha256": "28a96c884361ab245cff38768c61292e012f7ed7e39c0508aad3d79bcd7d3404"
     },
     "LICENSE": {
       "source": "LICENSE",

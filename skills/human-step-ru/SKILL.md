@@ -92,8 +92,9 @@ description: Готовить, выполнять и проверять точн
 | --- | --- |
 | Работа в роли автора пакетов | [author.md](references/author.md) |
 | Работа в роли исполнителя пакетов | [executor.md](references/executor.md) |
+| Подготовка и проверка любого пакета | [packet.md](references/packet.md) |
 | Код/diff/текст коммита | [code.md](references/code.md) |
-| Файлы, UI или оборудование | [non-code.md](references/non-code.md) |
+| Непрограммные действия с файлами, настройками, UI или оборудованием | [non-code.md](references/non-code.md) |
 | Требования и ограниченная передача | [coordination.md](references/coordination.md) |
 | Состояние, журнал и отзывы | [experience.md](references/experience.md) |
 | Нужная прежняя трудность | [lessons.md](references/lessons.md) |
