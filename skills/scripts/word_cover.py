@@ -21,7 +21,14 @@ from safe_paths import destination, installation_root
 
 WN = '{' + W + '}'
 RN = '{' + R + '}'
-RESOURCES = Path(__file__).resolve().parents[1] / 'resources'
+def builtin_resources():
+    # Общая команда берет неизмененные Word-образцы из перенесенного отчетного навыка.
+    skills_root = Path(__file__).resolve().parents[1]
+    for name in ('md-report', 'md-report-ru'):
+        root = skills_root / name / 'resources'
+        if all((root / 'assets/word' / filename).is_file() for filename in ('base.docx', 'cover.docx')):
+            return root
+    raise ValueError('Word resources are unavailable; preserve the md-report or md-report-ru resources directory')
 NS = {'w': W, 'a': 'http://schemas.openxmlformats.org/drawingml/2006/main'}
 
 # Property children have defined sequences. Keep inserted properties in the
@@ -437,7 +444,7 @@ def apply(layout_path, cover_path, output, mode):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--layout', type=Path, default=RESOURCES / 'assets/word/base.docx')
+    p.add_argument('--layout', type=Path)
     p.add_argument('--cover-source', choices=['builtin', 'uploaded', 'from_sample'], required=True)
     p.add_argument('--cover', type=Path)
     p.add_argument('--out', type=Path, required=True)
@@ -453,8 +460,10 @@ def main():
             raise ValueError('Output already exists; preserve it and select a new result path')
         if output.is_relative_to(installation_root(__file__)):
             raise ValueError('Task output must be outside the product installation/source')
-        cover = args.cover or RESOURCES / 'assets/word/cover.docx'
-        result = apply(args.layout.expanduser().resolve(), cover.expanduser().resolve(), output, args.cover_source)
+        resources = builtin_resources() if args.layout is None or args.cover is None else None
+        layout = args.layout or resources / 'assets/word/base.docx'
+        cover = args.cover or resources / 'assets/word/cover.docx'
+        result = apply(layout.expanduser().resolve(), cover.expanduser().resolve(), output, args.cover_source)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
     except (ValueError, OSError, KeyError, TypeError, E.XMLSyntaxError, BadZipFile) as exc:

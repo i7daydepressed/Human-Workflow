@@ -25,7 +25,7 @@
     },
     "../references/agent-log.md": {
       "source": "locales/ru/md-word/references/agent-log.md",
-      "sha256": "255c594d474d44b671f73fc355098810693cc5655d9061ee2bf216b213684424"
+      "sha256": "74f5b3358c4724bac8aaae59379f04e19108344ccfecf24e50e5536ffff45302"
     },
     "../references/authoring.md": {
       "source": "locales/ru/md-word/references/authoring.md",
@@ -57,7 +57,7 @@
     },
     "../references/ratings-and-cases.md": {
       "source": "locales/ru/md-word/references/ratings-and-cases.md",
-      "sha256": "46b94209f62d91097c385ae286b1c62e4b98823604e7088c2287cc106b5ed837"
+      "sha256": "77dd42e9f7862e5280bf38dc2b0dcc084e979ae265d61d957205f3aa8b058f77"
     },
     "../references/requirements.md": {
       "source": "locales/ru/md-word/references/requirements.md",
@@ -77,51 +77,15 @@
     },
     "../references/word-layout.md": {
       "source": "locales/ru/md-word/references/word-layout.md",
-      "sha256": "33f0bdf857a601510759f06bd503df37dca3135594a13fd933a98c74e64c432f"
+      "sha256": "96584deeac6a2f89129f8fdba5219a49ea07059e4341f685316b5823248df9f3"
     },
     "../references/workspace.md": {
       "source": "locales/ru/md-word/references/workspace.md",
       "sha256": "86ee5239d261a5f877d0b163cecc5ecd20e29784d74006960c19ff0bb91a55d6"
     },
-    "../scripts/agent_journal.py": {
-      "source": "shared/scripts/agent_journal.py",
-      "sha256": "ae99e59ead9d5dd72fb2bd46951fc491fcbe8ad4b53e261c0feb2018046bebaf"
-    },
-    "../scripts/case_catalog.py": {
-      "source": "shared/scripts/case_catalog.py",
-      "sha256": "dc13287fb7ba03bfd826f22cdeea00c2474c80e3ff8282f2508d6d50908315a9"
-    },
-    "../scripts/docx_guard.py": {
-      "source": "shared/scripts/docx_guard.py",
-      "sha256": "8236bf6c246401ce4c6a1d1df09d2e4b5422a0b9d750b3a8a8cd1cfbd1343a6c"
-    },
-    "../scripts/docx_package.py": {
-      "source": "shared/scripts/docx_package.py",
-      "sha256": "af02a54ac297ab5af8b55da1b37e6e90fbbd408ebbcdbeb5a1cee3ae545c99bb"
-    },
-    "../scripts/i18n.py": {
-      "source": "shared/scripts/i18n.py",
-      "sha256": "32d9cc5dff653358a22734d32c1f24797b4eac002a6d2d184e3ae54f41dfe2db"
-    },
-    "../scripts/inspect_word_sample.py": {
-      "source": "shared/scripts/inspect_word_sample.py",
-      "sha256": "1671b793a177dd6b739b999c2acf8f118fd0eacfb7dd84c5ecce3293a55c2421"
-    },
-    "../scripts/profile.py": {
-      "source": "shared/scripts/profile.py",
-      "sha256": "e1742aa530d6770738277b1debf40c8a8075d8f11be10dc166dcbe97c48ee681"
-    },
     "../scripts/report_workspace.py": {
       "source": "shared/scripts/report_workspace.py",
-      "sha256": "cfcba3ee5c09f0dd9fa627607268f79e22a511360b84b52d832037a9d6181e47"
-    },
-    "../scripts/safe_paths.py": {
-      "source": "shared/scripts/safe_paths.py",
-      "sha256": "d6749d7ca4a7ea0877882f200a93de2f9d04d7185f2d0d88c83220e710502025"
-    },
-    "../scripts/word_cover.py": {
-      "source": "shared/scripts/word_cover.py",
-      "sha256": "e6960a4f008e77368d404069adf1c407e39d9f08ef62025ff46c2ff189a2c45d"
+      "sha256": "d4718aba411ebadd654d6931bee0ce670415a71c8aaac819ea766648e16c3226"
     },
     "../workflow.md": {
       "source": "locales/ru/md-word/workflow.md",
@@ -165,7 +129,7 @@
     },
     "docs/profile.ru.md": {
       "source": "docs/profile.ru.md",
-      "sha256": "ae6a233d838e5de21329617fd5008a0b5d4bb3d03eceb2d65b3b03c66c398233"
+      "sha256": "8d72719a51f351a996fa6d126e68691fcbd15c41fdcae8ecd204456eb9f06fb4"
     },
     "docs/skill-resources.ru.md": {
       "source": "docs/skill-resources.ru.md",
@@ -173,7 +137,7 @@
     },
     "docs/word-preset.ru.md": {
       "source": "docs/word-preset.ru.md",
-      "sha256": "31e930d3adc69ebe5b07dca1f2ed57eff2b9144de4e40236d1a6077464545a09"
+      "sha256": "a55693bd451e776ad8c889c075d6bc15592edbb47488c9d70cb35a03e356ddc3"
     },
     "examples/historical-candidates.json": {
       "source": "shared/examples/historical-candidates.json",
@@ -237,7 +201,11 @@
     },
     "../reporting.md": {
       "source": "skills/md-report-ru/reporting.md",
-      "sha256": "584306b3937cd2417c54f35374747a6ac3b40e2e289b1266bc30fbf8be2750e7"
+      "sha256": "593727e5ddf80af8212025897058d02f129bea5787277d0ecfa84d626421cef7"
+    },
+    "../README.md": {
+      "source": "skills/md-report-ru/README.md",
+      "sha256": "617b514bc1a0ca299727e9503a425819399c899738167bd05dead8a6c22a4b3b"
     }
   }
 }

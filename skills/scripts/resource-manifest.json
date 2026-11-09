@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "kind": "workflow_shared_scripts",
+  "generated": false,
+  "package": {
+    "name": "human-workflow",
+    "version": "0.0.7",
+    "display_name": "Human-workflow-v0.0.7",
+    "source": "plugin.json",
+    "source_sha256": "074a2ebdf34548ca2ecc59226132ad0c0b000aa507a28f8c5cb4ab917a0e9ce2"
+  },
+  "files": {
+    "agent_journal.py": {
+      "source": "skills/scripts/agent_journal.py",
+      "sha256": "ae99e59ead9d5dd72fb2bd46951fc491fcbe8ad4b53e261c0feb2018046bebaf"
+    },
+    "case_catalog.py": {
+      "source": "skills/scripts/case_catalog.py",
+      "sha256": "dc13287fb7ba03bfd826f22cdeea00c2474c80e3ff8282f2508d6d50908315a9"
+    },
+    "docx_guard.py": {
+      "source": "skills/scripts/docx_guard.py",
+      "sha256": "8236bf6c246401ce4c6a1d1df09d2e4b5422a0b9d750b3a8a8cd1cfbd1343a6c"
+    },
+    "docx_package.py": {
+      "source": "skills/scripts/docx_package.py",
+      "sha256": "af02a54ac297ab5af8b55da1b37e6e90fbbd408ebbcdbeb5a1cee3ae545c99bb"
+    },
+    "i18n.py": {
+      "source": "skills/scripts/i18n.py",
+      "sha256": "32d9cc5dff653358a22734d32c1f24797b4eac002a6d2d184e3ae54f41dfe2db"
+    },
+    "inspect_word_sample.py": {
+      "source": "skills/scripts/inspect_word_sample.py",
+      "sha256": "1671b793a177dd6b739b999c2acf8f118fd0eacfb7dd84c5ecce3293a55c2421"
+    },
+    "profile.py": {
+      "source": "skills/scripts/profile.py",
+      "sha256": "e1742aa530d6770738277b1debf40c8a8075d8f11be10dc166dcbe97c48ee681"
+    },
+    "safe_paths.py": {
+      "source": "skills/scripts/safe_paths.py",
+      "sha256": "7a87cbd042ffea611cac62c15d2aac2f585f55d72fd53692e1224664c54ab2bf"
+    },
+    "word_cover.py": {
+      "source": "skills/scripts/word_cover.py",
+      "sha256": "14d1bbbd74afcf5e11a39cc0c7c5c7754378ede20d8b05ca1bb32cd89a044694"
+    },
+    "README.md": {
+      "source": "skills/scripts/README.md",
+      "sha256": "6c3fe317d2344cd3cd26981a8b3af35881324e64d90eafd619117df6ce0b7aaf"
+    }
+  }
+}

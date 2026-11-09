@@ -15,4 +15,4 @@
 Оценка преподавателя со слов пользователя: **VALUE**
 ```
 
-Использовать `python3 <package-root>/scripts/case_catalog.py validate <private-catalog>/ratings.json`, затем `index <private-catalog>/ratings.json --language ru --out <private-catalog>/index.md`. Условные пути заменить выбранными. Индекс использует только реально полученные case URL; локальный case_file остается относительным. Проверка подтверждает согласованность, а не реальную приемку/качество. При недоступности каталога оставить явно несинхронизированную запись задачи, а не конкурирующий основной реестр.
+Использовать `python3 <shared-scripts>/case_catalog.py validate <private-catalog>/ratings.json`, затем `index <private-catalog>/ratings.json --language ru --out <private-catalog>/index.md`. Условные пути заменить выбранными. Индекс использует только реально полученные case URL; локальный case_file остается относительным. Проверка подтверждает согласованность, а не реальную приемку/качество. При недоступности каталога оставить явно несинхронизированную запись задачи, а не конкурирующий основной реестр.

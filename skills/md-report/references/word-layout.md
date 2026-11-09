@@ -10,7 +10,7 @@ The previous converter may not describe final Word: an earlier project preserved
 
 Obtain fresh MD, images, and selected DOCX. Use the available document-editing capability and follow its applicable instructions and runtime/render workflow. A skill named documents is one host-specific example, not a dependency. Explicitly select layout sample and current-work cover source; retaining a cover does not mean copying another lab's number/topic.
 
-Run `python3 <package-root>/scripts/inspect_word_sample.py sample.docx --out sample-inventory.json`. Inspect the sample and XML. Identify cover/section break, body, headings 1–3, caption, image, table/header/data row, equation, list, unnumbered section, TOC. Determine margins, spacing, indents, fonts, keepNext/keepLines, headers/footers, numbering. Bold alone does not identify a block role.
+Run `python3 <shared-scripts>/inspect_word_sample.py sample.docx --out sample-inventory.json`. Inspect the sample and XML. Identify cover/section break, body, headings 1–3, caption, image, table/header/data row, equation, list, unnumbered section, TOC. Determine margins, spacing, indents, fonts, keepNext/keepLines, headers/footers, numbering. Bold alone does not identify a block role.
 
 Do not reuse paragraph indices from a different lab/sample revision.
 

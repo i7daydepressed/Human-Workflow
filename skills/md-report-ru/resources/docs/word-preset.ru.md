@@ -13,10 +13,10 @@
 Запускать из каталога исходников, заменяя условные пути. Результат — новый файл вне исходников/установки:
 
 ```bash
-python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source builtin --out <new-result.docx>
-python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source uploaded --cover <standalone-cover.docx> --out <new-result.docx>
-python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source from_sample --cover <full-sample.docx> --out <new-result.docx>
-python3 scripts/docx_package.py <new-result.docx>
+python3 <shared-scripts>/word_cover.py --layout <task-layout.docx> --cover-source builtin --out <new-result.docx>
+python3 <shared-scripts>/word_cover.py --layout <task-layout.docx> --cover-source uploaded --cover <standalone-cover.docx> --out <new-result.docx>
+python3 <shared-scripts>/word_cover.py --layout <task-layout.docx> --cover-source from_sample --cover <full-sample.docx> --out <new-result.docx>
+python3 <shared-scripts>/docx_package.py <new-result.docx>
 ```
 
 Без `--layout` используется нейтральная база. Макету нужен явный первый раздел титула. `uploaded` принимает отдельный титул с одним разделом; `from_sample` берет первый явный раздел полного образца либо его единственный раздел. Раздел не обязательно занимает одну страницу: проверить фактический объем выбранного титула. Полный образец без границы раздела титула автоматически не разделяется.

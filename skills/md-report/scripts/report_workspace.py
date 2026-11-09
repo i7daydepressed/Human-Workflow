@@ -11,6 +11,11 @@ import sys
 import tempfile
 from urllib.parse import unquote, urlsplit
 import uuid
+# Общие модули находятся рядом с папками навыков, независимо от рабочего каталога.
+SHARED_SCRIPTS = Path(__file__).resolve().parents[2] / 'scripts'
+if not all((SHARED_SCRIPTS / name).is_file() for name in ('i18n.py', 'safe_paths.py')):
+    raise SystemExit("Required skills/scripts directory is missing. Copy it with this skill and preserve the sibling layout.")
+sys.path.insert(0, str(SHARED_SCRIPTS))
 from i18n import message
 
 from safe_paths import destination as checked_destination, directory as checked_directory, external_path

@@ -13,10 +13,10 @@ For the neutral cover, request the assignment's actual fields. Department, progr
 Run these commands from the source directory, replacing the example paths. Outputs must be new files outside the source/installation:
 
 ```bash
-python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source builtin --out <new-result.docx>
-python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source uploaded --cover <standalone-cover.docx> --out <new-result.docx>
-python3 scripts/word_cover.py --layout <task-layout.docx> --cover-source from_sample --cover <full-sample.docx> --out <new-result.docx>
-python3 scripts/docx_package.py <new-result.docx>
+python3 <shared-scripts>/word_cover.py --layout <task-layout.docx> --cover-source builtin --out <new-result.docx>
+python3 <shared-scripts>/word_cover.py --layout <task-layout.docx> --cover-source uploaded --cover <standalone-cover.docx> --out <new-result.docx>
+python3 <shared-scripts>/word_cover.py --layout <task-layout.docx> --cover-source from_sample --cover <full-sample.docx> --out <new-result.docx>
+python3 <shared-scripts>/docx_package.py <new-result.docx>
 ```
 
 If `--layout` is omitted, the helper uses the neutral base. A layout needs an explicit first cover section. `uploaded` accepts a standalone single-section cover; `from_sample` takes the first explicit section of a sample, or its only section. A section is not necessarily one page: check the selected cover's actual extent. A full sample without a cover-section boundary is not automatically separable.

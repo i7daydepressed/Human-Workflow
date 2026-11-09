@@ -15,4 +15,4 @@ Current user report rating: **VALUE**
 Teacher rating reported by the user: **VALUE**
 ```
 
-Use `python3 <package-root>/scripts/case_catalog.py validate <private-catalog>/ratings.json`, then `index <private-catalog>/ratings.json --language en --out <private-catalog>/index.md`. Replace placeholders with selected paths. An index uses only observed case URLs; local case_file remains relative. Validation establishes consistency, not real acceptance/quality. If the catalog is inaccessible, save an explicitly unsynchronized task record, not a competing canonical registry.
+Use `python3 <shared-scripts>/case_catalog.py validate <private-catalog>/ratings.json`, then `index <private-catalog>/ratings.json --language en --out <private-catalog>/index.md`. Replace placeholders with selected paths. An index uses only observed case URLs; local case_file remains relative. Validation establishes consistency, not real acceptance/quality. If the catalog is inaccessible, save an explicitly unsynchronized task record, not a competing canonical registry.

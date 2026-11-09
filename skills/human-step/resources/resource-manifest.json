@@ -150,6 +150,10 @@
     "templates/task-state.md": {
       "source": "shared/templates/en/task-state.md",
       "sha256": "217066a87408d2b76c3d8102db3e3e30dad0d67c495a2b9bba5b6133f5d245ba"
+    },
+    "../README.md": {
+      "source": "skills/human-step/README.md",
+      "sha256": "072174f46f42d61c44ca8edfc31256a344502f810efb61ffabb8cd885122a08e"
     }
   }
 }

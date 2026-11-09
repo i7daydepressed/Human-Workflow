@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "workflow_skill_resources",
+  "skill": "work-journal-ru",
+  "generated": false,
+  "package": {
+    "name": "human-workflow",
+    "version": "0.0.7",
+    "display_name": "Human-workflow-v0.0.7",
+    "source": "plugin.json",
+    "source_sha256": "074a2ebdf34548ca2ecc59226132ad0c0b000aa507a28f8c5cb4ab917a0e9ce2"
+  },
+  "files": {
+    "../SKILL.md": {
+      "source": "skills/work-journal-ru/SKILL.md",
+      "sha256": "2b8b129ff97b6c2ccd84103d0111b649bd988e82f489aab6f582e0f8ac9be736"
+    },
+    "../references/working-notes.md": {
+      "source": "skills/work-journal-ru/references/working-notes.md",
+      "sha256": "7714e1e0222342d881569121da92bb8e3d559862d855a6806b99348f2320da3e"
+    },
+    "../agents/openai.yaml": {
+      "source": "skills/work-journal-ru/agents/openai.yaml",
+      "sha256": "ab68a23d47584f7076df0889c80124ddce9ad732685f0105394321eb489629f6"
+    },
+    "LICENSE": {
+      "source": "skills/work-journal-ru/resources/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "../README.md": {
+      "source": "skills/work-journal-ru/README.md",
+      "sha256": "1a7e549aca89e718254e2b0e44a1f5f3bffc41d810402fa9b76598c3c185f235"
+    },
+    "../references/agent-journal.md": {
+      "source": "skills/work-journal-ru/references/agent-journal.md",
+      "sha256": "11734add9cfa86770e9e440028b31759356e102d1ad0185aea6326ebf3def92a"
+    }
+  }
+}

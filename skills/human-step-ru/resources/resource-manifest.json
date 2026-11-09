@@ -13,11 +13,11 @@
   "files": {
     "../SKILL.md": {
       "source": "locales/ru/human-step/workflow.md",
-      "sha256": "24d39567e37ed0c9bc541e69a572d6d9019552328f6e37b66e7c2130f6237949"
+      "sha256": "ecb501fc385bf4a316f9387a111e3670942f8703686c82391be9830ea0f7c072"
     },
     "../references/author.md": {
       "source": "locales/ru/human-step/references/author.md",
-      "sha256": "2021513ee3622dd00909210aa3cd6efec9344f69a99e1353c3f96a57a9a7446e"
+      "sha256": "ca1cbfe9fbf24bdf4db734d1b7b7a3115314d10efd6f0058f48c72b6d88542b6"
     },
     "../references/code.md": {
       "source": "locales/ru/human-step/references/code.md",
@@ -33,11 +33,11 @@
     },
     "../references/executor.md": {
       "source": "locales/ru/human-step/references/executor.md",
-      "sha256": "45e1aaad464f4c75451bd18767110fb3da7b850064a99cfc6a268a6a76f2a2d8"
+      "sha256": "4016a80a85d2e772f637f7a245bf9baf9005bd1e23818c4b3df36f534c72635e"
     },
     "../references/experience.md": {
       "source": "locales/ru/human-step/references/experience.md",
-      "sha256": "b13f2b2a8a49cd40657c4139d787965da2bf5bb170626ea05f02cbae57f8c4e7"
+      "sha256": "190d720d2e7592e8e9f4141a8819c0ed2d16c8be1b025de861c0fcdef7b36ffa"
     },
     "../references/language-and-maintenance.md": {
       "source": "locales/ru/human-step/references/language-and-maintenance.md",
@@ -58,6 +58,10 @@
     "../references/packet.md": {
       "source": "skills/human-step-ru/references/packet.md",
       "sha256": "28a96c884361ab245cff38768c61292e012f7ed7e39c0508aad3d79bcd7d3404"
+    },
+    "../references/storage.md": {
+      "source": "skills/human-step-ru/references/storage.md",
+      "sha256": "06bd0ea134a1f438888218c677876803a3ed3a91d477e34eeaabf5d58692f5f4"
     },
     "LICENSE": {
       "source": "LICENSE",
@@ -154,6 +158,10 @@
     "templates/task-state.md": {
       "source": "shared/templates/ru/task-state.md",
       "sha256": "5f14bd1602753af00581669db6c5588ffd60a79a80690fb64a5950f75d419210"
+    },
+    "../README.md": {
+      "source": "skills/human-step-ru/README.md",
+      "sha256": "6aed41f71dd4b2a6e7bd6682c0c8e8b1695c355699ac1067f5c81d3ed55b0ace"
     }
   }
 }

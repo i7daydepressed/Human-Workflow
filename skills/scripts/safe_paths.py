@@ -4,12 +4,19 @@ from pathlib import Path
 
 def installation_root(module_file):
     skill_root = Path(module_file).resolve().parents[1]
+    # Общие скрипты защищают весь плагин либо общий каталог skills в отдельной поставке.
+    if skill_root.name == 'skills' and Path(module_file).resolve().parent.name == 'scripts':
+        plugin_root = skill_root.parent
+        if (plugin_root / 'plugin.json').is_file() or (plugin_root / '.claude-plugin/plugin.json').is_file():
+            return plugin_root
+        return skill_root
     resource_root = skill_root / 'resources'
     if (resource_root / 'resource-manifest.json').is_file() and (skill_root / 'SKILL.md').is_file():
         plugin_root = skill_root.parent.parent
-        if skill_root.parent.name == 'skills' and ((plugin_root / 'plugin.json').is_file()
-                or (plugin_root / '.claude-plugin/plugin.json').is_file()):
-            return plugin_root
+        if skill_root.parent.name == 'skills':
+            if (plugin_root / 'plugin.json').is_file() or (plugin_root / '.claude-plugin/plugin.json').is_file():
+                return plugin_root
+            return skill_root.parent
         return skill_root
     return skill_root
 
