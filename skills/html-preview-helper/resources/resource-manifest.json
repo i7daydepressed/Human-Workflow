@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "kind": "workflow_skill_resources",
+  "skill": "html-preview-helper",
+  "generated": false,
+  "package": {
+    "name": "human-workflow",
+    "version": "0.0.7",
+    "display_name": "Human-workflow-v0.0.7",
+    "source": "plugin.json",
+    "source_sha256": "074a2ebdf34548ca2ecc59226132ad0c0b000aa507a28f8c5cb4ab917a0e9ce2"
+  },
+  "files": {
+    "../SKILL.md": {
+      "source": "skills/html-preview-helper/SKILL.md",
+      "sha256": "a5308b8ed69ce3200a937d99675270e702e5cbb99d0f8433f1108caa82f5c48a"
+    },
+    "../agents/openai.yaml": {
+      "source": "skills/html-preview-helper/agents/openai.yaml",
+      "sha256": "0e2dea0ebde81bf60292d258f9a283c8009adb3a56aa372336ed1ce7f300ec04"
+    },
+    "../references/build-script.md": {
+      "source": "skills/html-preview-helper/references/build-script.md",
+      "sha256": "6a8e9b09966e178a3bc57f712b8a24ebcbbeebe04b64df7c843c7c42eb796733"
+    },
+    "../references/library-additions.md": {
+      "source": "skills/html-preview-helper/references/library-additions.md",
+      "sha256": "07d37762c4bc7f705b22276ed1063f3406ebbf3f1810b640c5bdbfc7c0a3415b"
+    },
+    "../references/library.md": {
+      "source": "skills/html-preview-helper/references/library.md",
+      "sha256": "70ab55d81f2a1b46f7d400b4105e554c57bf5513ca3fa74d7cd3efea241f0b22"
+    },
+    "../references/preset-additions.md": {
+      "source": "skills/html-preview-helper/references/preset-additions.md",
+      "sha256": "45afd421ecc414cfdd9c9b7bf47703f0d18ed5f2584ad50c8ccac28396174c95"
+    },
+    "../references/recommendations.md": {
+      "source": "skills/html-preview-helper/references/recommendations.md",
+      "sha256": "9c3781c6714bf25bc626224942c369eb29d716706c0c7d8ccacf8b902f5b4b16"
+    },
+    "../references/templates/file-viewer.md": {
+      "source": "skills/html-preview-helper/references/templates/file-viewer.md",
+      "sha256": "19e9c98b52bd2dc9b6bf140430f4ea96b26b9211981dd280c739c53facc674d6"
+    },
+    "../references/templates/image-compare.md": {
+      "source": "skills/html-preview-helper/references/templates/image-compare.md",
+      "sha256": "4a86521576dac45aa11aa9d927d46b3fbbb000afb3cdac366bfc7c3cfa49eb7f"
+    },
+    "LICENSE": {
+      "source": "skills/html-preview-helper/resources/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "file-viewer.html": {
+      "source": "skills/html-preview-helper/resources/file-viewer.html",
+      "sha256": "2cd3cd0b287ac37d10684424e7caeb7ffe154fd85dbd17f4a71a473b222aaa51"
+    },
+    "image-compare.html": {
+      "source": "skills/html-preview-helper/resources/image-compare.html",
+      "sha256": "89ca8fb1cd2991710378eb72f95a91b04a9fecb3be3b9363fad737bb878808f1"
+    },
+    "../scripts/build_comparison.py": {
+      "source": "skills/html-preview-helper/scripts/build_comparison.py",
+      "sha256": "f19842d34037b1b9d61a13756ceb19304687c2dcc822733bbbca87927d2f15fd"
+    },
+    "../scripts/build_viewer.py": {
+      "source": "skills/html-preview-helper/scripts/build_viewer.py",
+      "sha256": "5b6a4c3c6ed7423fdb47e73e64c6c8ae23264f53f2cd9e67c2c34c65a641bad3"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "kind": "workflow_skill_resources",
+  "skill": "html-preview-helper-en",
+  "generated": false,
+  "package": {
+    "name": "human-workflow",
+    "version": "0.0.7",
+    "display_name": "Human-workflow-v0.0.7",
+    "source": "plugin.json",
+    "source_sha256": "074a2ebdf34548ca2ecc59226132ad0c0b000aa507a28f8c5cb4ab917a0e9ce2"
+  },
+  "files": {
+    "../SKILL.md": {
+      "source": "skills/html-preview-helper-en/SKILL.md",
+      "sha256": "4945d633ccdf0aadf2641700ae977ee4efd2606ff77ddd25bf45d9c3f5ebfbf5"
+    },
+    "../agents/openai.yaml": {
+      "source": "skills/html-preview-helper-en/agents/openai.yaml",
+      "sha256": "8b7efd9c6f423e07d95cb5b9522b6897f06230f378c43b822d75eed046b00cda"
+    },
+    "../references/build-script.md": {
+      "source": "skills/html-preview-helper-en/references/build-script.md",
+      "sha256": "bda1c7744bb196d91e6f9417ab038f6848e0c2c054ed22d9f6e0634716e23425"
+    },
+    "../references/library-additions.md": {
+      "source": "skills/html-preview-helper-en/references/library-additions.md",
+      "sha256": "c707f6e7c7578215ec55323a71b9bde4c8fe3df419964d1da4f9e7d711b2aaa6"
+    },
+    "../references/library.md": {
+      "source": "skills/html-preview-helper-en/references/library.md",
+      "sha256": "a76b8bb6b3241bd8a9372e23fee5be78793f9de6ae43223e203625b2839377d5"
+    },
+    "../references/preset-additions.md": {
+      "source": "skills/html-preview-helper-en/references/preset-additions.md",
+      "sha256": "63f16bb67cd8e5fb742cfa1826f2c7097f5c53b654f64254f330609286e1be2b"
+    },
+    "../references/recommendations.md": {
+      "source": "skills/html-preview-helper-en/references/recommendations.md",
+      "sha256": "3269efcaeb112a354d6699f4c5ffbcaed074e047dc28c9c04212eb38f00ceff3"
+    },
+    "../references/templates/file-viewer.md": {
+      "source": "skills/html-preview-helper-en/references/templates/file-viewer.md",
+      "sha256": "808d5f304acddf00d44b31d9adb6bc997efc11e8566dc1727212cfcd2c7a6bea"
+    },
+    "../references/templates/image-compare.md": {
+      "source": "skills/html-preview-helper-en/references/templates/image-compare.md",
+      "sha256": "b3272f61f309ae071e9a788875fd89ef964bd0a0dfcde6630843bc5aab9fa2d5"
+    },
+    "LICENSE": {
+      "source": "skills/html-preview-helper-en/resources/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "file-viewer.html": {
+      "source": "skills/html-preview-helper-en/resources/file-viewer.html",
+      "sha256": "40eea1559c7319d44d5b17fbddde417d00d1a95891de64d8e9ded3c636c2423d"
+    },
+    "image-compare.html": {
+      "source": "skills/html-preview-helper-en/resources/image-compare.html",
+      "sha256": "bf5a6daa945e1eca1d218c8643cf5bd03bcc3e7e7070e2e9a69c036ef86c438a"
+    },
+    "../scripts/build_comparison.py": {
+      "source": "skills/html-preview-helper-en/scripts/build_comparison.py",
+      "sha256": "9b6cc1da3a8fc33b248c2b680425887410aff5ca6a9f1638108c6c7a40301482"
+    },
+    "../scripts/build_viewer.py": {
+      "source": "skills/html-preview-helper-en/scripts/build_viewer.py",
+      "sha256": "62d8a3a5f7ddb0197924d6aa9cc4477207ea1dbb5c3b54c7a24d718c6ff7f69e"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Preview Helper — EN"
+  short_description: "HTML views, explanations, and reusable presets"
+  default_prompt: "Use $html-preview-helper-en to choose a useful HTML view of these materials and prepare it for a viewing method available here."

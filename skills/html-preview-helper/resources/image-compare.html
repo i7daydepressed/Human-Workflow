@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сравнение изображений</title>
+<style>
+  :root{color-scheme:dark;--bg:#1e1e1e;--panel:#252526;--top:#323233;--text:#e1e1e1;--sub:#b3b3b3;--line:#49494d;--accent:#75beff;--field:#29292c}
+  *{box-sizing:border-box}
+  html,body{margin:0;min-width:320px;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  button,select,input{font:inherit;color:inherit}
+  button,select{min-height:36px;border:1px solid var(--line);border-radius:5px;background:var(--field)}
+  button{padding:6px 11px;cursor:pointer}
+  button:hover:not(:disabled){border-color:var(--accent);background:#34343a}
+  button:disabled,select:disabled{opacity:.5;cursor:default}
+  select{padding:6px 28px 6px 8px;width:100%;min-width:0}
+  button:focus-visible,select:focus-visible,input:focus-visible,.viewport:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  label{display:grid;gap:5px;min-width:0}
+  h1{font-size:21px;line-height:1.35;margin:0}
+  h2{font-size:17px;line-height:1.4;margin:0}
+  p{margin:0}
+  [hidden]{display:none!important}
+  #image-comparison{max-width:1600px;margin:auto;padding-bottom:20px}
+  header{padding:16px 20px;background:var(--top);display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .muted,.path,.facts,.scale,.field-label{font-size:12px;color:var(--sub)}
+  .path{overflow-wrap:anywhere}
+  .global-controls{padding:14px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .sync-label{display:flex;align-items:center;gap:8px;margin-right:auto;cursor:pointer}
+  .sync-label input{width:17px;height:17px;accent-color:var(--accent)}
+  .hint{padding:0 20px 14px;color:var(--sub);font-size:12px}
+  .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:0 20px}
+  .image-panel{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .image-panel[data-active="true"]{border-color:var(--accent)}
+  .panel-head{padding:12px;display:grid;gap:9px}
+  .panel-title{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .panel-controls{display:flex;align-items:end;gap:6px;flex-wrap:wrap}
+  .panel-controls label{flex:1;min-width:125px}
+  .panel-controls button{padding-left:10px;padding-right:10px}
+  .scale{min-height:19px;font-variant-numeric:tabular-nums}
+  .viewport{position:relative;height:clamp(300px,58vh,650px);overflow:hidden;background:#121214;touch-action:none;cursor:grab;user-select:none;isolation:isolate}
+  .viewport.dragging{cursor:grabbing}
+  .viewport img{position:absolute;display:block;max-width:none;max-height:none;pointer-events:none;user-select:none;-webkit-user-drag:none;transform-origin:0 0}
+  .viewport-placeholder{position:absolute;inset:0;display:grid;place-content:center;padding:22px;color:var(--sub);text-align:center;cursor:default;pointer-events:none}
+  .panel-foot{padding:10px 12px;display:grid;gap:4px;min-height:70px}
+  .preview-warning{font-size:12px;color:#e5c582}
+  .status{display:block;min-height:22px;padding:10px 20px;color:var(--sub);font-size:12px;overflow-wrap:anywhere}
+  .records{margin:10px 20px 0;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+  .records-head{padding:14px;border-bottom:1px solid var(--line)}
+  .record-controls{padding:12px 14px;display:grid;grid-template-columns:minmax(140px,.8fr) minmax(120px,.65fr) minmax(180px,1.4fr);gap:10px}
+  .record-meta{padding:0 14px 10px;display:grid;gap:4px}
+  #doc-text{margin:0;padding:16px;border-top:1px solid var(--line);background:var(--bg);font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-height:55vh;overflow:auto;tab-size:4}
+  @media(max-width:700px){header{padding:14px}.global-controls{padding:12px 14px}.hint{padding:0 14px 12px}.pair{grid-template-columns:minmax(0,1fr);padding:0 14px;gap:14px}.viewport{height:clamp(280px,60vh,470px)}.records{margin-left:14px;margin-right:14px}.record-controls{grid-template-columns:minmax(0,1fr)}.sync-label{width:100%;margin-bottom:3px}.status{padding-left:14px;padding-right:14px}select{font-size:16px}.panel-controls label{min-width:145px}}
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main id="image-comparison">
+  <header><h1 id="comparison-title">Сравнение изображений</h1><p class="muted" id="snapshot-label"></p></header>
+  <div class="global-controls">
+    <label class="sync-label"><input type="checkbox" id="sync-view" checked>Связать масштаб и перемещение</label>
+    <button type="button" id="reset-view">Сброс вида</button>
+    <button type="button" id="reset-comparison">Сброс сравнения</button>
+  </div>
+  <p class="hint">Над изображением: щипок тачпада или Ctrl + колесо — масштаб у курсора; два пальца или колесо — перемещение; перетаскивание — перемещение. Кнопка «1:1» относится к пикселям встроенной копии. При связи панелей 1:1 устанавливается в выбранной панели, другая получает тот же относительный масштаб. Клавиатура в панели: + / −, стрелки, 0 — вписать.</p>
+  <div class="pair">
+    <section class="image-panel" id="panel-left" data-active="true" aria-labelledby="title-left">
+      <div class="panel-head">
+        <div class="panel-title"><h2 id="title-left">Левая панель</h2><span class="scale" id="zoom-left"></span></div>
+        <label><span class="field-label">Изображение</span><select id="image-left" aria-label="Изображение слева"></select></label>
+        <div class="panel-controls">
+          <label><span class="field-label">Быстрая область</span><select id="region-left" aria-label="Область слева"></select></label>
+          <button type="button" data-side="left" data-action="zoom-out" aria-label="Уменьшить слева">−</button>
+          <button type="button" data-side="left" data-action="zoom-in" aria-label="Увеличить слева">+</button>
+          <button type="button" data-side="left" data-action="fit">Вписать</button>
+          <button type="button" data-side="left" data-action="actual-size" title="Один пиксель встроенной копии на один пиксель страницы">1:1</button>
+        </div>
+      </div>
+      <div class="viewport" id="viewport-left" tabindex="0" role="group" aria-label="Просмотр слева">
+        <img id="img-left" alt="" draggable="false" hidden>
+        <p class="viewport-placeholder" id="empty-left">В шаблон пока не добавлены изображения.</p>
+      </div>
+      <div class="panel-foot"><p class="facts" id="facts-left"></p><p class="path" id="path-left"></p><p class="preview-warning" id="warning-left"></p></div>
+    </section>
+    <section class="image-panel" id="panel-right" data-active="false" aria-labelledby="title-right">
+      <div class="panel-head">
+        <div class="panel-title"><h2 id="title-right">Правая панель</h2><span class="scale" id="zoom-right"></span></div>
+        <label><span class="field-label">Изображение</span><select id="image-right" aria-label="Изображение справа"></select></label>
+        <div class="panel-controls">
+          <label><span class="field-label">Быстрая область</span><select id="region-right" aria-label="Область справа"></select></label>
+          <button type="button" data-side="right" data-action="zoom-out" aria-label="Уменьшить справа">−</button>
+          <button type="button" data-side="right" data-action="zoom-in" aria-label="Увеличить справа">+</button>
+          <button type="button" data-side="right" data-action="fit">Вписать</button>
+          <button type="button" data-side="right" data-action="actual-size" title="Один пиксель встроенной копии на один пиксель страницы">1:1</button>
+        </div>
+      </div>
+      <div class="viewport" id="viewport-right" tabindex="0" role="group" aria-label="Просмотр справа">
+        <img id="img-right" alt="" draggable="false" hidden>
+        <p class="viewport-placeholder" id="empty-right">В шаблон пока не добавлены изображения.</p>
+      </div>
+      <div class="panel-foot"><p class="facts" id="facts-right"></p><p class="path" id="path-right"></p><p class="preview-warning" id="warning-right"></p></div>
+    </section>
+  </div>
+  <output class="status" id="comparison-status" role="status" aria-live="polite"></output>
+  <section class="records" aria-labelledby="records-title">
+    <div class="records-head"><h2 id="records-title">Документы участников</h2><p class="muted">Выбор документов независим от изображений. Здесь показан сохранённый текст, исходные файлы не изменяются.</p></div>
+    <div class="record-controls">
+      <label><span class="field-label">Участник</span><select id="doc-owner" aria-label="Участник для документов"></select></label>
+      <label><span class="field-label">Тип документа</span><select id="doc-kind" aria-label="Тип документа"></select></label>
+      <label><span class="field-label">Документ</span><select id="doc-select" aria-label="Документ участника"></select></label>
+    </div>
+    <div class="record-meta"><p class="facts" id="doc-label"></p><p class="path" id="doc-path"></p></div>
+    <pre id="doc-text" tabindex="0">В шаблон пока не добавлены документы.</pre>
+  </section>
+  <noscript><p class="status">Для выбора материалов, масштаба и документов необходим JavaScript.</p></noscript>
+  <script type="application/json" id="comparison-data">{"title":"Сравнение изображений","snapshot":"","images":[],"owners":[],"documents":[]}</script>
+  <script>
+  (()=>{
+    'use strict';
+    const $=id=>document.getElementById(id), clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+    let data, configurationError='';
+    try{data=JSON.parse($('comparison-data').textContent);if(!data||typeof data!=='object')throw Error('данные');}
+    catch{data={};configurationError='Не удалось прочитать данные сравнения.';}
+    const unique=items=>{const seen=new Set();return (Array.isArray(items)?items:[]).filter(x=>x&&typeof x.id==='string'&&!seen.has(x.id)&&seen.add(x.id));};
+    const imageList=unique(data.images), imageMap=new Map(imageList.map(x=>[x.id,x]));
+    const documents=unique(data.documents).map(d=>({...d,ownerId:String(d.ownerId||'other'),kind:String(d.kind||'other')}));
+    const owners=unique(data.owners).map(o=>({id:o.id,label:String(o.label||o.id)}));
+    for(const doc of documents)if(!owners.some(o=>o.id===doc.ownerId))owners.push({id:doc.ownerId,label:doc.ownerId==='other'?'Другие материалы':doc.ownerId});
+    const fullRegion={id:'full',label:'Полный кадр',box:[0,0,1,1]};
+    const regionList=[fullRegion,...unique(data.regions).filter(r=>r.id!=='full'&&Array.isArray(r.box)&&r.box.length===4&&r.box.every(Number.isFinite)&&r.box[0]>=0&&r.box[1]>=0&&r.box[2]<=1&&r.box[3]<=1&&r.box[2]>r.box[0]&&r.box[3]>r.box[1])];
+    const regionMap=new Map(regionList.map(r=>[r.id,r]));
+    const kindNames={prompt:'Промпт',log:'Журнал',notes:'Текущее состояние',other:'Другой документ'};
+    const initial={left:imageMap.has(data.defaultLeft)?data.defaultLeft:imageList[0]?.id||'',right:imageMap.has(data.defaultRight)?data.defaultRight:imageList[1]?.id||imageList[0]?.id||''};
+    const panels={};let activeSide='left';
+    const option=(value,label)=>{const o=document.createElement('option');o.value=value;o.textContent=label;return o;};
+    const status=text=>{$('comparison-status').textContent=text;};
+    $('comparison-title').textContent=String(data.title||'Сравнение изображений');document.title=$('comparison-title').textContent;
+    $('snapshot-label').textContent=data.snapshot?'Снимок '+String(data.snapshot):'Только просмотр';
+
+    function safeSource(raw){
+      if(typeof raw!=='string'||!raw)return null;
+      if(/^data:image\/(png|jpeg|webp|gif);base64,[a-z0-9+/]*={0,2}$/i.test(raw))return raw;
+      if(/^[a-z][a-z0-9+.-]*:|^[\\/#?]|[\\?#]/i.test(raw))return null;
+      try{
+        const parts=raw.split('/').map(decodeURIComponent);
+        if(parts.some(p=>p==='..'||p.includes('/')||p.includes('\\')||p.includes(':')))return null;
+        const url=new URL(raw,location.href);
+        if(url.protocol!==location.protocol||url.host!==location.host)return null;
+        return url.href;
+      }catch{return null;}
+    }
+    function activate(side){activeSide=side;for(const p of Object.values(panels))p.root.dataset.active=String(p.side===side);}
+    function imageStatus(){
+      const selected=Object.values(panels).filter(p=>p.item);
+      if(!selected.length)status('В шаблон пока не добавлены изображения.');
+      else if(selected.some(p=>p.error))status('Не все изображения загружены. Причина указана в соответствующей панели.');
+      else if(selected.every(p=>p.loaded))status('Изображения доступны для просмотра. Документы выбираются отдельно.');
+      else status('Загрузка изображений…');
+    }
+    function geometry(p){
+      const w=p.viewport.clientWidth,h=p.viewport.clientHeight;
+      const iw=p.img.naturalWidth,ih=p.img.naturalHeight;
+      const fit=iw&&ih?Math.min(w/iw,h/ih):1;
+      return {w,h,iw,ih,fit,scale:fit*p.view.z};
+    }
+    function boundedZoom(p,z){const fit=geometry(p).fit||1;return clamp(z,Math.min(.1,1/fit),Math.max(64,1/fit));}
+    function draw(p){
+      p.viewport.dataset.imageId=p.item?.id||'';p.viewport.dataset.loaded=String(p.loaded);
+      p.viewport.dataset.zoom=p.view.z.toFixed(6);p.viewport.dataset.centerX=p.view.cx.toFixed(6);p.viewport.dataset.centerY=p.view.cy.toFixed(6);
+      if(!p.loaded){p.zoom.textContent='';return;}
+      const g=geometry(p),w=g.iw*g.scale,h=g.ih*g.scale;
+      p.img.style.width=w+'px';p.img.style.height=h+'px';p.img.style.left=(g.w/2-p.view.cx*w)+'px';p.img.style.top=(g.h/2-p.view.cy*h)+'px';
+      p.viewport.dataset.scale=g.scale.toFixed(6);
+      p.zoom.textContent=Math.round(p.view.z*100)+'% от вписанного · '+Math.round(g.scale*100)+'% копии';
+    }
+    function setView(p,next,region=''){
+      p.view={z:boundedZoom(p,Number(next.z)||1),cx:clamp(Number.isFinite(next.cx)?next.cx:.5,0,1),cy:clamp(Number.isFinite(next.cy)?next.cy:.5,0,1)};
+      p.region.value=region;
+      if($('sync-view').checked){const other=panels[p.side==='left'?'right':'left'];if(other){other.view={...p.view};other.region.value=region;draw(other);}}
+      draw(p);
+    }
+    function resetViews(){for(const p of Object.values(panels)){p.view={z:1,cx:.5,cy:.5};p.region.value='full';draw(p);}}
+    function point(p,clientX,clientY){const r=p.viewport.getBoundingClientRect();return {x:clientX-r.left,y:clientY-r.top};}
+    function anchor(p,at){const g=geometry(p);return {x:p.view.cx+(at.x-g.w/2)/(g.iw*g.scale),y:p.view.cy+(at.y-g.h/2)/(g.ih*g.scale)};}
+    function zoomAt(p,z,at){
+      if(!p.loaded)return;const g=geometry(p),a=anchor(p,at);z=boundedZoom(p,z);const scale=g.fit*z;
+      setView(p,{z,cx:a.x-(at.x-g.w/2)/(g.iw*scale),cy:a.y-(at.y-g.h/2)/(g.ih*scale)});
+    }
+    function pan(p,dx,dy){if(!p.loaded)return;const g=geometry(p);setView(p,{z:p.view.z,cx:p.view.cx-dx/(g.iw*g.scale),cy:p.view.cy-dy/(g.ih*g.scale)});}
+    function regionView(p,id){
+      if(!p.loaded)return;const r=regionMap.get(id);if(!r)return;const b=r.box,g=geometry(p);
+      const scale=Math.min(g.w/(g.iw*(b[2]-b[0])),g.h/(g.ih*(b[3]-b[1])));
+      setView(p,{z:scale/g.fit,cx:(b[0]+b[2])/2,cy:(b[1]+b[3])/2},id);
+    }
+    function chooseImage(p,id){
+      p.item=imageMap.get(id)||null;p.loaded=false;p.error='';p.pointers.clear();p.gesture=null;p.img.hidden=true;p.placeholder.hidden=false;p.img.removeAttribute('src');draw(p);
+      p.select.value=p.item?.id||'';p.facts.textContent='';p.path.textContent='';p.warning.textContent='';
+      for(const b of p.root.querySelectorAll('button'))b.disabled=!p.item;p.region.disabled=!p.item;
+      if(!p.item){p.placeholder.textContent='В шаблон пока не добавлены изображения.';return;}
+      p.path.textContent=String(p.item.sourcePath||'Путь источника не указан');p.img.alt=String(p.item.label||p.item.id);
+      if(p.item.isPreview)p.warning.textContent='Уменьшенное превью. Увеличение не восстанавливает детали оригинала.';
+      const src=safeSource(p.item.src);
+      if(!src){p.error='Источник не поддерживается';p.placeholder.textContent='Источник изображения не поддерживается. Разрешены встроенные растровые данные и относительные локальные пути.';imageStatus();return;}
+      p.placeholder.textContent='Загрузка изображения…';
+      imageStatus();
+      const item=p.item;
+      p.img.onload=()=>{
+        if(p.item!==item)return;p.loaded=true;p.img.hidden=false;p.placeholder.hidden=true;
+        const original=Number.isFinite(item.width)&&Number.isFinite(item.height)?item.width+' × '+item.height:'не указаны';
+        p.facts.textContent='Размеры оригинала: '+original+' · встроенная копия: '+p.img.naturalWidth+' × '+p.img.naturalHeight;
+        const reduced=!!item.isPreview||(Number(item.width)>p.img.naturalWidth||Number(item.height)>p.img.naturalHeight);
+        p.warning.textContent=reduced?'Уменьшенное превью. Увеличение не восстанавливает детали оригинала.':'';
+        draw(p);imageStatus();
+      };
+      p.img.onerror=()=>{if(p.item!==item)return;p.loaded=false;p.error='Не удалось загрузить';p.img.hidden=true;p.placeholder.hidden=false;p.placeholder.textContent='Не удалось загрузить изображение.';draw(p);imageStatus();};
+      p.img.src=src;
+    }
+    function pointerGesture(p){
+      const points=[...p.pointers.values()];
+      if(points.length>=2){const a=points[0],b=points[1],at=point(p,(a.x+b.x)/2,(a.y+b.y)/2);p.gesture={distance:Math.hypot(b.x-a.x,b.y-a.y),z:p.view.z,anchor:anchor(p,at)};}
+      else p.gesture=null;
+    }
+    function bindPanel(side){
+      const p={side,root:$('panel-'+side),viewport:$('viewport-'+side),img:$('img-'+side),placeholder:$('empty-'+side),select:$('image-'+side),region:$('region-'+side),zoom:$('zoom-'+side),facts:$('facts-'+side),path:$('path-'+side),warning:$('warning-'+side),item:null,loaded:false,view:{z:1,cx:.5,cy:.5},pointers:new Map(),gesture:null,safariGesture:null};panels[side]=p;
+      for(const item of imageList)p.select.append(option(item.id,String(item.label||item.id)));
+      if(!imageList.length)p.select.append(option('','Нет изображений'));p.select.disabled=!imageList.length;
+      p.region.append(option('','Текущий вид'));for(const r of regionList)p.region.append(option(r.id,String(r.label||r.id)));p.region.value='full';
+      p.select.addEventListener('change',()=>{activate(side);chooseImage(p,p.select.value);});
+      p.region.addEventListener('change',()=>{activate(side);regionView(p,p.region.value);});
+      p.viewport.addEventListener('focus',()=>activate(side));
+      p.viewport.addEventListener('wheel',e=>{
+        if(!p.loaded)return;e.preventDefault();activate(side);if(p.safariGesture)return;
+        const unit=e.deltaMode===1?16:e.deltaMode===2?p.viewport.clientHeight:1;const dx=e.deltaX*unit,dy=e.deltaY*unit;
+        if(e.ctrlKey)zoomAt(p,p.view.z*Math.exp(-dy*.01),point(p,e.clientX,e.clientY));
+        else if(e.shiftKey&&!dx)pan(p,-dy,0);else pan(p,-dx,-dy);
+      },{passive:false});
+      p.viewport.addEventListener('pointerdown',e=>{
+        if(!p.loaded||(e.pointerType!=='touch'&&e.button!==0))return;e.preventDefault();activate(side);p.viewport.focus({preventScroll:true});
+        p.pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});try{p.viewport.setPointerCapture(e.pointerId);}catch{}
+        p.viewport.classList.add('dragging');pointerGesture(p);
+      });
+      p.viewport.addEventListener('pointermove',e=>{
+        const old=p.pointers.get(e.pointerId);if(!old||!p.loaded)return;e.preventDefault();p.pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+        if(p.pointers.size>=2&&p.gesture){const pts=[...p.pointers.values()],at=point(p,(pts[0].x+pts[1].x)/2,(pts[0].y+pts[1].y)/2),g=geometry(p),distance=Math.hypot(pts[1].x-pts[0].x,pts[1].y-pts[0].y),z=boundedZoom(p,p.gesture.z*distance/Math.max(1,p.gesture.distance)),scale=g.fit*z;
+          setView(p,{z,cx:p.gesture.anchor.x-(at.x-g.w/2)/(g.iw*scale),cy:p.gesture.anchor.y-(at.y-g.h/2)/(g.ih*scale)});
+        }else pan(p,e.clientX-old.x,e.clientY-old.y);
+      });
+      const endPointer=e=>{if(!p.pointers.delete(e.pointerId))return;pointerGesture(p);if(!p.pointers.size)p.viewport.classList.remove('dragging');};
+      for(const type of ['pointerup','pointercancel','lostpointercapture'])p.viewport.addEventListener(type,endPointer);
+      p.viewport.addEventListener('gesturestart',e=>{if(!p.loaded)return;e.preventDefault();activate(side);const at=point(p,e.clientX||p.viewport.getBoundingClientRect().left+p.viewport.clientWidth/2,e.clientY||p.viewport.getBoundingClientRect().top+p.viewport.clientHeight/2);p.safariGesture={z:p.view.z,at};},{passive:false});
+      p.viewport.addEventListener('gesturechange',e=>{if(!p.loaded||!p.safariGesture)return;e.preventDefault();if(Number.isFinite(e.scale)&&e.scale>0)zoomAt(p,p.safariGesture.z*e.scale,p.safariGesture.at);},{passive:false});
+      p.viewport.addEventListener('gestureend',e=>{if(p.safariGesture)e.preventDefault();p.safariGesture=null;},{passive:false});
+      p.viewport.addEventListener('keydown',e=>{
+        if(!p.loaded)return;const g=geometry(p),center={x:g.w/2,y:g.h/2};let used=true;
+        if(e.key==='+'||e.key==='=')zoomAt(p,p.view.z*1.25,center);else if(e.key==='-')zoomAt(p,p.view.z/1.25,center);
+        else if(e.key==='ArrowLeft')pan(p,40,0);else if(e.key==='ArrowRight')pan(p,-40,0);else if(e.key==='ArrowUp')pan(p,0,40);else if(e.key==='ArrowDown')pan(p,0,-40);
+        else if(e.key==='0')setView(p,{z:1,cx:.5,cy:.5},'full');else if(e.key==='1')zoomAt(p,1/g.fit,center);else used=false;if(used)e.preventDefault();
+      });
+      if('ResizeObserver' in window)new ResizeObserver(()=>draw(p)).observe(p.viewport);else window.addEventListener('resize',()=>draw(p));
+      return p;
+    }
+    bindPanel('left');bindPanel('right');
+    for(const button of document.querySelectorAll('button[data-action]'))button.addEventListener('click',()=>{
+      const p=panels[button.dataset.side];if(!p.loaded)return;activate(p.side);const g=geometry(p),at={x:g.w/2,y:g.h/2};
+      if(button.dataset.action==='zoom-in')zoomAt(p,p.view.z*1.25,at);else if(button.dataset.action==='zoom-out')zoomAt(p,p.view.z/1.25,at);else if(button.dataset.action==='fit')setView(p,{z:1,cx:.5,cy:.5},'full');else if(button.dataset.action==='actual-size')zoomAt(p,1/g.fit,at);
+    });
+    $('sync-view').addEventListener('change',()=>{if($('sync-view').checked)setView(panels[activeSide],panels[activeSide].view,panels[activeSide].region.value);});
+    $('reset-view').addEventListener('click',()=>{resetViews();status('Масштаб и положение обеих картинок сброшены. Выбор изображений сохранён.');});
+    $('reset-comparison').addEventListener('click',()=>{resetViews();chooseImage(panels.left,initial.left);chooseImage(panels.right,initial.right);status('Возвращены начальная пара изображений и вид. Выбор документов сохранён.');});
+
+    function renderDocument(){
+      const doc=documents.find(d=>d.id===$('doc-select').value);
+      $('doc-label').textContent=doc?String(doc.label||kindNames[doc.kind]||doc.kind):'Нет подходящих документов';
+      $('doc-path').textContent=doc?String(doc.sourcePath||'Путь источника не указан'):'';
+      $('doc-text').textContent=doc?String(doc.text??''):'Для выбранного участника и типа документов материалов нет.';
+    }
+    function documentOptions(){
+      const owner=$('doc-owner').value,kind=$('doc-kind').value,select=$('doc-select');select.replaceChildren();
+      const items=documents.filter(d=>d.ownerId===owner&&(!kind||d.kind===kind));
+      for(const d of items)select.append(option(d.id,String(d.label||kindNames[d.kind]||d.id)+(d.strategy?' · '+String(d.strategy):'')));
+      if(!items.length)select.append(option('','Нет документов'));select.disabled=!items.length;renderDocument();
+    }
+    function ownerOptions(){
+      const kind=$('doc-kind');kind.replaceChildren(option('','Все типы'));
+      const kinds=[...new Set(documents.filter(d=>d.ownerId===$('doc-owner').value).map(d=>d.kind))];
+      for(const k of kinds)kind.append(option(k,kindNames[k]||k));kind.disabled=!kinds.length;documentOptions();
+    }
+    for(const o of owners)$('doc-owner').append(option(o.id,o.label));
+    if(!owners.length)$('doc-owner').append(option('','Нет участников'));$('doc-owner').disabled=!owners.length;
+    $('doc-owner').value=owners.some(o=>o.id===data.defaultOwner)?data.defaultOwner:owners[0]?.id||'';
+    $('doc-owner').addEventListener('change',ownerOptions);$('doc-kind').addEventListener('change',documentOptions);$('doc-select').addEventListener('change',renderDocument);
+    ownerOptions();
+    chooseImage(panels.left,initial.left);chooseImage(panels.right,initial.right);
+    if(configurationError)status(configurationError);else if(!imageList.length)status('Шаблон готов к наполнению. Изображения и документы проекта пока не добавлены.');
+    $('reset-view').disabled=$('reset-comparison').disabled=!imageList.length;
+    $('sync-view').disabled=!imageList.length;
+  })();
+  </script>
+</main>
+</body>
+</html>

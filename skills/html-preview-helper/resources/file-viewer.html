@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Обозреватель файлов</title><style>html,body{margin:0;min-width:320px;background:#1e1e1e}body{padding:0}#file-explorer{max-width:1500px;margin:0 auto}</style></head><body>
+<div id="file-explorer" data-theme="dark">
+  <style>
+    #file-explorer{--ed-bg:#1e1e1e;--ed-panel:#252526;--ed-rail:#333333;--ed-top:#323233;--ed-tab:#2d2d2d;--ed-text:#d4d4d4;--ed-sub:#a4a4a4;--ed-border:#404044;--ed-active:#37373d;--ed-accent:#3794ff;--ed-link:#75beff;--ed-code:#ce9178;--ed-green:#b5cea8;--ed-heading:#569cd6;--ed-bar:#007acc;color:var(--ed-text);background:var(--ed-bg);font:14px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:dark;overflow:hidden;isolation:isolate}
+    #file-explorer[data-theme="light"]{--ed-bg:#ffffff;--ed-panel:#f3f3f3;--ed-rail:#e8e8e8;--ed-top:#dddddd;--ed-tab:#ececec;--ed-text:#242424;--ed-sub:#646464;--ed-border:#d4d4d4;--ed-active:#e4e9ef;--ed-accent:#007acc;--ed-link:#006ab1;--ed-code:#a31515;--ed-green:#38761d;--ed-heading:#005fae;color-scheme:light}
+    #file-explorer *{box-sizing:border-box}
+    #file-explorer [hidden]{display:none!important}
+    #file-explorer button,#file-explorer input{font:inherit;color:inherit}
+    #file-explorer button{background:none;border:0;cursor:pointer}
+    #file-explorer button:hover{background:var(--ed-active)}
+    #file-explorer button:focus-visible,#file-explorer input:focus-visible,#file-explorer summary:focus-visible,#file-explorer a:focus-visible{outline:2px solid var(--ed-accent);outline-offset:-2px}
+    #file-explorer .ed-titlebar{display:flex;align-items:center;gap:10px;min-height:50px;padding:7px 12px;background:var(--ed-top);flex-wrap:wrap}
+    #file-explorer .ed-app-mark{font-family:monospace;color:var(--ed-link);font-weight:600}
+    #file-explorer .ed-title{font-weight:500;flex:1;min-width:120px}
+    #file-explorer .ed-snapshot{font-size:12px;color:var(--ed-sub)}
+    #file-explorer .ed-grid{display:grid;grid-template-columns:44px 230px minmax(0,1fr)}
+    #file-explorer .ed-activity{background:var(--ed-rail);display:flex;flex-direction:column;align-items:stretch;border-right:1px solid var(--ed-border)}
+    #file-explorer .ed-activity button{min-height:48px;padding:4px;font-size:12px;border-left:2px solid transparent}
+    #file-explorer .ed-activity button[aria-pressed="true"]{border-left-color:var(--ed-link);background:var(--ed-panel)}
+    #file-explorer .ed-activity .ed-theme-toggle{margin-top:auto}
+    #file-explorer .ed-explorer{background:var(--ed-panel);border-right:1px solid var(--ed-border);min-width:0;height:706px;overflow:auto}
+    #file-explorer .ed-explorer-head{padding:14px 12px 8px;font-size:12px;letter-spacing:.06em;color:var(--ed-sub)}
+    #file-explorer .ed-tree-help{padding:3px 12px 12px;color:var(--ed-sub);font-size:12px}
+    #file-explorer details{margin:0}
+    #file-explorer summary{cursor:pointer;min-height:30px;padding:4px 9px;overflow-wrap:anywhere}
+    #file-explorer .ed-file{display:flex;align-items:flex-start;gap:7px;text-align:left;width:100%;min-height:30px;padding:5px 8px 5px calc(18px + var(--depth,0)*12px);line-height:1.4}
+    #file-explorer .ed-file[aria-current="page"]{background:var(--ed-active);box-shadow:inset 2px 0 var(--ed-accent)}
+    #file-explorer .ed-file-name{min-width:0;overflow-wrap:anywhere;font-size:12px}
+    #file-explorer .ed-file-kind{flex:none;color:var(--ed-link);font:10px/1.8 monospace;min-width:22px}
+    #file-explorer .ed-editor{min-width:0;display:flex;flex-direction:column;height:706px}
+    #file-explorer .ed-tabs{display:flex;gap:1px;min-height:37px;overflow-x:auto;background:var(--ed-panel);border-bottom:1px solid var(--ed-border)}
+    #file-explorer .ed-tab{white-space:nowrap;display:flex;align-items:center;gap:6px;background:var(--ed-tab);border-top:2px solid transparent;flex:none}
+    #file-explorer .ed-tab.active{background:var(--ed-bg);border-top-color:var(--ed-accent)}
+    #file-explorer .ed-tab-open{padding:8px 10px;font-size:12px}
+    #file-explorer .ed-tab-close{padding:7px 6px;margin-right:3px;min-width:26px}
+    #file-explorer .ed-breadcrumb{padding:8px 14px;color:var(--ed-sub);font-size:11px;overflow-wrap:anywhere;border-bottom:1px solid var(--ed-border)}
+    #file-explorer .ed-toolbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:7px 12px;border-bottom:1px solid var(--ed-border)}
+    #file-explorer .ed-toolbar button{padding:4px 8px;border-radius:3px;font-size:12px}
+    #file-explorer .ed-toolbar button[aria-pressed="true"]{background:var(--ed-active);color:var(--ed-link)}
+    #file-explorer .ed-toolbar .ed-spacer{flex:1}
+    #file-explorer .ed-purpose{padding:7px 14px;font-size:12px;background:var(--ed-panel);color:var(--ed-sub);border-bottom:1px solid var(--ed-border)}
+    #file-explorer .ed-purpose strong{color:var(--ed-text);font-weight:500}
+    #file-explorer .ed-find{display:flex;align-items:center;gap:5px;padding:7px 12px;border-bottom:1px solid var(--ed-border);flex-wrap:wrap}
+    #file-explorer .ed-find[hidden]{display:none}
+    #file-explorer .ed-find input{background:var(--ed-bg);border:1px solid var(--ed-border);padding:5px 7px;flex:1;min-width:95px;width:160px}
+    #file-explorer .ed-find button{padding:5px 7px}
+    #file-explorer .ed-find-count{font-size:12px;color:var(--ed-sub);min-width:55px}
+    #file-explorer .ed-content{overflow:auto;flex:1;min-height:0;scroll-behavior:auto}
+    #file-explorer .ed-code{padding:13px 0 60px;font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}
+    #file-explorer .ed-code-line{display:grid;grid-template-columns:45px minmax(0,1fr);padding:1px 16px 1px 0;min-height:22px}
+    #file-explorer .ed-code-number{text-align:right;padding-right:12px;color:var(--ed-sub);user-select:none;font-variant-numeric:tabular-nums}
+    #file-explorer .ed-code-text{white-space:pre-wrap;overflow-wrap:anywhere}
+    #file-explorer .ed-code-line.is-match{background:color-mix(in srgb,var(--ed-accent) 13%,transparent)}
+    #file-explorer .ed-code-line.is-current{box-shadow:inset 3px 0 var(--ed-accent);background:var(--ed-active)}
+    #file-explorer mark{background:color-mix(in srgb,var(--ed-accent) 45%,transparent);color:var(--ed-text)}
+    #file-explorer .ed-syntax-heading{color:var(--ed-heading)}
+    #file-explorer .ed-syntax-key{color:var(--ed-link)}
+    #file-explorer .ed-syntax-fence{color:var(--ed-code)}
+    #file-explorer .ed-reading,#file-explorer .ed-guide{padding:20px 25px 48px;max-width:100%;overflow-wrap:anywhere}
+    #file-explorer h1{font-size:23px;line-height:1.35;font-weight:500;margin:0 0 18px}
+    #file-explorer h2{font-size:18px;line-height:1.4;font-weight:500;margin:25px 0 12px}
+    #file-explorer h3{font-size:15px;font-weight:500;margin:20px 0 8px}
+    #file-explorer p{margin:0 0 12px}
+    #file-explorer ul,#file-explorer ol{padding-left:22px;margin:8px 0 16px}
+    #file-explorer li{margin:5px 0}
+    #file-explorer strong{font-weight:600}
+    #file-explorer a,#file-explorer .ed-inline-link{color:var(--ed-link);text-decoration:underline;text-underline-offset:3px}
+    #file-explorer .ed-inline-link{text-align:left;padding:0;overflow-wrap:anywhere}
+    #file-explorer code{font:12px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--ed-code);overflow-wrap:anywhere}
+    #file-explorer pre{background:var(--ed-panel);padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;border-radius:4px}
+    #file-explorer .ed-table-wrap{overflow:auto;margin:12px 0}
+    #file-explorer table{border-collapse:collapse;width:100%;font-size:12px}
+    #file-explorer th,#file-explorer td{padding:8px;text-align:left;border-bottom:1px solid var(--ed-border);vertical-align:top;overflow-wrap:anywhere}
+    #file-explorer .ed-figure{margin:0;padding:20px}
+    #file-explorer .ed-figure img{display:block;max-width:100%;height:auto;max-height:470px;object-fit:contain;margin:16px auto}
+    #file-explorer .ed-image-note{color:var(--ed-sub);font-size:12px}
+    #file-explorer .ed-file-facts{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:12px;color:var(--ed-sub);margin-top:16px}
+    #file-explorer .ed-file-facts dt,#file-explorer .ed-file-facts dd{margin:0;overflow-wrap:anywhere}
+    #file-explorer .ed-status{display:flex;align-items:center;gap:12px;min-height:25px;padding:4px 12px;color:#ffffff;background:var(--ed-bar);font-size:11px;flex-wrap:wrap}
+    #file-explorer .ed-status span:last-child{margin-left:auto}
+    #file-explorer .ed-small{font-size:12px;color:var(--ed-sub)}
+    #file-explorer .ed-outline{margin-top:16px;display:flex;gap:6px;flex-wrap:wrap}
+    #file-explorer .ed-outline button{border:1px solid var(--ed-border);padding:5px 8px;border-radius:3px;font-size:12px}
+    #file-explorer .ed-live{min-height:1px}
+    #file-explorer .ed-hidden{display:none!important}
+    @media(max-width:760px){#file-explorer .ed-grid{grid-template-columns:44px 195px minmax(0,1fr)}#file-explorer .ed-titlebar{gap:6px}#file-explorer .ed-reading,#file-explorer .ed-guide{padding:18px}}
+    @media(max-width:620px){#file-explorer .ed-grid{grid-template-columns:40px minmax(0,1fr)}#file-explorer .ed-explorer{display:none}#file-explorer.ed-show-explorer .ed-explorer{display:block;height:706px}#file-explorer.ed-show-explorer .ed-editor{display:none}#file-explorer .ed-titlebar{padding-left:9px}#file-explorer .ed-snapshot{width:100%}#file-explorer .ed-code{font-size:12px}#file-explorer .ed-code-line{grid-template-columns:35px minmax(0,1fr);padding-right:10px}#file-explorer .ed-toolbar{padding:7px}#file-explorer .ed-toolbar button{padding:6px}#file-explorer .ed-reading,#file-explorer .ed-guide{padding:16px}#file-explorer .ed-status{gap:5px}#file-explorer .ed-status span:last-child{margin-left:0}}
+    @media(prefers-reduced-motion:reduce){#file-explorer *{scroll-behavior:auto!important}}
+  </style>
+  <header class="ed-titlebar">
+    <span class="ed-app-mark" aria-hidden="true">&lt;/&gt;</span>
+    <span class="ed-title">Обозреватель файлов</span>
+    <span class="ed-snapshot">Шаблон · только просмотр</span>
+  </header>
+  <div class="ed-grid">
+    <nav class="ed-activity" aria-label="Разделы обзора">
+      <button type="button" id="ed-files-button" aria-label="Показать дерево файлов" aria-pressed="true">▤<br>Файлы</button>
+      <button type="button" id="ed-guide-button" aria-label="Открыть объяснение работы">?<br>Обзор</button>
+      <button type="button" class="ed-theme-toggle" id="ed-theme-button" aria-label="Переключить светлую и темную тему">◐<br>Тема</button>
+    </nav>
+    <aside class="ed-explorer" aria-label="Дерево реальных файлов">
+      <div class="ed-explorer-head">ПРОВОДНИК</div>
+      <div class="ed-tree-help">Выбранные файлы на момент сборки снимка.</div>
+      <div id="ed-tree"></div>
+    </aside>
+    <main class="ed-editor">
+      <div class="ed-tabs" id="ed-tabs" aria-label="Открытые материалы"></div>
+      <div class="ed-breadcrumb" id="ed-breadcrumb"></div>
+      <div class="ed-toolbar" id="ed-toolbar">
+        <button type="button" id="ed-source-button" aria-pressed="true">Текст</button>
+        <button type="button" id="ed-reading-button" aria-pressed="false">Читать</button>
+        <span class="ed-spacer"></span>
+        <button type="button" id="ed-search-button">Найти</button>
+        <button type="button" id="ed-copy-button">Копировать</button>
+      </div>
+      <div class="ed-find" id="ed-find" hidden>
+        <input id="ed-find-input" type="search" placeholder="Текст в открытом файле" aria-label="Найти текст в открытом файле">
+        <span class="ed-find-count" id="ed-find-count" aria-live="polite"></span>
+        <button type="button" id="ed-find-prev" aria-label="Предыдущее совпадение">↑</button>
+        <button type="button" id="ed-find-next" aria-label="Следующее совпадение">↓</button>
+        <button type="button" id="ed-find-close" aria-label="Закрыть поиск">×</button>
+      </div>
+      <div class="ed-purpose" id="ed-purpose"></div>
+      <div class="ed-content" id="ed-content"></div>
+    </main>
+  </div>
+  <footer class="ed-status"><span id="ed-status-file">SKILL.md</span><span id="ed-status-details"></span><span>Снимок · только просмотр</span></footer>
+  <div class="ed-live ed-small" id="ed-message" aria-live="polite"></div>
+  <script type="application/json" id="ed-data">{"title":"Обозреватель файлов","snapshot":"","groups":[],"files":[],"initial":"@guide"}</script>
+  <script>
+  (()=>{
+    const root=document.getElementById('file-explorer');
+    const $=id=>root.querySelector('#'+id);
+    const data=JSON.parse($('ed-data').textContent);
+    const byId=new Map(data.files.map(f=>[f.id,f]));
+    let selected=byId.has(data.initial)?data.initial:'@guide',opened=[],mode='source',search='',matchIndex=0;
+    root.querySelector('.ed-title').textContent=data.title||'Обозреватель файлов';
+    document.title=data.title||'Обозреватель файлов';
+    root.querySelector('.ed-snapshot').textContent=data.snapshot?'Снимок '+data.snapshot+' · только просмотр':'Шаблон без материалов · только просмотр';
+    const content=$('ed-content');
+    const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const makeButton=(text,fn,cls='')=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.className=cls;b.addEventListener('click',fn);return b;};
+    function msg(text){$('ed-message').textContent=text;setTimeout(()=>{$('ed-message').textContent='';},4000);}
+    function prettyBytes(n){return n<1024?n+' Б':(n/1024).toFixed(1)+' КБ';}
+    function resolveFile(target){
+      const path=target.split('#')[0];if(!path)return selected;
+      const parts=selected.split('/').slice(0,-1);
+      for(const raw of path.split('/')){let p;try{p=decodeURIComponent(raw);}catch{msg('Некорректный адрес файла: '+target);return null;}if(p==='..')parts.pop();else if(p&&p!=='.')parts.push(p);}
+      return parts.join('/');
+    }
+    function inline(text){
+      const tokens=[];
+      const replaced=text.replace(/`([^`]+)`|\[([^\]]+)\]\(([^)]+)\)/g,(_,code,label,target)=>{
+        tokens.push(code!==undefined?'<code>'+escape(code)+'</code>':'<a href="#" data-file-target="'+escape(target)+'">'+escape(label)+'</a>');
+        return '\u0000'+(tokens.length-1)+'\u0000';
+      });
+      return escape(replaced).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\u0000(\d+)\u0000/g,(_,i)=>tokens[Number(i)]||'');
+    }
+    function markdown(text){
+      const lines=text.split('\n');let html='',i=0,list=null;
+      const closeList=()=>{if(list){html+='</'+list+'>';list=null;}};
+      while(i<lines.length){const l=lines[i];
+        if(l.startsWith('```')){closeList();let code=[];i++;while(i<lines.length&&!lines[i].startsWith('```'))code.push(lines[i++]);html+='<pre><code>'+escape(code.join('\n'))+'</code></pre>';i++;continue;}
+        if(i===0&&l.trim()==='---'){closeList();let meta=[l];i++;while(i<lines.length){meta.push(lines[i]);if(lines[i++].trim()==='---')break;}html+='<details><summary>Метаданные файла</summary><pre><code>'+escape(meta.join('\n'))+'</code></pre></details>';continue;}
+        if(/^\|/.test(l)&&i+1<lines.length&&/^\|[\s:|\-]+\|?\s*$/.test(lines[i+1])){closeList();const cells=x=>x.trim().replace(/^\||\|$/g,'').split('|').map(c=>c.trim());html+='<div class="ed-table-wrap"><table><thead><tr>'+cells(l).map(c=>'<th>'+inline(c)+'</th>').join('')+'</tr></thead><tbody>';i+=2;while(i<lines.length&&/^\|/.test(lines[i]))html+='<tr>'+cells(lines[i++]).map(c=>'<td>'+inline(c)+'</td>').join('')+'</tr>';html+='</tbody></table></div>';continue;}
+        const heading=l.match(/^(#{1,6})\s+(.+)$/);if(heading){closeList();const n=Math.min(heading[1].length,3);html+='<h'+n+'>'+inline(heading[2])+'</h'+n+'>';i++;continue;}
+        const bullet=l.match(/^\s*([-*]|\d+\.)\s+(.+)$/);if(bullet){const type=/\d/.test(bullet[1])?'ol':'ul';if(list!==type){closeList();html+='<'+type+'>';list=type;}html+='<li>'+inline(bullet[2])+'</li>';i++;continue;}
+        closeList();if(l.trim())html+='<p>'+inline(l)+'</p>';i++;
+      }closeList();return html;
+    }
+    function treeNode(prefix,files,depth){
+      const box=document.createElement('div');const nodes=new Map();for(const f of files){const rest=f.id.slice(prefix.length),name=rest.split('/')[0];if(!nodes.has(name))nodes.set(name,[]);nodes.get(name).push(f);}
+      for(const [name,items] of [...nodes.entries()].sort((a,b)=>{const ad=a[1][0].id.slice(prefix.length).includes('/'),bd=b[1][0].id.slice(prefix.length).includes('/');return Number(bd)-Number(ad)||a[0].localeCompare(b[0]);})){
+        if(items[0].id.slice(prefix.length).includes('/')){const d=document.createElement('details');d.open=name==='references'||name==='agents';const s=document.createElement('summary');s.textContent=name;s.style.paddingLeft=(10+depth*12)+'px';d.append(s,treeNode(prefix+name+'/',items,depth+1));box.append(d);}
+        else{const f=items[0],b=makeButton('',()=>openFile(f.id),'ed-file');b.style.setProperty('--depth',depth);b.dataset.fileId=f.id;b.setAttribute('aria-label','Открыть '+f.id);const kind=document.createElement('span');kind.className='ed-file-kind';kind.textContent=f.type==='image'?'ИЗО':f.path.endsWith('.md')?'MD':f.path.endsWith('.json')?'{}':f.path.endsWith('.yaml')?'YML':'ТЕК';const label=document.createElement('span');label.className='ed-file-name';label.textContent=name;b.append(kind,label);box.append(b);}
+      }return box;
+    }
+    function buildTree(){
+      const tree=$('ed-tree');tree.replaceChildren();
+      for(const group of data.groups){const d=document.createElement('details');d.open=true;const s=document.createElement('summary');s.textContent=group.label;d.append(s,treeNode('',data.files.filter(f=>f.group===group.id),0));tree.append(d);}
+      if(!data.files.length){const note=document.createElement('p');note.className='ed-tree-help';note.textContent='В шаблон пока не добавлены материалы.';tree.append(note);}
+    }
+    function renderTabs(){const tabs=$('ed-tabs');tabs.replaceChildren();const guide=document.createElement('div');guide.className='ed-tab'+(selected==='@guide'?' active':'');guide.append(makeButton('Об обзоре',()=>openFile('@guide'),'ed-tab-open'));tabs.append(guide);
+      for(const id of opened){const f=byId.get(id);const t=document.createElement('div');t.className='ed-tab'+(selected===id?' active':'');const b=makeButton(f.path.split('/').pop(),()=>openFile(id),'ed-tab-open');b.setAttribute('aria-label','Вкладка '+id);t.append(b);const close=makeButton('×',()=>{opened=opened.filter(x=>x!==id);if(selected===id)openFile(opened.at(-1)||'@guide');else renderTabs();},'ed-tab-close');close.setAttribute('aria-label','Закрыть вкладку '+id);t.append(close);tabs.append(t);}
+      tabs.querySelector('.active')?.scrollIntoView({block:'nearest',inline:'nearest'});
+    }
+    function sourceView(f){if(f.path.endsWith('.md')&&!search){const nav=document.createElement('nav');nav.className='ed-outline';nav.style.padding='0 14px';nav.setAttribute('aria-label','Разделы документа');f.content.split('\n').forEach((line,i)=>{if(line.startsWith('## '))nav.append(makeButton(line.slice(3),()=>go(f.id,i+1)));});content.append(nav);}const wrap=document.createElement('div');wrap.className='ed-code';const lines=f.content.split('\n');let globalMatches=0;
+      lines.forEach((line,i)=>{const row=document.createElement('div');row.className='ed-code-line';row.dataset.line=String(i+1);const n=document.createElement('span');n.className='ed-code-number';n.textContent=String(i+1);const text=document.createElement('span');text.className='ed-code-text';if(/^#{1,6}\s/.test(line))text.classList.add('ed-syntax-heading');else if(/^```/.test(line))text.classList.add('ed-syntax-fence');else if(/^\s*[\w-]+:/.test(line))text.classList.add('ed-syntax-key');
+        if(search){const lower=line.toLocaleLowerCase(),needle=search.toLocaleLowerCase();let pos=0,last=0;while((pos=lower.indexOf(needle,last))!==-1){text.append(document.createTextNode(line.slice(last,pos)));const mark=document.createElement('mark');mark.textContent=line.slice(pos,pos+search.length);mark.dataset.match=String(globalMatches++);text.append(mark);last=pos+search.length;}text.append(document.createTextNode(line.slice(last)));if(last)row.classList.add('is-match');}
+        else text.textContent=line;row.append(n,text);wrap.append(row);
+      });content.append(wrap);if(search){$('ed-find-count').textContent=globalMatches?`${Math.min(matchIndex+1,globalMatches)} / ${globalMatches}`:'0 совпадений';if(globalMatches){matchIndex=((matchIndex%globalMatches)+globalMatches)%globalMatches;const m=content.querySelector('[data-match="'+matchIndex+'"]');m?.closest('.ed-code-line').classList.add('is-current');m?.scrollIntoView({block:'center'});$('ed-find-count').textContent=(matchIndex+1)+' / '+globalMatches;}}else $('ed-find-count').textContent='';
+    }
+    function imageView(f){
+      const figure=document.createElement('figure');figure.className='ed-figure';
+      const heading=document.createElement('h2');heading.textContent=f.path.split('/').pop();heading.style.marginTop='0';figure.append(heading);
+      const im=document.createElement('img');im.alt=f.id;figure.append(im);
+      const note=document.createElement('p');note.className='ed-image-note';note.textContent='Встроенная копия изображения. Масштаб показа не меняет файл.';figure.append(note);
+      const facts=document.createElement('dl');facts.className='ed-file-facts';
+      const dimensions=document.createElement('dd');dimensions.textContent='Ожидается загрузка';
+      const label=document.createElement('dt');label.textContent='Размер встроенного изображения';facts.append(label,dimensions);
+      for(const [k,v] of [['Файл',prettyBytes(f.bytes)],['SHA-256',f.sha256]]){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;facts.append(dt,dd);}
+      im.addEventListener('load',()=>{dimensions.textContent=im.naturalWidth+' × '+im.naturalHeight;});
+      im.addEventListener('error',()=>{dimensions.textContent='Изображение не загрузилось';msg('Не удалось показать изображение: '+f.id);});
+      if(/^data:image\/(png|jpeg|webp|gif);base64,/i.test(f.preview||''))im.src=f.preview;else{dimensions.textContent='Неподдерживаемый источник';note.textContent='Ресурс принимает встроенные PNG, JPEG, WEBP и GIF.';}
+      figure.append(facts);content.append(figure);
+    }
+    function go(id,line){openFile(id);if(line){mode='source';renderContent();content.querySelector('[data-line="'+line+'"]')?.scrollIntoView({block:'start'});}}
+    function renderGuide(){
+      const wrap=document.createElement('article');wrap.className='ed-guide';
+      const title=document.createElement('h1');title.textContent='Об этом обзоре';wrap.append(title);
+      const note=document.createElement('p');note.textContent=data.files.length?'Здесь показан снимок выбранных файлов. Изменения исходников после сборки в него не попадают.':'Это готовая оболочка обозревателя. Файлы проекта пока не добавлены.';wrap.append(note);
+      const list=document.createElement('ul');
+      for(const text of ['Дерево и вкладки переключают материалы.','Режим «Текст» показывает точное содержимое текстовых файлов с номерами строк.','Режим «Читать» упрощённо оформляет Markdown; исходный текст остаётся доступен.','Поиск работает только в открытом текстовом файле.','Кнопка копирования передаёт полный текст в буфер обмена, если среда это разрешает.','Обзор не редактирует и не сохраняет исходники, не выполняет их код.','Внутренние ссылки открывают встроенные файлы. Внешние адреса только показываются сообщением.']){const li=document.createElement('li');li.textContent=text;list.append(li);}wrap.append(list);
+      if(data.files.length){const heading=document.createElement('h2');heading.textContent='Материалы';wrap.append(heading);for(const f of data.files){const p=document.createElement('p');p.append(makeButton(f.id,()=>openFile(f.id),'ed-inline-link'));wrap.append(p);}}
+      content.append(wrap);
+    }
+    function renderContent(){content.replaceChildren();const guide=selected==='@guide',f=byId.get(selected);$('ed-toolbar').hidden=guide||f?.type==='image';$('ed-purpose').textContent=guide?'Справка обозревателя. Отдельно от содержимого файлов.':f.purpose||'';$('ed-breadcrumb').textContent=guide?'Обзор › Об этом обзоре':selected.split('/').join(' › ');$('ed-status-file').textContent=guide?'Обзор':f.path.split('/').pop();$('ed-status-details').textContent=guide?'Назначение и границы обзора':f.type==='image'?prettyBytes(f.bytes):f.content.split('\n').length+' строк · UTF-8';$('ed-source-button').setAttribute('aria-pressed',String(mode==='source'));$('ed-reading-button').setAttribute('aria-pressed',String(mode==='reading'));$('ed-reading-button').disabled=f?.type==='text'&&!f.path.endsWith('.md');if(guide)renderGuide();else if(f.type==='image')imageView(f);else if(mode==='reading'&&f.path.endsWith('.md')){const article=document.createElement('article');article.className='ed-reading';article.innerHTML=markdown(f.content);content.append(article);}else sourceView(f);}
+    function openFile(id){if(id!=='@guide'&&!byId.has(id)){msg('Файл отсутствует в этом снимке: '+id);return;}selected=id;if(id!=='@guide'&&!byId.get(id).path.endsWith('.md'))mode='source';search='';matchIndex=0;$('ed-find-input').value='';$('ed-find').hidden=true;if(id!=='@guide'&&!opened.includes(id)){opened.push(id);}root.classList.remove('ed-show-explorer');root.querySelectorAll('[data-file-id]').forEach(b=>{if(b.dataset.fileId===id){b.setAttribute('aria-current','page');let d=b.parentElement;while(d&&d!==root){if(d.tagName==='DETAILS')d.open=true;d=d.parentElement;}}else b.removeAttribute('aria-current');});renderTabs();renderContent();content.scrollTop=0;}
+    root.addEventListener('click',e=>{const direct=e.target.closest('[data-open-id]');if(direct){go(direct.dataset.openId,Number(direct.dataset.openLine)||null);return;}const link=e.target.closest('[data-file-target]');if(link){e.preventDefault();const raw=link.dataset.fileTarget;if(/^[a-z][a-z0-9+.-]*:|^\/\//i.test(raw)){msg('В этом автономном обзоре открываются только встроенные файлы. Адрес: '+raw);return;}const id=resolveFile(raw);if(id!==null)openFile(id);}});
+    function showSearch(){if(selected==='@guide'||byId.get(selected)?.type==='image'){msg('Поиск доступен в открытом текстовом файле.');return;}mode='source';$('ed-find').hidden=false;renderContent();$('ed-find-input').focus();}
+    $('ed-source-button').addEventListener('click',()=>{mode='source';renderContent();});$('ed-reading-button').addEventListener('click',()=>{mode='reading';search='';$('ed-find-input').value='';$('ed-find').hidden=true;renderContent();});$('ed-guide-button').addEventListener('click',()=>openFile('@guide'));$('ed-files-button').addEventListener('click',()=>{if(matchMedia('(max-width:620px)').matches)root.classList.toggle('ed-show-explorer');else{const current=root.querySelector('[aria-current="page"]');current?.scrollIntoView({block:'nearest'});}});$('ed-theme-button').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';});$('ed-search-button').addEventListener('click',showSearch);
+    $('ed-find-input').addEventListener('input',e=>{search=e.target.value;matchIndex=0;renderContent();});$('ed-find-next').addEventListener('click',()=>{matchIndex++;renderContent();});$('ed-find-prev').addEventListener('click',()=>{matchIndex--;renderContent();});$('ed-find-close').addEventListener('click',()=>{search='';$('ed-find-input').value='';$('ed-find').hidden=true;renderContent();});$('ed-find-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();matchIndex+=e.shiftKey?-1:1;renderContent();}if(e.key==='Escape')$('ed-find-close').click();});
+    $('ed-copy-button').addEventListener('click',async()=>{const f=byId.get(selected);if(f?.type!=='text')return;try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(f.content);else{const area=document.createElement('textarea');area.value=f.content;area.style.position='absolute';area.style.left='-10000px';root.append(area);area.select();try{if(!document.execCommand('copy'))throw new Error('clipboard');}finally{area.remove();}}msg('Скопирован полный текст '+f.path);}catch{msg('Браузер ограничил буфер обмена. Текст можно выделить и скопировать обычным способом.');}});
+    root.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='f'){e.preventDefault();showSearch();}});
+    buildTree();openFile(selected);
+  })();
+  </script>
+</div>
+
+</body></html>
