@@ -78,10 +78,12 @@ When supplying an enlarged source crop, add: "Image 3 is a detail reference from
 
 If the technique is unclear or did not help, inspect the specific source region and compare the correction with the accepted version. Keep pattern, geometry and color requirements separate. Enlarging a crop adds no source information; if both the crop and the text change, do not attribute an improvement to either change without evidence. Do not continue identical attempts without a new specific reason; keep the accepted version and explicitly record the remaining deviation.
 
-## 6. Present the result
+## 6. Present the result and save task materials
 
 Show results separately with stable labels, noting improvements and material deviations. For comparison, use the source and result at the same scale. If display fails, use a supported presentation method; do not regenerate merely to display the result.
 
-Take the storage destination from the assignment. Keep the source, selected strategy, actual request, result, checks performed and available feedback with the task materials so the result remains traceable.
+For assigned tasks, save the source, selected strategy, actual request, result, checks performed and feedback in the task's working folder; take the storage destination and scope from the assignment. Do not add user materials or detailed history to the distributable skill folder. Do not transfer a series rating to individual files, another strategy or a new palette.
 
-For requested measurements, use actual dimensions, verifiable features and available call records. Take token usage and internal durations only from telemetry explicitly linked to the run; if unavailable, mark them unknown. Keep editor-call waiting time separate from preparation time, text length separate from tokens, and visual observation separate from measurement.
+For assigned tests, save the exact prompt and result as separate files, with a measurement record alongside them. Measure the editor-call duration immediately before and after await, saving both points and their difference; record concurrency separately. Distinguish an agent task name, a local experiment label and an actual run/session ID. Take input/output/cached/reasoning tokens and internal durations only from an accessible source explicitly linked to the run; without such a source, write null and the reason. Do not present a result-file identifier or shell-session identifier as a model-run identifier.
+
+For measurements, use actual dimensions, verifiable features and available call records. Take token usage only from telemetry linked to the run; if unavailable, mark it unknown. Keep editor-call waiting time separate from preparation time, text length separate from tokens, and visual observation separate from measurement.
