@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "kind": "workflow_skill_resources",
+  "skill": "enhance-image-quality-ru",
+  "generated": false,
+  "package": {
+    "name": "human-workflow",
+    "version": "0.0.7",
+    "display_name": "Human-workflow-v0.0.7",
+    "source": "plugin.json",
+    "source_sha256": "074a2ebdf34548ca2ecc59226132ad0c0b000aa507a28f8c5cb4ab917a0e9ce2"
+  },
+  "files": {
+    "../SKILL.md": {
+      "source": "skills/enhance-image-quality-ru/SKILL.md",
+      "sha256": "42601bcbbfb7ee7a2a772f1c207f66c3fa4ed677afc9446f0e1b22f9c0b11856"
+    },
+    "../agents/openai.yaml": {
+      "source": "skills/enhance-image-quality-ru/agents/openai.yaml",
+      "sha256": "29503104bde0808bb96fb91506a4867a021d465efdf679621d87efc6ba4d9a5e"
+    },
+    "../references/enhancement.md": {
+      "source": "skills/enhance-image-quality-ru/references/enhancement.md",
+      "sha256": "9a84a56df9b2b165b8bd519cc30986bd43f2a933f77d56cc29e00fa5234fc591"
+    },
+    "../references/harmonize-hair.md": {
+      "source": "skills/enhance-image-quality-ru/references/harmonize-hair.md",
+      "sha256": "b6c7e254f578a52252b5e2f14c8103a0cc895669b50e12374e5bd2496d0b0560"
+    },
+    "../references/observation-card.md": {
+      "source": "skills/enhance-image-quality-ru/references/observation-card.md",
+      "sha256": "75f7683bd890aa057315207e14348e3e07b8ac148f553716aaa3fd01275a38f3"
+    },
+    "../references/preserve-colors.md": {
+      "source": "skills/enhance-image-quality-ru/references/preserve-colors.md",
+      "sha256": "b22cfb178e46700452811b365026d594bed70bfff867b24209c008c2587cf758"
+    },
+    "LICENSE": {
+      "source": "skills/enhance-image-quality-ru/resources/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "../scripts/prepare_request.py": {
+      "source": "skills/enhance-image-quality-ru/scripts/prepare_request.py",
+      "sha256": "4783b434a35edd65ddb31cb0dcaedadbc312245e4938f21df464a26011ba07b6"
+    }
+  }
+}

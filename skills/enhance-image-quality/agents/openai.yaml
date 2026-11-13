@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character image enhancement"
+  short_description: "Enhance quality while preserving colors or harmonizing hair"
+  default_prompt: "Use $enhance-image-quality to enhance this character image and clarify the permitted hair color changes if they have not already been selected."
